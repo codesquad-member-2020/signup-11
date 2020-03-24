@@ -1,9 +1,11 @@
 spring:
   datasource:
-    url: jdbc:h2:mem://localhost/~/signup-11;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
-    driver-class-name: org.h2.Driver
-    data-username: sa
-    data-password:
+    hikari:
+      jdbc-url: jdbc:h2:mem://localhost/~/signup_server;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+      driver-class-name: org.h2.Driver
+      data-username: sa
+      data-password:
+        
   h2:
     console:
       enabled: true
