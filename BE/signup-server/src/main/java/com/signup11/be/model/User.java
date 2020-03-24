@@ -17,7 +17,7 @@ public class User {
   public String password;
 
   public String name;
-//
+
 //  public String birth;
 //
 //  public String gender;
@@ -30,6 +30,13 @@ public class User {
   public LocalDateTime createdDate;
 
   public User() {
+  }
+
+  public User(String id, String password, String name) {
+    this.id = id;
+    this.password = password;
+    this.name = name;
+    this.createdDate = LocalDateTime.now();
   }
 
   @Override
