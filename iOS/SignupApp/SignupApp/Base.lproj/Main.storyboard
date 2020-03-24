@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyt-DX-jIP" userLabel="ID Label">
-                                <rect key="frame" x="43.333333333333343" y="140" width="288.33333333333326" height="18"/>
+                                <rect key="frame" x="43.333333333333336" y="140" width="39.000000000000007" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="아이디">
                                         <attributes>
@@ -40,17 +40,17 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-au-aDX" userLabel="ID Text Field">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-au-aDX" userLabel="ID Text Field">
                                 <rect key="frame" x="43.333333333333343" y="163" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2G8-au-aDX" secondAttribute="height" multiplier="288:37" id="dvg-cT-FnJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czv-n5-9Uf" userLabel="PW Label">
-                                <rect key="frame" x="43.333333333333343" y="230" width="288.33333333333326" height="18"/>
+                                <rect key="frame" x="43.333333333333343" y="230" width="52" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="비밀번호">
                                         <attributes>
@@ -61,7 +61,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-hh-w0t" userLabel="PW Text Field">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-hh-w0t" userLabel="PW Text Field">
                                 <rect key="frame" x="43.333333333333343" y="253" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -71,7 +71,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-D0-lcL" userLabel="PW RE Label">
-                                <rect key="frame" x="43.333333333333343" y="320" width="288.33333333333326" height="18"/>
+                                <rect key="frame" x="43.333333333333343" y="320" width="95" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="비밀번호 재확인">
                                         <attributes>
@@ -92,7 +92,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-gP-4Fv" userLabel="Name Label">
-                                <rect key="frame" x="43.333333333333343" y="410.33333333333331" width="288.33333333333326" height="18"/>
+                                <rect key="frame" x="43.333333333333336" y="410.33333333333331" width="26.000000000000007" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="이름">
                                         <attributes>
@@ -124,21 +124,21 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="width" secondItem="2G8-au-aDX" secondAttribute="width" multiplier="1.3" id="5xr-j0-NV5"/>
                             <constraint firstItem="2G8-au-aDX" firstAttribute="width" secondItem="pSj-hh-w0t" secondAttribute="width" id="8pd-hr-mDi"/>
                             <constraint firstItem="pSj-hh-w0t" firstAttribute="top" secondItem="czv-n5-9Uf" secondAttribute="bottom" constant="5" id="9B4-c7-vZu"/>
-                            <constraint firstItem="gaU-HE-YkU" firstAttribute="trailing" secondItem="ymg-D0-lcL" secondAttribute="trailing" id="9Jn-3m-AOE"/>
                             <constraint firstItem="MMe-yl-ijN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AMF-lX-0pG"/>
                             <constraint firstItem="XWk-gP-4Fv" firstAttribute="leading" secondItem="l9X-kA-2Sd" secondAttribute="leading" id="Bvh-km-MWo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="czv-n5-9Uf" secondAttribute="trailing" symbolic="YES" id="EaT-hQ-HXE"/>
                             <constraint firstItem="gaU-HE-YkU" firstAttribute="leading" secondItem="ymg-D0-lcL" secondAttribute="leading" id="GR1-E0-udi"/>
                             <constraint firstItem="MMe-yl-ijN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="HXN-hL-wnU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XWk-gP-4Fv" secondAttribute="trailing" symbolic="YES" id="LGu-4O-zME"/>
                             <constraint firstItem="pSj-hh-w0t" firstAttribute="leading" secondItem="czv-n5-9Uf" secondAttribute="leading" id="Lmv-Hb-IAO"/>
                             <constraint firstItem="dyt-DX-jIP" firstAttribute="top" secondItem="MMe-yl-ijN" secondAttribute="bottom" constant="35" id="M5x-oH-yU4"/>
                             <constraint firstItem="2G8-au-aDX" firstAttribute="leading" secondItem="dyt-DX-jIP" secondAttribute="leading" id="SrZ-tV-Yvo"/>
                             <constraint firstItem="l9X-kA-2Sd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U6N-ao-Lrv"/>
                             <constraint firstItem="gaU-HE-YkU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="avo-yq-WbC"/>
-                            <constraint firstItem="pSj-hh-w0t" firstAttribute="trailing" secondItem="czv-n5-9Uf" secondAttribute="trailing" id="ccu-ao-2uW"/>
                             <constraint firstItem="l9X-kA-2Sd" firstAttribute="top" secondItem="XWk-gP-4Fv" secondAttribute="bottom" constant="5" id="cmV-hb-ErP"/>
-                            <constraint firstItem="XWk-gP-4Fv" firstAttribute="trailing" secondItem="l9X-kA-2Sd" secondAttribute="trailing" id="e10-Ug-cpq"/>
-                            <constraint firstItem="2G8-au-aDX" firstAttribute="trailing" secondItem="dyt-DX-jIP" secondAttribute="trailing" id="eWP-k9-E6Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ymg-D0-lcL" secondAttribute="trailing" symbolic="YES" id="kL9-Gi-gCZ"/>
                             <constraint firstItem="2G8-au-aDX" firstAttribute="top" secondItem="dyt-DX-jIP" secondAttribute="bottom" constant="5" id="ldr-yp-uaL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dyt-DX-jIP" secondAttribute="trailing" symbolic="YES" id="myf-2s-bJp"/>
                             <constraint firstItem="gaU-HE-YkU" firstAttribute="top" secondItem="ymg-D0-lcL" secondAttribute="bottom" constant="5" id="raH-NZ-6Ln"/>
                             <constraint firstItem="pSj-hh-w0t" firstAttribute="width" secondItem="gaU-HE-YkU" secondAttribute="width" id="xtW-ih-byU"/>
                         </constraints>
