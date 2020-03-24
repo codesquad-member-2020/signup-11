@@ -10,3 +10,11 @@ spring:
     console:
       enabled: true
       path: /h2-console
+
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework.web: error
+    com.signup11.be: debug
+

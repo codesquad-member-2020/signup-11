@@ -5,10 +5,10 @@ CREATE TABLE users
     seq       bigint NOT NULL AUTO_INCREMENT,
     id        varchar(25),
     password  varchar(80),
-    email     varchar(50),
     name      varchar(10),
-    birth     date,
-    phone     varchar(20),
+--     email     varchar(50),
+--     birth     date,
+--     phone     varchar(20),
     create_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     PRIMARY KEY (seq),
     CONSTRAINT unq_user_id UNIQUE (id)
