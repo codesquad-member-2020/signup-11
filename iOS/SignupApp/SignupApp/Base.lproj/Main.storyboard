@@ -97,7 +97,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.91794199486301364" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="czv-n5-9Uf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="1B8-Cb-jqx"/>
                             <constraint firstItem="czv-n5-9Uf" firstAttribute="top" secondItem="2G8-au-aDX" secondAttribute="bottom" constant="30" id="1CY-aM-efz"/>
