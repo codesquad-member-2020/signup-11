@@ -5,7 +5,7 @@ spring:
       driver-class-name: org.h2.Driver
       data-username: sa
       data-password:
-        
+
   h2:
     console:
       enabled: true
@@ -13,8 +13,11 @@ spring:
 
 logging:
   pattern:
-    console: "%d %-5level %logger : %msg%n"
+    console: "%date  %highlight(%-5level) %cyan(%-40.40logger{40}) : %msg%n"
   level:
     org.springframework.web: error
     com.signup11.be: debug
+    sql : debug
+
+
 
