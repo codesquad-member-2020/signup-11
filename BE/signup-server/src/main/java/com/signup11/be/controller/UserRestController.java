@@ -9,6 +9,9 @@ import com.signup11.be.service.UserService;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,5 +45,13 @@ public class UserRestController {
     List<Interest> interestList = userService.findByUserSeq(saved.getSeq());
 
     return ApiResult.OK(new JoinResult(saved, interestList));
+  }
+
+  @GetMapping(path = "user/id/{userId}")
+  public ApiResult<Boolean> checkId(@PathVariable String userId) {
+    if(userService.findById(userId).isPresent()){
+      return ApiResult.OK(true);
+    }
+    return ApiResult.ERROR("존재하지 않는 유저입니다", HttpStatus.NOT_FOUND);
   }
 }

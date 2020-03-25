@@ -7,11 +7,16 @@ import com.signup11.be.repository.InterestRepository;
 import com.signup11.be.repository.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserService {
+
+  private Logger logger = LoggerFactory.getLogger(UserService.class);
 
   private final UserRepository userRepository;
   private final InterestRepository interestRepository;
@@ -40,6 +45,11 @@ public class UserService {
     for (Interest interest : interests) {
       interestRepository.save(interest);
     }
+  }
+
+  @Transactional(readOnly = true)
+  public Optional<User> findById(String userId) {
+    return userRepository.findById(userId);
   }
 
 
