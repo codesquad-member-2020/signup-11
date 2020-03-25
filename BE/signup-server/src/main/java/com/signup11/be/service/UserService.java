@@ -23,13 +23,16 @@ public class UserService {
 
 
   @Transactional
-  public User join(String id, String password, String name, String birth, String gender,
-      String email, String phone, String interests) {
-    User user = new User(id, password, name, birth, gender, email, phone);
+  public User join(User user, String interests) {
     User saved = save(user);
     List<Interest> interestList = createInterest(saved.getSeq(), interests);
     addInterest(interestList);
     return saved;
+  }
+
+  @Transactional(readOnly = true)
+  public List<Interest> findByUserSeq(Long userSeq) {
+    return interestRepository.findByUserSeq(userSeq);
   }
 
   @Transactional
@@ -38,6 +41,7 @@ public class UserService {
       interestRepository.save(interest);
     }
   }
+
 
   private User save(User user) {
     return userRepository.save(user);
