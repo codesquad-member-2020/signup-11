@@ -122,9 +122,9 @@
 			children = (
 				5A4CA5E8242B7E9D0095FA0C /* CustomTextFieldDelegate.swift */,
 				5A4CA5EA242B7EE30095FA0C /* IDTextFieldDelegate.swift */,
+				5A4CA5F0242B7FBF0095FA0C /* NameTextFieldDelegate.swift */,
 				5A4CA5EC242B7F920095FA0C /* PWTextFieldDelegate.swift */,
 				5A4CA5EE242B7FAA0095FA0C /* PWAgainTextFieldDelegate.swift */,
-				5A4CA5F0242B7FBF0095FA0C /* NameTextFieldDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";

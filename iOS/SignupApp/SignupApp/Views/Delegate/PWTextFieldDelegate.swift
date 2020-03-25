@@ -8,6 +8,8 @@
 
 import UIKit
 
-final class PWTextFieldDelegate: CustomTextFieldDelegate {
-
+class PWTextFieldDelegate: CustomTextFieldDelegate {
+    override var textLimit: Int {
+        return 16
+    }
 }

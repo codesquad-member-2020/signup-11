@@ -8,6 +8,6 @@
 
 import UIKit
 
-final class PWAgainTextFieldDelegate: CustomTextFieldDelegate {
+final class PWAgainTextFieldDelegate: PWTextFieldDelegate {
 
 }
