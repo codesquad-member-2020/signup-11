@@ -1,5 +1,8 @@
 package com.signup11.be.model;
 
+import static java.time.LocalDateTime.now;
+import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
+
 import com.google.common.base.Objects;
 import java.time.LocalDateTime;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -7,6 +10,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
+
 
 @Table(value = "users")
 public class User {
@@ -32,7 +36,7 @@ public class User {
   private final LocalDateTime createdDate;
 
   public User(String id, String password, String name, String birth, String gender,
-      String email, String phone) {
+      String email, String phone, LocalDateTime createdDate) {
     this.id = id;
     this.password = password;
     this.name = name;
@@ -40,7 +44,7 @@ public class User {
     this.gender = gender;
     this.email = email;
     this.phone = phone;
-    this.createdDate = LocalDateTime.now();
+    this.createdDate = defaultIfNull(createdDate, now());
   }
 
   public Long getSeq() {
@@ -116,6 +120,7 @@ public class User {
     private String gender;
     private String email;
     private String phone;
+    private LocalDateTime createdDate;
 
     public Builder() {
     }
@@ -165,9 +170,14 @@ public class User {
       return this;
     }
 
+    public Builder createdDate(LocalDateTime createdDate) {
+      this.createdDate = createdDate;
+      return this;
+    }
+
 
     public User build() {
-      return new User(id, password, name, birth, gender, email, phone);
+      return new User(id, password, name, birth, gender, email, phone, createdDate);
     }
   }
 }
