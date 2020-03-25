@@ -7,8 +7,6 @@ import com.signup11.be.model.JoinResult;
 import com.signup11.be.model.User;
 import com.signup11.be.service.UserService;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserRestController {
 
   private final UserService userService;
-
-  private Logger logger = LoggerFactory.getLogger(UserRestController.class);
 
   public UserRestController(UserService userService) {
     this.userService = userService;
@@ -47,11 +43,29 @@ public class UserRestController {
     return ApiResult.OK(new JoinResult(saved, interestList));
   }
 
-  @GetMapping(path = "user/id/{userId}")
+  @GetMapping(path = "users/userId/{userId}")
   public ApiResult<Boolean> checkId(@PathVariable String userId) {
-    if(userService.findById(userId).isPresent()){
+    if (userService.findById(userId).isPresent()) {
       return ApiResult.OK(true);
     }
     return ApiResult.ERROR("존재하지 않는 유저입니다", HttpStatus.NOT_FOUND);
   }
+
+  @GetMapping(path = "users/email/{email}")
+  public ApiResult<Boolean> checkEmail(@PathVariable String email) {
+    if (userService.findByEmail(email).isPresent()) {
+      return ApiResult.OK(true);
+    }
+    return ApiResult.ERROR("존재하지 않는 유저입니다", HttpStatus.NOT_FOUND);
+  }
+
+  @GetMapping(path = "users/phone/{phone}")
+  public ApiResult<Boolean> checkPhone(@PathVariable String phone) {
+    if (userService.findByPhone(phone).isPresent()) {
+      return ApiResult.OK(true);
+    }
+    return ApiResult.ERROR("존재하지 않는 유저입니다", HttpStatus.NOT_FOUND);
+  }
+
+
 }

@@ -52,6 +52,16 @@ public class UserService {
     return userRepository.findById(userId);
   }
 
+  @Transactional(readOnly = true)
+  public Optional<User> findByEmail(String email) {
+    return userRepository.findByEmail(email);
+  }
+
+  @Transactional(readOnly = true)
+  public Optional<User> findByPhone(String phone) {
+    return userRepository.findByPhone(phone);
+  }
+
 
   private User save(User user) {
     return userRepository.save(user);
