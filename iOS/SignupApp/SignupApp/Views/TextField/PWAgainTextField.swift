@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PWAgainTextField: CustomTextField {
+final class PWAgainTextField: CustomTextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

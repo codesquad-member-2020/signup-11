@@ -33,7 +33,10 @@ extension UIColor {
             green >= 0 && green <= 255,
             blue >= 0 && blue <= 255
             else { return nil }
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+        self.init(red: CGFloat(red) / 255.0,
+                  green: CGFloat(green) / 255.0,
+                  blue: CGFloat(blue) / 255.0,
+                  alpha: 1.0)
     }
     
     convenience init?(rgb: Int) {
