@@ -8,12 +8,18 @@
 
 import UIKit
 
-class PWTextField: UITextField, UITextFieldDelegate {
+class PWTextField: CustomTextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        return true
     }
 }
