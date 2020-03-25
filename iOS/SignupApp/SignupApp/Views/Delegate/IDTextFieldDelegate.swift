@@ -9,5 +9,4 @@
 import UIKit
 
 final class IDTextFieldDelegate: CustomTextFieldDelegate {
-    
 }
