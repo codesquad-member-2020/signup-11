@@ -89,6 +89,7 @@
 		5A4CA5D7242B4BE60095FA0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A4CA5E7242B7CED0095FA0C /* Delegate */,
 				5A4CA5E0242B53C90095FA0C /* TextField */,
 			);
 			path = Views;
@@ -104,6 +105,13 @@
 				5A4CA5DE242B4DF30095FA0C /* NameTextField.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		5A4CA5E7242B7CED0095FA0C /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		5A8344FF242A301B00F20FAA = {
