@@ -16,10 +16,4 @@ class IDTextField: CustomTextField {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-        
-    override func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
-        return true
-    }
 }

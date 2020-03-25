@@ -8,7 +8,8 @@
 
 import UIKit
 
-class CustomTextField: UITextField, UITextFieldDelegate {
+class CustomTextField: UITextField {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -20,12 +21,6 @@ class CustomTextField: UITextField, UITextFieldDelegate {
     }
     
     private func setup() {
-        delegate = self
-    }
-    
-    func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
-        return true
+        
     }
 }
