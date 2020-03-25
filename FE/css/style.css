@@ -1,0 +1,85 @@
+body,html {
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --title-color:#07A600;
+}
+input {
+    border: 1px solid #d1d1d1;
+    outline: none 0;
+}
+.wrap {
+    margin: 10px;
+    outline: 2px solid darkblue;
+}
+
+.link {
+    margin: 20px auto;
+    float: right;
+}
+
+.link-list {
+    display: flex;
+}
+
+.link-list li {
+    margin:10px;
+}
+
+#form-container {
+    margin:0 auto;
+    width: 80%;
+}
+
+#form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.join-content {
+    width: 50%;
+    margin:0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+}
+
+.form-title {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    margin: 10px 0;
+    color:var(--title-color);
+}
+
+.input-box {
+    display: block;
+}
+.form-group input {
+    padding:10px;
+    border-radius: 1px;
+}
+
+.input-box input {
+    width: 100%;
+}
+.birth-container {
+    display: flex;
+}
+.button-group {
+    display: flex;
+}
+.button-group button {
+    width: 50%;
+    color:#fff;
+    background-color: var(--title-color);
+    padding: 10px;
+}
+.terms-modal {
+    /* display: none; */
+}
