@@ -19,11 +19,16 @@ public class UserServiceTest {
 
   @Test
   public void 유저가입() {
-    String id = "test1234";
+    String userId = "postManUser";
     String password = "1234";
     String name = "테스터";
-    User saved = userService.join(id, password, name);
+    String birth = "2020-03-24";
+    String gender = "남자";
+    String email = "test@gmail.com";
+    String phone = "010-1234-5678";
+    String interests = "영화감상, 자전거";
+    User saved = userService.join(userId, password, name, birth, gender, email, phone, interests);
     assertThat(saved).isNotNull();
-    assertThat(saved.name).isEqualTo(name);
+    assertThat(saved.getName()).isEqualTo(name);
   }
 }
