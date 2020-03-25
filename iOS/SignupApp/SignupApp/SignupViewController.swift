@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController, UITextFieldDelegate {
+class SignupViewController: UIViewController {
     @IBOutlet weak var idTextField: IDTextField!
     @IBOutlet weak var pwTextField: PWTextField!
     @IBOutlet weak var pwAgainTextField: PWAgainTextField!
@@ -16,14 +16,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTextFieldsDelegate()
-    }
-    
-    private func setTextFieldsDelegate() {
-        idTextField.delegate = self
-        pwTextField.delegate = self
-        pwAgainTextField.delegate = self
-        nameTextField.delegate = self
     }
 }
 
