@@ -10,4 +10,10 @@ import UIKit
 
 class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
     var textLimit = 20
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let textFieldTextCount = textField.text?.count ?? 0
+        let totalLength = textFieldTextCount + string.count - range.length
+        return totalLength <= textLimit
+    }
 }
