@@ -9,12 +9,11 @@
 import UIKit
 
 class SignupViewController: UIViewController {
-
+    @IBOutlet weak var idTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
 }
 
