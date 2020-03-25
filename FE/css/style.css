@@ -11,13 +11,21 @@
   width: 500px;
 }
 
-.link-list li {
-  float: left;
+.link {
+  padding: 20px 0;
 }
 
-.form-wrap {}
+.link-list {
+  display: block;
+}
 
-.form-wrap form {}
+.link-list li {
+  float: right;
+}
+
+.link-list li:last-child {
+  margin-right: 6px;
+}
 
 .form-title h1 {
   text-align: center;
@@ -109,17 +117,56 @@
 
 /* 약관 */
 .terms-modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
+  padding: 20px 10px;
   background-color: #dedede;
 }
 
-.terms-contents ul {
-  height: 200%;
-  overflow: scroll;
+.close-buttom {
+  position: relative;
 }
+
+.close-buttom button {
+  position: absolute;
+  top: -12px;
+  right: -6px;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.terms-contents {
+  margin-bottom: 20px;
+}
+
+.terms-title {}
+
+.terms-title h3 {
+  margin-bottom: 10px;
+}
+
+.terms-contents ul {
+  height: 200px;
+  overflow: scroll;
+  background-color: #fff;
+  padding: 20px 10px;
+}
+
+.agree {
+  text-align: center;
+}
+
+.agree-button {
+  width: 30%;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  background-color: #07A600;
+}
+
 
 /* login css */
 .login {
@@ -134,86 +181,6 @@
   margin: 0 0 10px;
 }
 
-.login .form-group {}
-
 .userLogin {
   margin: 20px 0 0;
 }
-
-
-
-/* .link-list {
-  display: flex;
-}
-
-.link-list li {
-  margin: 10px;
-} */
-
-/* #form-container {
-  margin: 0 auto;
-  width: 80%;
-}
-
-#form-container form {
-  display: flex;
-  flex-direction: column;
-} */
-/* 
-.join-content {
-  width: 50%;
-  margin: 0 auto;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-}
-
-.form-group label {
-  margin: 10px 0;
-}
-
-.form-title h1 {
-  text-align: center;
-  font-size: 2em;
-  color: var(--title-color);
-}
-
-.input-box {
-  display: block;
-}
-
-.form-group input {
-  padding: 10px;
-  border-radius: 3px;
-}
-
-.input-box input {
-  width: 100%;
-}
-
-.birth-group {
-  display: flex;
-  justify-content: space-between;
-}
-
-.birth-group label,
-.birth-group input,
-.birth-group select {}
-
-.button-group {
-  display: flex;
-}
-
-.button-group button {
-  width: 50%;
-  color: #fff;
-  background-color: var(--title-color);
-  padding: 10px;
-}
-
-.terms-modal {
-  display: none;
-} */
