@@ -14,22 +14,22 @@ public class User {
   @Id
   private Long seq;
 
-  private String id;
+  private final String id;
 
-  private String password;
+  private final String password;
 
-  private String name;
+  private final String name;
 
-  public String birth;
+  private final String birth;
 
-  public String gender;
+  private final String gender;
 
-  public String email;
+  private final String email;
 
-  public String phone;
+  private final String phone;
 
   @Column(value = "create_at")
-  public LocalDateTime createdDate;
+  private final LocalDateTime createdDate;
 
   public User(String id, String password, String name, String birth, String gender,
       String email, String phone) {
@@ -105,5 +105,69 @@ public class User {
         .append("name", name)
         .append("createdDate", createdDate)
         .toString();
+  }
+
+  static public class Builder {
+
+    private String id;
+    private String password;
+    private String name;
+    private String birth;
+    private String gender;
+    private String email;
+    private String phone;
+
+    public Builder() {
+    }
+
+    public Builder(User user) {
+      this.id = user.id;
+      this.password = user.password;
+      this.name = user.name;
+      this.birth = user.birth;
+      this.gender = user.gender;
+      this.email = user.email;
+      this.phone = user.phone;
+    }
+
+    public Builder id(String id) {
+      this.id = id;
+      return this;
+    }
+
+    public Builder password(String password) {
+      this.password = password;
+      return this;
+    }
+
+    public Builder name(String name) {
+      this.name = name;
+      return this;
+    }
+
+    public Builder birth(String birth) {
+      this.birth = birth;
+      return this;
+    }
+
+    public Builder gender(String gender) {
+      this.gender = gender;
+      return this;
+    }
+
+    public Builder email(String email) {
+      this.email = email;
+      return this;
+    }
+
+    public Builder phone(String phone) {
+      this.phone = phone;
+      return this;
+    }
+
+
+    public User build() {
+      return new User(id, password, name, birth, gender, email, phone);
+    }
   }
 }
