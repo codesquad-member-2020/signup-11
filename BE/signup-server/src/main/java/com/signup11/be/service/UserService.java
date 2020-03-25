@@ -1,7 +1,12 @@
 package com.signup11.be.service;
 
+import com.google.common.base.Splitter;
+import com.signup11.be.model.Interest;
 import com.signup11.be.model.User;
+import com.signup11.be.repository.InterestRepository;
 import com.signup11.be.repository.UserRepository;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,18 +14,41 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
 
   private final UserRepository userRepository;
+  private final InterestRepository interestRepository;
 
-  public UserService(UserRepository userRepository) {
+  public UserService(UserRepository userRepository, InterestRepository interestRepository) {
     this.userRepository = userRepository;
+    this.interestRepository = interestRepository;
+  }
+
+
+  @Transactional
+  public User join(String id, String password, String name, String birth, String gender,
+      String email, String phone, String interests) {
+    User user = new User(id, password, name, birth, gender, email, phone);
+    User saved = save(user);
+    List<Interest> interestList = createInterest(saved.getSeq(), interests);
+    addInterest(interestList);
+    return saved;
   }
 
   @Transactional
-  public User join(String id, String password, String name) {
-    User user = new User(id, password, name);
-    return save(user);
+  public void addInterest(List<Interest> interests) {
+    for (Interest interest : interests) {
+      interestRepository.save(interest);
+    }
   }
 
   private User save(User user) {
     return userRepository.save(user);
+  }
+
+  private List<Interest> createInterest(Long userSeq, String interests) {
+    List<Interest> list = new ArrayList<>();
+    Iterable<String> iterable = Splitter.on(",").trimResults().omitEmptyStrings().split(interests);
+    for (String interest : iterable) {
+      list.add(new Interest(userSeq, interest));
+    }
+    return list;
   }
 }

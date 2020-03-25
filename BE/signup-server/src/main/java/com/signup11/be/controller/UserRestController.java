@@ -28,8 +28,13 @@ public class UserRestController {
     User user = userService.join(
         joinRequest.getUserId(),
         joinRequest.getPassword(),
-        joinRequest.getName()
+        joinRequest.getName(),
+        joinRequest.getBirth(),
+        joinRequest.getGender(),
+        joinRequest.getEmail(),
+        joinRequest.getPhone(),
+        joinRequest.getInterests()
     );
-    logger.debug("saved User {},",user);
+    logger.debug("saved User {},", user);
   }
 }
