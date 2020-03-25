@@ -8,6 +8,12 @@
 
 import UIKit
 
-class PWTextField: UITextField {
+class PWTextField: UITextField, UITextFieldDelegate {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }

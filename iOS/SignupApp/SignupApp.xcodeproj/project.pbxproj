@@ -87,12 +87,20 @@
 		5A4CA5D7242B4BE60095FA0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A4CA5E0242B53C90095FA0C /* TextField */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A4CA5E0242B53C90095FA0C /* TextField */ = {
+			isa = PBXGroup;
+			children = (
 				5A4CA5D8242B4C350095FA0C /* IDTextField.swift */,
 				5A4CA5DA242B4CEB0095FA0C /* PWTextField.swift */,
 				5A4CA5DC242B4DAE0095FA0C /* PWAgainTextField.swift */,
 				5A4CA5DE242B4DF30095FA0C /* NameTextField.swift */,
 			);
-			path = Views;
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		5A8344FF242A301B00F20FAA = {
