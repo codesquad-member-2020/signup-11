@@ -28,6 +28,22 @@ public class Interest {
     this.createdDate = LocalDateTime.now();
   }
 
+  public Long getSeq() {
+    return seq;
+  }
+
+  public Long getUserSeq() {
+    return userSeq;
+  }
+
+  public String getContent() {
+    return content;
+  }
+
+  public LocalDateTime getCreatedDate() {
+    return createdDate;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
