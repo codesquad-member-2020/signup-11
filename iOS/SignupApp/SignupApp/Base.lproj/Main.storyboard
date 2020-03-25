@@ -112,6 +112,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRE-h7-TXu">
+                                <rect key="frame" x="145.33333333333334" y="502.33333333333331" width="84.333333333333343" height="44.333333333333314"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cRE-h7-TXu" secondAttribute="height" multiplier="19:10" id="m5O-bH-51O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="다음" image="chevron.right.circle.fill" catalog="system">
+                                    <color key="titleColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -125,6 +139,7 @@
                             <constraint firstItem="2G8-au-aDX" firstAttribute="width" secondItem="pSj-hh-w0t" secondAttribute="width" id="8pd-hr-mDi"/>
                             <constraint firstItem="pSj-hh-w0t" firstAttribute="top" secondItem="czv-n5-9Uf" secondAttribute="bottom" constant="5" id="9B4-c7-vZu"/>
                             <constraint firstItem="MMe-yl-ijN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AMF-lX-0pG"/>
+                            <constraint firstItem="cRE-h7-TXu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AcR-CM-ZK7"/>
                             <constraint firstItem="XWk-gP-4Fv" firstAttribute="leading" secondItem="l9X-kA-2Sd" secondAttribute="leading" id="Bvh-km-MWo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="czv-n5-9Uf" secondAttribute="trailing" symbolic="YES" id="EaT-hQ-HXE"/>
                             <constraint firstItem="gaU-HE-YkU" firstAttribute="leading" secondItem="ymg-D0-lcL" secondAttribute="leading" id="GR1-E0-udi"/>
@@ -133,10 +148,12 @@
                             <constraint firstItem="pSj-hh-w0t" firstAttribute="leading" secondItem="czv-n5-9Uf" secondAttribute="leading" id="Lmv-Hb-IAO"/>
                             <constraint firstItem="dyt-DX-jIP" firstAttribute="top" secondItem="MMe-yl-ijN" secondAttribute="bottom" constant="35" id="M5x-oH-yU4"/>
                             <constraint firstItem="2G8-au-aDX" firstAttribute="leading" secondItem="dyt-DX-jIP" secondAttribute="leading" id="SrZ-tV-Yvo"/>
+                            <constraint firstItem="l9X-kA-2Sd" firstAttribute="width" secondItem="cRE-h7-TXu" secondAttribute="width" multiplier="3.428" id="Tie-c1-Udv"/>
                             <constraint firstItem="l9X-kA-2Sd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U6N-ao-Lrv"/>
                             <constraint firstItem="gaU-HE-YkU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="avo-yq-WbC"/>
                             <constraint firstItem="l9X-kA-2Sd" firstAttribute="top" secondItem="XWk-gP-4Fv" secondAttribute="bottom" constant="5" id="cmV-hb-ErP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ymg-D0-lcL" secondAttribute="trailing" symbolic="YES" id="kL9-Gi-gCZ"/>
+                            <constraint firstItem="cRE-h7-TXu" firstAttribute="top" secondItem="l9X-kA-2Sd" secondAttribute="bottom" constant="32" id="lEP-l1-XZI"/>
                             <constraint firstItem="2G8-au-aDX" firstAttribute="top" secondItem="dyt-DX-jIP" secondAttribute="bottom" constant="5" id="ldr-yp-uaL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dyt-DX-jIP" secondAttribute="trailing" symbolic="YES" id="myf-2s-bJp"/>
                             <constraint firstItem="gaU-HE-YkU" firstAttribute="top" secondItem="ymg-D0-lcL" secondAttribute="bottom" constant="5" id="raH-NZ-6Ln"/>
@@ -150,4 +167,7 @@
             <point key="canvasLocation" x="138.40000000000001" y="129.31034482758622"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.right.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
