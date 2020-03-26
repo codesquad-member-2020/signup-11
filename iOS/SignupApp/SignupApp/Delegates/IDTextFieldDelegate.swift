@@ -11,13 +11,13 @@ import UIKit
 final class IDTextFieldDelegate: CustomTextFieldDelegate {
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let idTextField = textField as? IDTextField {
-            if Controller.isCorrectID(textField.text) {
+            if !Controller.isCorrectID(textField.text) {
+                idTextField.setMessageNotCorrectID()
+                idTextField.setCorrectFalse()
+            } else {
                 idTextField.setMessageCorrectID()
                 idTextField.setCorrectTrue()
                 return true
-            } else {
-                idTextField.setMessageNotCorrectID()
-                idTextField.setCorrectFalse()
             }
         }
         return super.textFieldShouldEndEditing(textField)

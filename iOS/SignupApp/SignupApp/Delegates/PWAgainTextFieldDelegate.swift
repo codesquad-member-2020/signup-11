@@ -17,10 +17,10 @@ final class PWAgainTextFieldDelegate: PWTextFieldDelegate {
             } else if !Controller.isSameText(lhs: pwAgainTextField.pwTextField.text, rhs: pwAgainTextField.pwTextField.text) {
                 pwAgainTextField.setMessageNotSamePassword()
                 pwAgainTextField.setCorrectFalse()
-                return true
             } else {
                 pwAgainTextField.setMessageSamePassword()
                 pwAgainTextField.setCorrectTrue()
+                return true
             }
         }
         return super.textFieldShouldEndEditing(textField)
