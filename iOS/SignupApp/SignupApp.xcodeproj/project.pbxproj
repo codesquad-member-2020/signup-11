@@ -99,12 +99,12 @@
 		5A4CA5D7242B4BE60095FA0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5A4CA5E0242B53C90095FA0C /* TextField */,
+				5A4CA5E0242B53C90095FA0C /* TextFields */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5A4CA5E0242B53C90095FA0C /* TextField */ = {
+		5A4CA5E0242B53C90095FA0C /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
 				5A4CA5E3242B5BB20095FA0C /* CustomTextField.swift */,
@@ -113,7 +113,7 @@
 				5A4CA5DC242B4DAE0095FA0C /* PWAgainTextField.swift */,
 				5A4CA5DE242B4DF30095FA0C /* NameTextField.swift */,
 			);
-			path = TextField;
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 		5A4CA5E7242B7CED0095FA0C /* Delegates */ = {
