@@ -9,5 +9,8 @@
 import UIKit
 
 final class NameTextField: CustomTextField {
-
+    func setMessageCorrectName() {
+        let messageCorrectName = "사용가능한 이름입니다."
+        Util.setCorrectMessage(messageLabel, text: messageCorrectName)
+    }
 }

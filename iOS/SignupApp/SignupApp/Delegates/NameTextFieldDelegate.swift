@@ -9,4 +9,14 @@
 import UIKit
 
 final class NameTextFieldDelegate: CustomTextFieldDelegate {
+    override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if let nameTextField = textField as? NameTextField {
+            if Controller.isTextLengthZero(count: nameTextField.text?.count) {
+                nameTextField.setMessageRequireText()
+            } else {
+                nameTextField.setMessageCorrectName()
+            }
+        }
+        return true
+    }
 }
