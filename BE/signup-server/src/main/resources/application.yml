@@ -5,7 +5,6 @@ spring:
       driver-class-name: org.h2.Driver
       data-username: sa
       data-password:
-
   h2:
     console:
       enabled: true
@@ -17,7 +16,4 @@ logging:
   level:
     org.springframework.web: error
     com.signup11.be: debug
-    sql : debug
-
-
-
+    sql: debug
