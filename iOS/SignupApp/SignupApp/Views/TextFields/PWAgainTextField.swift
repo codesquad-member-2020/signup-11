@@ -22,7 +22,7 @@ final class PWAgainTextField: CustomTextField {
     }
     
     func setMessagePrePasswordFirst() {
-        let messagePrePasswordFirst = "이전 비밀번호를 먼저 입력해주시기 바랍니다."
+        let messagePrePasswordFirst = "이전 비밀번호를 먼저 올바르게 입력해주시기 바랍니다."
         Util.setNotCorrectMessage(messageLabel, text: messagePrePasswordFirst)
     }
 }
