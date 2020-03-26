@@ -17,7 +17,7 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web') {
         exclude group: "org.springframework.boot", module: "spring-boot-starter-tomcat"
     }
-    implementation("org.springframework.boot:spring-boot-starter-undertow")
+    implementation "org.springframework.boot:spring-boot-starter-undertow"
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
     compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
