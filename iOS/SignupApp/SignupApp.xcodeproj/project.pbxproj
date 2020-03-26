@@ -99,7 +99,6 @@
 		5A4CA5D7242B4BE60095FA0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5A4CA5E7242B7CED0095FA0C /* Delegate */,
 				5A4CA5E0242B53C90095FA0C /* TextField */,
 			);
 			path = Views;
@@ -117,7 +116,7 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
-		5A4CA5E7242B7CED0095FA0C /* Delegate */ = {
+		5A4CA5E7242B7CED0095FA0C /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				5A4CA5E8242B7E9D0095FA0C /* CustomTextFieldDelegate.swift */,
@@ -126,7 +125,7 @@
 				5A4CA5EC242B7F920095FA0C /* PWTextFieldDelegate.swift */,
 				5A4CA5EE242B7FAA0095FA0C /* PWAgainTextFieldDelegate.swift */,
 			);
-			path = Delegate;
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		5A8344FF242A301B00F20FAA = {
@@ -152,6 +151,7 @@
 		5A83450A242A301B00F20FAA /* SignupApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A4CA5E7242B7CED0095FA0C /* Delegates */,
 				5A4CA5D7242B4BE60095FA0C /* Views */,
 				5A83450B242A301B00F20FAA /* AppDelegate.swift */,
 				5A83450D242A301B00F20FAA /* SceneDelegate.swift */,
