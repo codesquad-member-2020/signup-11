@@ -69,4 +69,12 @@ extension CustomTextField {
         let messageRequireText = "필수 항목입니다."
         Util.setNotCorrectMessage(messageLabel, text: messageRequireText)
     }
+    
+    func setBorderColorGrey() {
+        layer.borderColor = UIColor.greyColor.cgColor
+    }
+    
+    func setBorderColorRed() {
+        layer.borderColor = UIColor.redColor.cgColor
+    }
 }

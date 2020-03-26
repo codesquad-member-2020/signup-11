@@ -28,6 +28,7 @@ class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
         if let customTextField = textField as? CustomTextField {
             if Controller.isTextLengthZero(count: customTextField.text?.count) {
                 customTextField.setMessageRequireText()
+                customTextField.setBorderColorRed()
                 customTextField.setCorrectFalse()
             }
         }

@@ -13,9 +13,11 @@ final class IDTextFieldDelegate: CustomTextFieldDelegate {
         if let idTextField = textField as? IDTextField {
             if !Controller.isCorrectID(textField.text) {
                 idTextField.setMessageNotCorrectID()
+                idTextField.setBorderColorRed()
                 idTextField.setCorrectFalse()
             } else {
                 idTextField.setMessageCorrectID()
+                idTextField.setBorderColorGrey()
                 idTextField.setCorrectTrue()
                 return true
             }
