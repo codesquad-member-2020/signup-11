@@ -25,9 +25,9 @@ class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if let textField = textField as? CustomTextField {
-            if Controller.isTextLengthZero(count: textField.text?.count) {
-                textField.setMessageRequireText()
+        if let customTextField = textField as? CustomTextField {
+            if Controller.isTextLengthZero(count: customTextField.text?.count) {
+                customTextField.setMessageRequireText()
             }
         }
         return true

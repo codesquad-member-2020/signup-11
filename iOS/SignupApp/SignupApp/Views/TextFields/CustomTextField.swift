@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomTextField: UITextField {
-    private let messageLabel = MessageLabel()
+    let messageLabel = MessageLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
