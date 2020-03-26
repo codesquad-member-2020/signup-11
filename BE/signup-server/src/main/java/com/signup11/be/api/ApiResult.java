@@ -20,10 +20,15 @@ public class ApiResult<T> {
   public static <T> ApiResult<T> OK(T response) {
     return new ApiResult<>(true, response, null);
   }
-  
+
   public static ApiResult ERROR(String errorMessage, HttpStatus httpStatus) {
     return new ApiResult<>(false, null, new ApiError(errorMessage, httpStatus));
   }
+
+  public static ApiResult ERROR(Throwable throwable, HttpStatus httpStatus) {
+    return new ApiResult<>(false, null, new ApiError(throwable, httpStatus));
+  }
+
 
   public boolean isSuccess() {
     return success;

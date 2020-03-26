@@ -9,7 +9,13 @@ public class ApiError {
   private final String message;
 
   private final int httpStatus;
-  
+
+  public ApiError(Throwable throwable, HttpStatus httpStatus) {
+    this.message = throwable.getMessage();
+    this.httpStatus = httpStatus.value();
+  }
+
+
   public ApiError(String message, HttpStatus httpStatus) {
     this.message = message;
     this.httpStatus = httpStatus.value();
