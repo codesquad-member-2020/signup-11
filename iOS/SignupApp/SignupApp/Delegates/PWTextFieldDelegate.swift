@@ -19,14 +19,19 @@ class PWTextFieldDelegate: CustomTextFieldDelegate {
                                                max: 16,
                                                count: textField.text?.count) {
                 pwTextField.setMessageCorrectTextLength()
+                pwTextField.setCorrectFalse()
             } else if !Controller.hasUpperCaseLetter(textField.text) {
                 pwTextField.setMessageWriteUpperCapitalLetter()
+                pwTextField.setCorrectFalse()
             } else if !Controller.hasNumber(textField.text) {
                 pwTextField.setMessageWriteNumber()
+                pwTextField.setCorrectFalse()
             } else if !Controller.hasSpecialCharacter(textField.text) {
                 pwTextField.setMessageWriteSpecialCharacter()
+                pwTextField.setCorrectFalse()
             } else {
                 pwTextField.setMessageCorrectPassword()
+                pwTextField.setCorrectTrue()
                 return true
             }
         }

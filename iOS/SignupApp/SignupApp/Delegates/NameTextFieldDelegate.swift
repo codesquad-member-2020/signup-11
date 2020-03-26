@@ -13,8 +13,11 @@ final class NameTextFieldDelegate: CustomTextFieldDelegate {
         if let nameTextField = textField as? NameTextField {
             if Controller.isTextLengthZero(count: nameTextField.text?.count) {
                 nameTextField.setMessageRequireText()
+                nameTextField.setCorrectFalse()
             } else {
                 nameTextField.setMessageCorrectName()
+                nameTextField.setCorrectTrue()
+                return true
             }
         }
         return true

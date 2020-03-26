@@ -56,4 +56,12 @@ class Controller {
             else { return false }
         return true
     }
+    
+    static func isSameText(lhs: String?, rhs: String?) -> Bool {
+        guard let lhs = lhs, let rhs = rhs
+        else {
+            return false
+        }
+        return lhs == rhs
+    }
 }

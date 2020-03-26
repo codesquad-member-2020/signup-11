@@ -13,8 +13,11 @@ final class IDTextFieldDelegate: CustomTextFieldDelegate {
         if let idTextField = textField as? IDTextField {
             if Controller.isCorrectID(textField.text) {
                 idTextField.setMessageCorrectID()
+                idTextField.setCorrectTrue()
+                return true
             } else {
                 idTextField.setMessageNotCorrectID()
+                idTextField.setCorrectFalse()
             }
         }
         return super.textFieldShouldEndEditing(textField)

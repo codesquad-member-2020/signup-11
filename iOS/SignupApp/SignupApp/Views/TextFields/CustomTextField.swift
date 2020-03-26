@@ -9,6 +9,7 @@
 import UIKit
 
 class CustomTextField: UITextField {
+    private(set) var isCorrect = false
     let messageLabel = MessageLabel()
     
     override init(frame: CGRect) {
@@ -38,6 +39,13 @@ class CustomTextField: UITextField {
         messageLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 2).isActive = true
     }
     
+    func setCorrectTrue() {
+        isCorrect = true
+    }
+    
+    func setCorrectFalse() {
+        isCorrect = false
+    }
 }
 
 extension CustomTextField {
