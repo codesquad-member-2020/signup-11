@@ -1,6 +1,7 @@
 package com.signup11.be.service;
 
 import com.google.common.base.Splitter;
+import com.signup11.be.error.UserNotFoundException;
 import com.signup11.be.model.Interest;
 import com.signup11.be.model.User;
 import com.signup11.be.repository.InterestRepository;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +28,12 @@ public class UserService {
     this.interestRepository = interestRepository;
   }
 
+  @Transactional
+  public User login(String userId, String password) {
+    User user = findById(userId).orElseThrow(() -> new UserNotFoundException(userId));
+    user.login(password);
+    return user;
+  }
 
   @Transactional
   public User join(User user, String interests) {
@@ -35,16 +43,16 @@ public class UserService {
     return saved;
   }
 
-  @Transactional(readOnly = true)
-  public List<Interest> findByUserSeq(Long userSeq) {
-    return interestRepository.findByUserSeq(userSeq);
-  }
-
   @Transactional
   public void addInterest(List<Interest> interests) {
     for (Interest interest : interests) {
       interestRepository.save(interest);
     }
+  }
+
+  @Transactional(readOnly = true)
+  public List<Interest> findByUserSeq(Long userSeq) {
+    return interestRepository.findByUserSeq(userSeq);
   }
 
   @Transactional(readOnly = true)

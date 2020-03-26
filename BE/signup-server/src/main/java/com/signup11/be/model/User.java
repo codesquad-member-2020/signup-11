@@ -3,6 +3,7 @@ package com.signup11.be.model;
 import static java.time.LocalDateTime.now;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.Objects;
 import java.time.LocalDateTime;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -20,6 +21,7 @@ public class User {
 
   private final String id;
 
+  @JsonIgnore
   private final String password;
 
   private final String name;
@@ -83,6 +85,13 @@ public class User {
     return createdDate;
   }
 
+  public void login(String password) {
+    if (!this.password.equals(password)) {
+      throw new IllegalArgumentException("잘못된 패스워드 입력입니다");
+    }
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -110,6 +119,7 @@ public class User {
         .append("createdDate", createdDate)
         .toString();
   }
+
 
   static public class Builder {
 
