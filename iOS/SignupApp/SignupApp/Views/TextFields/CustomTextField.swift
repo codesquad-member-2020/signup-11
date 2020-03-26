@@ -59,8 +59,6 @@ extension CustomTextField {
 extension CustomTextField {
     func setMessageRequireText() {
         let messageRequireText = "필수 항목입니다."
-        messageLabel.text = messageRequireText
-        messageLabel.textColor = UIColor.redColor
-        messageLabel.isHidden = false
+        Util.setNotCorrectMessage(messageLabel, text: messageRequireText)
     }
 }
