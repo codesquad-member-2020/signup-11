@@ -20,4 +20,9 @@ final class PWAgainTextField: CustomTextField {
         let messageNotSamePassword = "비밀번호가 일치하지 않습니다."
         Util.setNotCorrectMessage(messageLabel, text: messageNotSamePassword)
     }
+    
+    func setMessagePrePasswordFirst() {
+        let messagePrePasswordFirst = "이전 비밀번호를 먼저 입력해주시기 바랍니다."
+        Util.setNotCorrectMessage(messageLabel, text: messagePrePasswordFirst)
+    }
 }

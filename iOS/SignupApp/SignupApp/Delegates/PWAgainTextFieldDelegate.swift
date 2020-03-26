@@ -11,14 +11,16 @@ import UIKit
 final class PWAgainTextFieldDelegate: PWTextFieldDelegate {
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let pwAgainTextField = textField as? PWAgainTextField {
-            if pwAgainTextField.pwTextField.isCorrect,
-               Controller.isSameText(lhs: pwAgainTextField.pwTextField.text, rhs: pwAgainTextField.pwTextField.text) {
-                pwAgainTextField.setMessageSamePassword()
+            if !pwAgainTextField.pwTextField.isCorrect {
+                pwAgainTextField.setMessagePrePasswordFirst()
                 pwAgainTextField.setCorrectTrue()
-                return true
-            } else {
+            } else if !Controller.isSameText(lhs: pwAgainTextField.pwTextField.text, rhs: pwAgainTextField.pwTextField.text) {
                 pwAgainTextField.setMessageNotSamePassword()
                 pwAgainTextField.setCorrectFalse()
+                return true
+            } else {
+                pwAgainTextField.setMessageSamePassword()
+                pwAgainTextField.setCorrectTrue()
             }
         }
         return super.textFieldShouldEndEditing(textField)
