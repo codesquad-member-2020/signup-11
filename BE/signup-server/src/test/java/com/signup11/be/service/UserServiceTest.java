@@ -3,6 +3,7 @@ package com.signup11.be.service;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.signup11.be.model.User;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,19 +17,26 @@ public class UserServiceTest {
   private UserService userService;
 
   private Logger logger = LoggerFactory.getLogger(UserServiceTest.class);
+  User user;
+
+  @BeforeEach
+  public void 유저생성() {
+    user = new User.Builder()
+        .id("test1234")
+        .password("12345")
+        .name("테스터")
+        .birth("2020-03-24")
+        .gender("male")
+        .email("test@gmail.com")
+        .phone("010-1233-4567")
+        .build();
+  }
 
   @Test
   public void 유저가입() {
-    String userId = "postManUser";
-    String password = "1234";
-    String name = "테스터";
-    String birth = "2020-03-24";
-    String gender = "남자";
-    String email = "test@gmail.com";
-    String phone = "010-1234-5678";
     String interests = "영화감상, 자전거";
-    User saved = userService.join(userId, password, name, birth, gender, email, phone, interests);
+    User saved = userService.join(user, interests);
     assertThat(saved).isNotNull();
-    assertThat(saved.getName()).isEqualTo(name);
+    assertThat(saved.getName()).isEqualTo(user.getName());
   }
 }
