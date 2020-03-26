@@ -10,8 +10,7 @@ import UIKit
 
 class Tag {
     static func nextTagBecomeFirstResponder(view: UIView) {
-        let mod = 4
-        let nextTag = view.tag % mod + 1
+        let nextTag = view.tag + 1
         guard let nextResponder = view.superview?.viewWithTag(nextTag) else { return }
         nextResponder.becomeFirstResponder()
     }
