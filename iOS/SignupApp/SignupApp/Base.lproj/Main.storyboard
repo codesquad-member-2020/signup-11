@@ -74,7 +74,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-hh-w0t" userLabel="PW Text Field" customClass="PWTextField" customModule="SignupApp" customModuleProvider="target">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-hh-w0t" userLabel="PW Text Field" customClass="PWTextField" customModule="SignupApp" customModuleProvider="target">
                                 <rect key="frame" x="43.333333333333343" y="253" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -108,7 +108,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-HE-YkU" userLabel="PW RE Text Field" customClass="PWAgainTextField" customModule="SignupApp" customModuleProvider="target">
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-HE-YkU" userLabel="PW RE Text Field" customClass="PWAgainTextField" customModule="SignupApp" customModuleProvider="target">
                                 <rect key="frame" x="43.333333333333343" y="343" width="288.33333333333326" height="37.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -142,7 +142,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9X-kA-2Sd" userLabel="Name Text Field" customClass="NameTextField" customModule="SignupApp" customModuleProvider="target">
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9X-kA-2Sd" userLabel="Name Text Field" customClass="NameTextField" customModule="SignupApp" customModuleProvider="target">
                                 <rect key="frame" x="43.333333333333343" y="433.33333333333331" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
