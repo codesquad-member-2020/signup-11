@@ -11,7 +11,7 @@ import UIKit
 class SignupViewController: UIViewController {
     private let idTextFieldDelegate = IDTextFieldDelegate()
     @IBOutlet weak var idTextField: IDTextField!
-    
+
     private let pwTextFieldDelegate = PWTextFieldDelegate()
     @IBOutlet weak var pwTextField: PWTextField!
     

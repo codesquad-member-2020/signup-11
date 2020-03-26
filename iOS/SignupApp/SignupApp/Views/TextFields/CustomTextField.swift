@@ -30,6 +30,8 @@ extension UIColor {
 }
 
 class CustomTextField: UITextField {
+    private let messageLabel = MessageLabel()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -41,10 +43,23 @@ class CustomTextField: UITextField {
     }
     
     private func setup() {
+        setBorder()
+        setMessageLabel()
+    }
+    
+    private func setBorder() {
         layer.borderWidth = 0.9
         let greyColor = UIColor(rgb: 0x707070)!
         layer.borderColor = greyColor.cgColor
     }
+    
+    private func setMessageLabel() {
+        addSubview(messageLabel)
+        messageLabel.trailingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+        messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        messageLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 2).isActive = true
+    }
+    
 }
 
 extension CustomTextField {
@@ -60,5 +75,14 @@ extension CustomTextField {
     
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: CustomTextField.padding)
+    }
+}
+
+extension CustomTextField {
+    func setMessageRequireText() {
+        let messageRequireText = "필수 항목입니다."
+        messageLabel.text = messageRequireText
+        messageLabel.textColor = .red
+        messageLabel.isHidden = false
     }
 }

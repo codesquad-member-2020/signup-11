@@ -49,19 +49,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPx-ID-PeS" userLabel="ID Status Label">
-                                <rect key="frame" x="43.333333333333336" y="202" width="93.666666666666657" height="15"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="아이디 상태메시지">
-                                        <attributes>
-                                            <color key="NSColor" red="0.019607843137254902" green="0.65098039215686276" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="13" name="AppleSDGothicNeo-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czv-n5-9Uf" userLabel="PW Label">
                                 <rect key="frame" x="43.333333333333343" y="230" width="52" height="18"/>
                                 <attributedString key="attributedText">
@@ -83,19 +70,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH3-E9-RRe" userLabel="PW Status Label">
-                                <rect key="frame" x="43.333333333333343" y="292" width="105" height="16"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="비밀번호 상태메시지">
-                                        <attributes>
-                                            <color key="NSColor" red="0.019607843137254902" green="0.65098039215686276" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="13" name="AppleSDGothicNeo-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-D0-lcL" userLabel="PW RE Label">
                                 <rect key="frame" x="43.333333333333343" y="320" width="95" height="18"/>
                                 <attributedString key="attributedText">
@@ -117,19 +91,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99k-Zm-tbd" userLabel="PW RE Status Label">
-                                <rect key="frame" x="43.333333333333343" y="382.33333333333331" width="142" height="16"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="비밀번호 재확인 상태메시지">
-                                        <attributes>
-                                            <color key="NSColor" red="0.019607843137254902" green="0.65098039215686276" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="13" name="AppleSDGothicNeo-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-gP-4Fv" userLabel="Name Label">
                                 <rect key="frame" x="43.333333333333336" y="410.33333333333331" width="26.000000000000007" height="18"/>
                                 <attributedString key="attributedText">
@@ -151,19 +112,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td5-YE-TBy" userLabel="Name Status Label">
-                                <rect key="frame" x="43.333333333333343" y="472.33333333333331" width="149" height="16"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="이름은 필수 입력 항목입니다.">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="13" name="AppleSDGothicNeo-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRE-h7-TXu">
                                 <rect key="frame" x="145.33333333333334" y="502.33333333333331" width="84.333333333333343" height="44.333333333333314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,9 +130,7 @@
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pSj-hh-w0t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="10a-5a-kiA"/>
-                            <constraint firstItem="2G8-au-aDX" firstAttribute="leading" secondItem="MPx-ID-PeS" secondAttribute="leading" id="10d-Iz-D30"/>
                             <constraint firstItem="czv-n5-9Uf" firstAttribute="top" secondItem="2G8-au-aDX" secondAttribute="bottom" constant="30" id="1CY-aM-efz"/>
-                            <constraint firstItem="Td5-YE-TBy" firstAttribute="top" secondItem="l9X-kA-2Sd" secondAttribute="bottom" constant="2" id="1lj-Zh-Ska"/>
                             <constraint firstItem="XWk-gP-4Fv" firstAttribute="top" secondItem="gaU-HE-YkU" secondAttribute="bottom" constant="30" id="3Va-Ag-utu"/>
                             <constraint firstItem="2G8-au-aDX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3fG-Pl-a2i"/>
                             <constraint firstItem="gaU-HE-YkU" firstAttribute="width" secondItem="l9X-kA-2Sd" secondAttribute="width" id="5XR-2R-e4O"/>
@@ -204,24 +150,14 @@
                             <constraint firstItem="2G8-au-aDX" firstAttribute="leading" secondItem="dyt-DX-jIP" secondAttribute="leading" id="SrZ-tV-Yvo"/>
                             <constraint firstItem="l9X-kA-2Sd" firstAttribute="width" secondItem="cRE-h7-TXu" secondAttribute="width" multiplier="3.428" id="Tie-c1-Udv"/>
                             <constraint firstItem="l9X-kA-2Sd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U6N-ao-Lrv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JH3-E9-RRe" secondAttribute="trailing" symbolic="YES" id="UTQ-kG-Cpa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Td5-YE-TBy" secondAttribute="trailing" symbolic="YES" id="VO6-wh-lhh"/>
-                            <constraint firstItem="l9X-kA-2Sd" firstAttribute="leading" secondItem="Td5-YE-TBy" secondAttribute="leading" id="WzB-b8-baT"/>
                             <constraint firstItem="gaU-HE-YkU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="avo-yq-WbC"/>
                             <constraint firstItem="l9X-kA-2Sd" firstAttribute="top" secondItem="XWk-gP-4Fv" secondAttribute="bottom" constant="5" id="cmV-hb-ErP"/>
-                            <constraint firstItem="MPx-ID-PeS" firstAttribute="top" secondItem="2G8-au-aDX" secondAttribute="bottom" constant="2" id="hz0-Fe-3Vh"/>
-                            <constraint firstItem="pSj-hh-w0t" firstAttribute="leading" secondItem="JH3-E9-RRe" secondAttribute="leading" id="jx3-dH-AGZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ymg-D0-lcL" secondAttribute="trailing" symbolic="YES" id="kL9-Gi-gCZ"/>
                             <constraint firstItem="cRE-h7-TXu" firstAttribute="top" secondItem="l9X-kA-2Sd" secondAttribute="bottom" constant="32" id="lEP-l1-XZI"/>
-                            <constraint firstItem="gaU-HE-YkU" firstAttribute="leading" secondItem="99k-Zm-tbd" secondAttribute="leading" id="lOS-xU-N1b"/>
                             <constraint firstItem="2G8-au-aDX" firstAttribute="top" secondItem="dyt-DX-jIP" secondAttribute="bottom" constant="5" id="ldr-yp-uaL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MPx-ID-PeS" secondAttribute="trailing" symbolic="YES" id="mJf-cq-Amm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dyt-DX-jIP" secondAttribute="trailing" symbolic="YES" id="myf-2s-bJp"/>
-                            <constraint firstItem="JH3-E9-RRe" firstAttribute="top" secondItem="pSj-hh-w0t" secondAttribute="bottom" constant="2" id="qMj-RN-GmF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="99k-Zm-tbd" secondAttribute="trailing" symbolic="YES" id="qUj-nm-cOq"/>
                             <constraint firstItem="gaU-HE-YkU" firstAttribute="top" secondItem="ymg-D0-lcL" secondAttribute="bottom" constant="5" id="raH-NZ-6Ln"/>
                             <constraint firstItem="pSj-hh-w0t" firstAttribute="width" secondItem="gaU-HE-YkU" secondAttribute="width" id="xtW-ih-byU"/>
-                            <constraint firstItem="99k-Zm-tbd" firstAttribute="top" secondItem="gaU-HE-YkU" secondAttribute="bottom" constant="2" id="zJy-h1-f7V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

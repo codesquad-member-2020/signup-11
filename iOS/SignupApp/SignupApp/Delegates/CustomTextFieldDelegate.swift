@@ -21,11 +21,19 @@ class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag = textField.tag + 1
-        
         if let nextResponder = textField.superview?.viewWithTag(nextTag) {
             nextResponder.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if let textField = textField as? CustomTextField {
+            if Controller.isTextLengthZero(count: textField.text?.count) {
+                textField.setMessageRequireText()
+            }
         }
         return true
     }
