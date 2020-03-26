@@ -17,10 +17,10 @@ public class UserServiceTest {
   private UserService userService;
 
   private Logger logger = LoggerFactory.getLogger(UserServiceTest.class);
-  User user;
+  private User user;
 
   @BeforeEach
-  public void 유저생성() {
+  public void 생성() {
     user = new User.Builder()
         .id("test1234")
         .password("12345")
@@ -33,7 +33,7 @@ public class UserServiceTest {
   }
 
   @Test
-  public void 유저가입() {
+  public void 가입() {
     String interests = "영화감상, 자전거";
     User saved = userService.join(user, interests);
     assertThat(saved).isNotNull();
