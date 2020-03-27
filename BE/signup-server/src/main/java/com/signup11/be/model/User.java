@@ -5,6 +5,7 @@ import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.Objects;
+import com.signup11.be.error.UnauthorizedException;
 import java.time.LocalDateTime;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -87,7 +88,7 @@ public class User {
 
   public void login(String password) {
     if (!this.password.equals(password)) {
-      throw new IllegalArgumentException("잘못된 패스워드 입력입니다");
+      throw new UnauthorizedException("잘못된 패스워드 입력입니다");
     }
   }
 
