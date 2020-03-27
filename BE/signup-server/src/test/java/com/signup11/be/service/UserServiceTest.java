@@ -22,7 +22,7 @@ public class UserServiceTest {
   @BeforeEach
   public void 생성() {
     user = new User.Builder()
-        .id("test1234")
+        .id("test1234--!!")
         .password("12345")
         .name("테스터")
         .birth("2020-03-24")
