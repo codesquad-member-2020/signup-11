@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="129.31034482758622"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="yZA-kc-k2H">
             <objects>
-                <viewController storyboardIdentifier="loginViewController" id="Wnz-kV-CCs" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="Wnz-kV-CCs" customClass="LoginViewController" customModule="SignupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7P4-la-Qo5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,7 +211,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ps-fP-yES" userLabel="ID Text Field" customClass="IDTextField" customModule="SignupApp" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ps-fP-yES" userLabel="ID Text Field">
                                 <rect key="frame" x="55.333333333333343" y="173" width="264.33333333333326" height="34"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -232,7 +232,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-bR-gNl" userLabel="PW Text Field" customClass="PWTextField" customModule="SignupApp" customModuleProvider="target">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-bR-gNl" userLabel="PW Text Field">
                                 <rect key="frame" x="55.333333333333343" y="260" width="264.33333333333326" height="34"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -254,6 +254,9 @@
                                 <state key="normal" title="로그인" image="chevron.right.circle.fill" catalog="system">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonTouched:" destination="Wnz-kV-CCs" eventType="touchUpInside" id="ZSl-2s-8Vy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -280,6 +283,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7ZU-CS-wJy"/>
                     </view>
+                    <connections>
+                        <outlet property="idTextField" destination="2ps-fP-yES" id="usb-YG-IbY"/>
+                        <outlet property="pwTextField" destination="pCy-bR-gNl" id="nfp-73-nDx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldB-GE-KYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
