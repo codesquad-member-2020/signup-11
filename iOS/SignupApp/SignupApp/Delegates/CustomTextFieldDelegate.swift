@@ -18,4 +18,18 @@ class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
         let totalLength = textFieldTextCount + string.count - range.length
         return totalLength <= textLimit
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        Tag.nextTagBecomeFirstResponder(view: textField)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if let customTextField = textField as? CustomTextField {
+            if Controller.isTextLengthZero(count: customTextField.text?.count) {
+                customTextField.setWrongCaseByNoText()
+            }
+        }
+        return true
+    }
 }

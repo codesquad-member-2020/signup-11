@@ -1,30 +1,12 @@
 //
-//  CustomTextField.swift
+//  UIColor.swift
 //  SignupApp
 //
-//  Created by kimdo2297 on 2020/03/25.
+//  Created by kimdo2297 on 2020/03/26.
 //  Copyright © 2020 Jason. All rights reserved.
 //
 
 import UIKit
-
-class CustomTextField: UITextField {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    private func setup() {
-        layer.borderWidth = 0.9
-        let greyColor = UIColor(rgb: 0x707070)!
-        layer.borderColor = greyColor.cgColor
-    }
-}
 
 extension UIColor {
     convenience init?(red: Int, green: Int, blue: Int) {
@@ -45,4 +27,10 @@ extension UIColor {
             blue: rgb & 0xFF
         )
     }
+}
+
+extension UIColor {
+    static let greyColor = UIColor(rgb: 0x707070)!
+    static let redColor = UIColor(rgb: 0xFF0000)!
+    static let greenColor = UIColor(rgb: 0x05A600)!
 }
