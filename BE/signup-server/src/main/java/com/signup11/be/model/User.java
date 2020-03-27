@@ -5,6 +5,7 @@ import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.Objects;
+import com.signup11.be.error.NotMatchException;
 import com.signup11.be.error.UnauthorizedException;
 import java.time.LocalDateTime;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -40,7 +41,7 @@ public class User {
 
   public User(String id, String password, String name, String birth, String gender,
       String email, String phone, LocalDateTime createdDate) {
-    this.id = id;
+    this.id = checkId(id);
     this.password = password;
     this.name = name;
     this.birth = birth;
@@ -48,6 +49,13 @@ public class User {
     this.email = email;
     this.phone = phone;
     this.createdDate = defaultIfNull(createdDate, now());
+  }
+
+  private String checkId(String id) {
+    if (!id.matches("^[a-z0-9-_]{5,20}")) {
+      throw new NotMatchException("아이디 제한 조건과 맞지 않습니다");
+    }
+    return id;
   }
 
   public Long getSeq() {
