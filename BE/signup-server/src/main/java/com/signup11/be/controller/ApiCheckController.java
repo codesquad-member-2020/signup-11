@@ -25,7 +25,7 @@ public class ApiCheckController {
   @GetMapping(path = "userId/{userId}")
   @ApiOperation(value = "아이디 중복 확인")
   public ApiResult<Boolean> checkId(
-      @PathVariable @ApiParam(value = "example: {\"id\": \"test\"}") String userId) {
+      @PathVariable @ApiParam(value = "example: \"test\"") String userId) {
     if (userService.findById(userId).isPresent()) {
       return ApiResult.OK(true);
     }
@@ -35,7 +35,7 @@ public class ApiCheckController {
   @GetMapping(path = "email/{email}")
   @ApiOperation(value = "이메일 중복 확인")
   public ApiResult<Boolean> checkEmail(
-      @PathVariable @ApiParam(value = "example: {\"email\": \"test@gmail.com\"}") String email) {
+      @PathVariable @ApiParam(value = "example: \"test@gmail.com\"") String email) {
     if (userService.findByEmail(email).isPresent()) {
       return ApiResult.OK(true);
     }
@@ -45,7 +45,7 @@ public class ApiCheckController {
   @GetMapping(path = "phone/{phone}")
   @ApiOperation(value = "핸드폰 중복 확인")
   public ApiResult<Boolean> checkPhone(
-      @PathVariable @ApiParam(value = "example: {\"phone\": \"010-1234-5678\"}") String phone) {
+      @PathVariable @ApiParam(value = "example: \"010-1234-5678\"") String phone) {
     if (userService.findByPhone(phone).isPresent()) {
       return ApiResult.OK(true);
     }
