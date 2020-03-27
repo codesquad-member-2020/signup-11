@@ -1,7 +1,3 @@
-:root {
-  --title-color: #07A600;
-}
-
 .clearfix {
   overflow: hidden;
 }
@@ -79,7 +75,8 @@
 }
 
 .term-group input {
-  vertical-align: middle;
+  position: absolute;
+  z-index: -1;
 }
 
 .term-group label {
@@ -87,9 +84,13 @@
 }
 
 .term-group input,
-.term-group label {
-  display: table-cell;
+.terms-pop-btn {
   cursor: pointer;
+}
+
+.terms-pop-btn {
+  margin-left: 20px;
+  padding: 10px;
 }
 
 .term-group label {
@@ -115,17 +116,46 @@
   cursor: pointer;
 }
 
+.tag-container {
+  overflow: auto;
+  display: flex;
+  border: 1px solid #d1d1d1;
+  padding: 15px 10px;
+  font-size: 1em;
+}
+
+.tag-container .tag {
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  background-color: #f2f2f2;
+}
+
+.tag i {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.tag-container input {
+  flex: 1;
+  padding: 0;
+  border: none;
+}
+
 /* 약관 */
 .terms-modal {
   padding: 20px 10px;
   background-color: #dedede;
 }
 
-.close-buttom {
+.close-button {
   position: relative;
 }
 
-.close-buttom button {
+.close-button button {
   position: absolute;
   top: -12px;
   right: -6px;
@@ -140,14 +170,12 @@
   margin-bottom: 20px;
 }
 
-.terms-title {}
-
 .terms-title h3 {
   margin-bottom: 10px;
 }
 
 .terms-contents ul {
-  height: 200px;
+  height: 100px;
   overflow: scroll;
   background-color: #fff;
   padding: 20px 10px;
@@ -157,16 +185,14 @@
   text-align: center;
 }
 
-.agree-button {
-  width: 30%;
-  padding: 10px 0;
+.agree label {
+  padding: 10px 20px;
   text-align: center;
   color: #fff;
   cursor: pointer;
   border: 0;
   background-color: #07A600;
 }
-
 
 /* login css */
 .login {
