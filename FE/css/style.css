@@ -1,0 +1,219 @@
+:root {
+  --title-color: #07A600;
+}
+
+.clearfix {
+  overflow: hidden;
+}
+
+.wrap {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.link-list li {
+  float: left;
+}
+
+.form-wrap {}
+
+.form-wrap form {}
+
+.form-title h1 {
+  text-align: center;
+  color: #07A600;
+  font-size: 2em;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label,
+.form-group input,
+.form-group select {
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin: 50px 0 10px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  padding: 15px 10px;
+  font-size: 1em;
+}
+
+.message {
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  font-size: 0.8em;
+  color: #07A600;
+}
+
+.birth-contents {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gender-group select {
+  height: 53px;
+}
+
+.term-group {
+  display: table;
+  margin-top: 40px;
+}
+
+.term-group input {
+  vertical-align: middle;
+}
+
+.term-group label {
+  padding-left: 10px;
+}
+
+.term-group input,
+.term-group label {
+  display: table-cell;
+  cursor: pointer;
+}
+
+.term-group label {
+  font-size: 0.9em;
+}
+
+.join-button {
+  margin: 20px -5px 40px;
+  display: flex;
+}
+
+.join-button button,
+.userLogin {
+  padding: 15px 0;
+  margin: 0 5px;
+  width: 100%;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color: #07A600;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+/* 약관 */
+.terms-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  background-color: #dedede;
+}
+
+.terms-contents ul {
+  height: 200%;
+  overflow: scroll;
+}
+
+/* login css */
+.login {
+  padding: 20px 0;
+}
+
+.login h1,
+.login .form-group label {
+  color: transparent;
+  text-indent: -9999px;
+  height: 0;
+  margin: 0 0 10px;
+}
+
+.login .form-group {}
+
+.userLogin {
+  margin: 20px 0 0;
+}
+
+
+
+/* .link-list {
+  display: flex;
+}
+
+.link-list li {
+  margin: 10px;
+} */
+
+/* #form-container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+#form-container form {
+  display: flex;
+  flex-direction: column;
+} */
+/* 
+.join-content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.form-group label {
+  margin: 10px 0;
+}
+
+.form-title h1 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--title-color);
+}
+
+.input-box {
+  display: block;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.input-box input {
+  width: 100%;
+}
+
+.birth-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.birth-group label,
+.birth-group input,
+.birth-group select {}
+
+.button-group {
+  display: flex;
+}
+
+.button-group button {
+  width: 50%;
+  color: #fff;
+  background-color: var(--title-color);
+  padding: 10px;
+}
+
+.terms-modal {
+  display: none;
+} */
