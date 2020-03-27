@@ -4,8 +4,6 @@ import {getElement,getAllElements} from '../util/util.js';
 
 
 const form = getElement('.form-wrap')
-function handleChangeEvent () {
-}
 
 function handleInputEvent ({target}) {
     const id  = target.id;
@@ -24,11 +22,60 @@ function handleInputEvent ({target}) {
             recheckPassword(currentPwd,originalPwd,target);
     }
 }
-    
+
+function handleChangeEvent ({target}) {
+    const id = target.id
+    switch (id) {
+        case 'birth1':
+            const birthYear = target.value;
+            checkBirthYear(birthYear);
+            break;
+        case 'birth2':
+            const birthDay = target.value;
+            checkBirthDay(birthDay);
+            break;
+        case 'mm':
+            const birthMonth = target.value;
+            checkMonth(birthMonth)
+    }
+}
+
 function init () {
     form.addEventListener('input',handleInputEvent);
     form.addEventListener('change',handleChangeEvent);
 }
+function checkBirthYear (birthYear) {
+    const currentYear = new Date().getFullYear();
+    const minAge=19;
+    const MaxAge=85;
+    const outOfYearRange = currentYear - birthYear <minAge ||
+        currentYear-birthYear>MaxAge;
+    const messageEl =getElement('.birth-group .message');
+    if (outOfYearRange) {
+        messageEl.innerText = CHECK_MESSAGE.birthYY.errorMsg;
+        return;
+    }
+    messageEl.innerText = CHECK_MESSAGE.birthYY.suceesMsg;
+}
+
+function checkMonth (birthMonth) {
+    console.log(birthMonth)
+    if (!!birthMonth) {
+        const messageEl=getElement('.birth-contents').nextElementSibling;
+        messageEl.innerText=CHECK_MESSAGE.birthDD.errorMsg;
+        return;
+    }
+}
+
+function checkBirthDay (birthDay) {
+    const messageEl=getElement('.birth-contents').nextElementSibling;
+    const outOfDayRange = !CHECK_PATTERN.birthDay.test(birthDay);
+    console.log(outOfDayRange);
+    if (!outOfDayRange) {
+        return messageEl.innerText='';
+    }
+}
+
 
 function checkId (id,target) {
     const messageEl = target.nextElementSibling;
@@ -72,6 +119,8 @@ function recheckPassword (currentPwd,originalPwd,target) {
     if (currentPwd!==originalPwd) return messageEl.innerText=CHECK_MESSAGE.password_check.errorMsg;
     messageEl.innerText=CHECK_MESSAGE.password_check.successMsg;
 }
+
+
 
 window.addEventListener('DOMContentLoaded',init);
 // 로그인 후 세션 부여해서 개인정보 조회까지요청
