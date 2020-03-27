@@ -12,6 +12,7 @@ export const CHECK_PATTERN = {
 
   export const CHECK_MESSAGE = {
     userID: {
+      default :'아이디를 입력하세요',
       errorMsg: '5~20자의 영문 소문자, 숫자, 특수기호(_)(-)만 사용가능합니다.',
       successMsg: '사용 가능한 아이디입니다.',
       existMsg: '이미 사용중인 아이디입니다.'
@@ -25,7 +26,7 @@ export const CHECK_PATTERN = {
       },
       successMsg: '안전한 비밀번호 입니다.'
     },
-    password_confirm: {
+    password_check: {
       errorMsg: '패스워드가 다릅니다.',
       successMsg: '패스워드가 일치합니다.'
     },
