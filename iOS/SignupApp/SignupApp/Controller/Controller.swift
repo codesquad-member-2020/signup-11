@@ -18,13 +18,24 @@ class Controller {
         guard let count = count else { return false }
         return min <= count && count <= max
     }
-
+    
     private static let correctIDPattern = "^[a-z0-9_\\-]{5,20}$"
     static func isCorrectID(_ text: String?) -> Bool {
         guard let text = text, text.range(of: correctIDPattern,
                                           options: .regularExpression) != nil
-        else { return false }
+            else { return false }
         return true
+    }
+    
+    static func isOverlappedID(_ id: String?, resultHandler: @escaping (Bool?) -> ()) {
+        guard let id = id else { return }
+        let urlString = "https://signup11.herokuapp.com/api/userId/"
+        DataDecoder.decodeJSONData(from: "\(urlString)\(id)",
+            type: IDResponse.self,
+            dateDecodingStrategy: nil) { (idResponse) in
+                guard let idResponse = idResponse else { return }
+                resultHandler(idResponse.success)
+        }
     }
     
     private static let hasUpperCaseLetterPattern = "[A-Z]"
@@ -59,8 +70,8 @@ class Controller {
     
     static func isSameText(lhs: String?, rhs: String?) -> Bool {
         guard let lhs = lhs, let rhs = rhs
-        else {
-            return false
+            else {
+                return false
         }
         return lhs == rhs
     }
