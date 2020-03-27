@@ -42,6 +42,7 @@ class SignupViewController: UIViewController {
             }
             if !textField.isCorrect {
                 allCorrect = false
+                textField.becomeFirstResponder()
                 break
             }
         }
@@ -50,6 +51,5 @@ class SignupViewController: UIViewController {
             sender.tintColor = UIColor.greenColor
         }
     }
-    
 }
 
