@@ -71,18 +71,32 @@ extension CustomTextField {
         setMessageRequireText()
         setWrongCase()
     }
-    
-    private func setMessageRequireText() {
-        let messageRequireText = "필수 항목입니다."
-        Util.setNotCorrectMessage(messageLabel, text: messageRequireText)
-    }
-    
+
     func setCorrectTrue() {
         isCorrect = true
     }
     
     func setCorrectFalse() {
         isCorrect = false
+    }
+        
+    func setCorrectMessage(text: String) {
+        messageLabel.text = text
+        messageLabel.textColor = UIColor.greenColor
+        messageLabel.isHidden = false
+    }
+    
+    func setNotCorrectMessage(text: String) {
+        messageLabel.text = text
+        messageLabel.textColor = UIColor.redColor
+        messageLabel.isHidden = false
+    }
+}
+
+extension CustomTextField {
+    private func setMessageRequireText() {
+        let messageRequireText = "필수 항목입니다."
+        setNotCorrectMessage(text: messageRequireText)
     }
 }
 

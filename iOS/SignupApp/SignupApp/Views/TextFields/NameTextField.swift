@@ -16,6 +16,6 @@ final class NameTextField: CustomTextField {
     
     private func setMessageCorrectName() {
         let messageCorrectName = "사용가능한 이름입니다."
-        Util.setCorrectMessage(messageLabel, text: messageCorrectName)
+        setCorrectMessage(text: messageCorrectName)
     }
 }
