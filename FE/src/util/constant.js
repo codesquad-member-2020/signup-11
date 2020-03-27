@@ -6,6 +6,9 @@ export const CHECK_PATTERN = {
       number: /^(?=.*[0-9])/,
       symbol: /^(?=.*[!@#$%^*+=-])/
     },
+    birthYear :/^(19|20)[0-9]{2}/,
+    birthMonth :/^(0[1-9]|1[1-2])/,
+    birthDay : /(0[1-9]|[1-2][0-9]|3[0-1])/,
     email: /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
     mobile: /^010\d{3,4}\d{4}$/g
   };
@@ -31,10 +34,11 @@ export const CHECK_PATTERN = {
       successMsg: '패스워드가 일치합니다.'
     },
     birthYY: {
-      errorMsg: '년도를 입력해주세요'
+      suceesMsg :'태어난 월을 선택하세요',
+      errorMsg: '19~85세만 가입가능합니다.'
     },
     birthDD: {
-      errorMsg: '태어난 날짜를 정확히 입력해주세요.'
+      errorMsg: '태어난 일(날짜) 2자리를 정확하게 입력하세요.'
     },
     email: {
       errorMsg: '이메일 주소를 다시 확인해주세요.',
