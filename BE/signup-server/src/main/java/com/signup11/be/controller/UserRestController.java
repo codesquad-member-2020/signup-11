@@ -60,7 +60,7 @@ public class UserRestController {
   @GetMapping(path = "/{userId}")
   public ApiResult<User> get(@PathVariable(value = "userId") String id, HttpSession httpSession) {
     User sessionUser = (User) Optional.ofNullable(httpSession.getAttribute(id)).
-        orElseThrow(() -> new UnauthorizedException(id));
+        orElseThrow(() -> new UnauthorizedException(id + ": 올바르지 않은 세션 접근입니다"));
     User user = userService.findById(id).orElseThrow(() -> new UserNotFoundException(id));
 
     if (!sessionUser.equals(user)) {

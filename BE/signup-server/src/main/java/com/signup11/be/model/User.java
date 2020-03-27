@@ -5,6 +5,8 @@ import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.Objects;
+import com.signup11.be.error.NotMatchException;
+import com.signup11.be.error.UnauthorizedException;
 import java.time.LocalDateTime;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -39,14 +41,43 @@ public class User {
 
   public User(String id, String password, String name, String birth, String gender,
       String email, String phone, LocalDateTime createdDate) {
-    this.id = id;
-    this.password = password;
+    this.id = checkId(id);
+    this.password = checkPassword(password);
     this.name = name;
     this.birth = birth;
     this.gender = gender;
-    this.email = email;
+    this.email = checkEmail(email);
     this.phone = phone;
     this.createdDate = defaultIfNull(createdDate, now());
+  }
+
+  private String checkId(String id) {
+    if (!id.matches("^[a-z0-9-_]{5,20}")) {
+      throw new NotMatchException("아이디 제한 조건과 맞지 않습니다");
+    }
+    return id;
+  }
+
+  private String checkPassword(String password) {
+    if (!password.matches("(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{8,16}")) {
+      throw new NotMatchException("비밀번호 제한 조건과 맞지 않습니다");
+    }
+    return password;
+  }
+
+  private String checkEmail(String email) {
+    if (!email.matches(
+        "([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)")) {
+      throw new NotMatchException("이메일 제한 조건과 맞지 않습니다");
+    }
+    return email;
+  }
+
+  private String checkPhone(String phone) {
+    if(!phone.matches("^010-\\d{3,4}-\\d{4}$")) {
+      throw new NotMatchException("전화번호 제한 조건과 맞지 않습니다");
+    }
+    return phone;
   }
 
   public Long getSeq() {
@@ -87,7 +118,7 @@ public class User {
 
   public void login(String password) {
     if (!this.password.equals(password)) {
-      throw new IllegalArgumentException("잘못된 패스워드 입력입니다");
+      throw new UnauthorizedException("잘못된 패스워드 입력입니다");
     }
   }
 
