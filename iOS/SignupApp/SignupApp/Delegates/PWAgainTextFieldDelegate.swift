@@ -12,17 +12,12 @@ final class PWAgainTextFieldDelegate: PWTextFieldDelegate {
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let pwAgainTextField = textField as? PWAgainTextField {
             if !pwAgainTextField.pwTextField.isCorrect {
-                pwAgainTextField.setMessagePrePasswordFirst()
-                pwAgainTextField.setBorderColorRed()
-                pwAgainTextField.setCorrectTrue()
-            } else if !Controller.isSameText(lhs: pwAgainTextField.pwTextField.text, rhs: pwAgainTextField.pwTextField.text) {
-                pwAgainTextField.setMessageNotSamePassword()
-                pwAgainTextField.setBorderColorRed()
-                pwAgainTextField.setCorrectFalse()
+                pwAgainTextField.setWrongCaseByWrongPrePassWord()
+            } else if !Controller.isSameText(lhs: pwAgainTextField.pwTextField.text,
+                                             rhs: pwAgainTextField.text) {
+                pwAgainTextField.setWrongCaseByNotSamePassword()
             } else {
-                pwAgainTextField.setMessageSamePassword()
-                pwAgainTextField.setBorderColorGrey()
-                pwAgainTextField.setCorrectTrue()
+                pwAgainTextField.setCorrectCase()
                 return true
             }
         }

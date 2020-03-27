@@ -9,12 +9,23 @@
 import UIKit
 
 final class IDTextField: CustomTextField {
-    func setMessageCorrectID() {
+    
+    override func setCorrectCase() {
+        super.setCorrectCase()
+        setMessageCorrectID()
+    }
+    
+    private func setMessageCorrectID() {
         let messageCorrectID = "사용 가능한 아이디입니다."
         Util.setCorrectMessage(messageLabel, text: messageCorrectID)
     }
     
-    func setMessageNotCorrectID() {
+    func setWrongCaseByWrongID() {
+        setWrongCase()
+        setMessageNotCorrectID()
+    }
+    
+    private func setMessageNotCorrectID() {
         let messageNotCorrectID = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-)만 사용 가능합니다."
         Util.setNotCorrectMessage(messageLabel, text: messageNotCorrectID)
     }

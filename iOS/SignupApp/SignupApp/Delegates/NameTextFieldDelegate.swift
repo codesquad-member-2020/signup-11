@@ -12,13 +12,9 @@ final class NameTextFieldDelegate: CustomTextFieldDelegate {
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let nameTextField = textField as? NameTextField {
             if Controller.isTextLengthZero(count: nameTextField.text?.count) {
-                nameTextField.setMessageRequireText()
-                nameTextField.setBorderColorRed()
-                nameTextField.setCorrectFalse()
+                nameTextField.setWrongCaseByNoText()
             } else {
-                nameTextField.setMessageCorrectName()
-                nameTextField.setBorderColorGrey()
-                nameTextField.setCorrectTrue()
+                nameTextField.setCorrectCase()
                 return true
             }
         }

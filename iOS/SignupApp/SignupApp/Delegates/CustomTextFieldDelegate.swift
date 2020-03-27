@@ -27,9 +27,7 @@ class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let customTextField = textField as? CustomTextField {
             if Controller.isTextLengthZero(count: customTextField.text?.count) {
-                customTextField.setMessageRequireText()
-                customTextField.setBorderColorRed()
-                customTextField.setCorrectFalse()
+                customTextField.setWrongCaseByNoText()
             }
         }
         return true

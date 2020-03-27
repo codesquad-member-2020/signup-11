@@ -38,14 +38,6 @@ class CustomTextField: UITextField {
         messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         messageLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 2).isActive = true
     }
-    
-    func setCorrectTrue() {
-        isCorrect = true
-    }
-    
-    func setCorrectFalse() {
-        isCorrect = false
-    }
 }
 
 extension CustomTextField {
@@ -65,11 +57,36 @@ extension CustomTextField {
 }
 
 extension CustomTextField {
-    func setMessageRequireText() {
+    @objc func setCorrectCase() {
+        setBorderColorGrey()
+        setCorrectTrue()
+    }
+    
+    func setWrongCase() {
+        setBorderColorRed()
+        setCorrectFalse()
+    }
+    
+    func setWrongCaseByNoText() {
+        setMessageRequireText()
+        setWrongCase()
+    }
+    
+    private func setMessageRequireText() {
         let messageRequireText = "필수 항목입니다."
         Util.setNotCorrectMessage(messageLabel, text: messageRequireText)
     }
     
+    func setCorrectTrue() {
+        isCorrect = true
+    }
+    
+    func setCorrectFalse() {
+        isCorrect = false
+    }
+}
+
+extension CustomTextField {
     func setBorderColorGrey() {
         layer.borderColor = UIColor.greyColor.cgColor
     }

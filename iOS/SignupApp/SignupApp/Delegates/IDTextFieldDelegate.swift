@@ -12,13 +12,9 @@ final class IDTextFieldDelegate: CustomTextFieldDelegate {
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let idTextField = textField as? IDTextField {
             if !Controller.isCorrectID(textField.text) {
-                idTextField.setMessageNotCorrectID()
-                idTextField.setBorderColorRed()
-                idTextField.setCorrectFalse()
+                idTextField.setWrongCaseByWrongID()
             } else {
-                idTextField.setMessageCorrectID()
-                idTextField.setBorderColorGrey()
-                idTextField.setCorrectTrue()
+                idTextField.setCorrectCase()
                 return true
             }
         }
