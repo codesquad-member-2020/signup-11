@@ -1,6 +1,6 @@
-import {CHECK_PATTERN,CHECK_MESSAGE} from '../util/constant.js';
-import {getElement,getAllElements} from '../util/util.js';
-
+import {CHECK_PATTERN,CHECK_MESSAGE} from './util/constant.js';
+import {getElement,getAllElements} from './util/util.js';
+import {signupData} from '../../data/signupData.js';
 
 
 const form = getElement('.form-wrap')
@@ -22,6 +22,9 @@ function handleInputEvent ({target}) {
             let currentPwd=target.value;
             let originalPwd =getElement('#password1').value;
             recheckPassword(currentPwd,originalPwd,target);
+        case 'name':
+            setName(target.value);
+            break;
     }
 }
     
@@ -71,6 +74,10 @@ function recheckPassword (currentPwd,originalPwd,target) {
     const messageEl =target.nextElementSibling
     if (currentPwd!==originalPwd) return messageEl.innerText=CHECK_MESSAGE.password_check.errorMsg;
     messageEl.innerText=CHECK_MESSAGE.password_check.successMsg;
+}
+function setName (name) {
+    signupData.name=null;
+    if (name) signupData.name = name;
 }
 
 window.addEventListener('DOMContentLoaded',init);
