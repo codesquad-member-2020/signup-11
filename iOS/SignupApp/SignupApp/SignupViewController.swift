@@ -13,6 +13,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var pwTextField: PWTextField!
     @IBOutlet weak var pwAgainTextField: PWAgainTextField!
     @IBOutlet weak var nameTextField: NameTextField!
+    private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     
     private let idTextFieldDelegate = IDTextFieldDelegate()
     private let pwAgainTextFieldDelegate = PWAgainTextFieldDelegate()
@@ -32,12 +33,21 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func nextButtonTouchedUpInside(_ sender: NextButton) {
-        if idTextField.isCorrect, pwTextField.isCorrect,
-            pwAgainTextField.isCorrect, nameTextField.isCorrect {
+        var allCorrect = true
+        for textField in textFields {
+            guard let textField = textField
+            else {
+                allCorrect = false
+                break
+            }
+            if !textField.isCorrect {
+                allCorrect = false
+                break
+            }
+        }
+        if allCorrect {
             sender.setTitleColor(UIColor.greenColor, for: .normal)
             sender.tintColor = UIColor.greenColor
-        } else {
-            
         }
     }
     
