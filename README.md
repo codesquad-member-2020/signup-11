@@ -6,7 +6,6 @@
 [Github wiki][ground-rule]
 
 
-
 ## 2. 기능 목록 
 
 * [iOS][iOS-list]
