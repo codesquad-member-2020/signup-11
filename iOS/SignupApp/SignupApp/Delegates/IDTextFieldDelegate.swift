@@ -14,7 +14,12 @@ final class IDTextFieldDelegate: CustomTextFieldDelegate {
             if !Controller.isCorrectID(textField.text) {
                 idTextField.setWrongCaseByWrongID()
             } else {
-                idTextField.setCorrectCase()
+                Controller.isOverlappedID(textField.text) { (result) in
+                    guard let result = result else { return }
+                    DispatchQueue.main.async {
+                        result ? idTextField.setWrongCaseByOverlappedID() : idTextField.setCorrectCase()
+                    }
+                }
                 return true
             }
         }
