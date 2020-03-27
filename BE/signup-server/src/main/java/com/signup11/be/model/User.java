@@ -42,7 +42,7 @@ public class User {
   public User(String id, String password, String name, String birth, String gender,
       String email, String phone, LocalDateTime createdDate) {
     this.id = checkId(id);
-    this.password = password;
+    this.password = checkPassword(password);
     this.name = name;
     this.birth = birth;
     this.gender = gender;
@@ -56,6 +56,13 @@ public class User {
       throw new NotMatchException("아이디 제한 조건과 맞지 않습니다");
     }
     return id;
+  }
+
+  private String checkPassword(String password) {
+    if (!password.matches("(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{8,16}")) {
+      throw new NotMatchException("비밀번호 제한 조건과 맞지 않습니다");
+    }
+    return password;
   }
 
   public Long getSeq() {
