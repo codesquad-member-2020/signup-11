@@ -46,7 +46,7 @@ public class User {
     this.name = name;
     this.birth = birth;
     this.gender = gender;
-    this.email = email;
+    this.email = checkEmail(email);
     this.phone = phone;
     this.createdDate = defaultIfNull(createdDate, now());
   }
@@ -63,6 +63,14 @@ public class User {
       throw new NotMatchException("비밀번호 제한 조건과 맞지 않습니다");
     }
     return password;
+  }
+
+  private String checkEmail(String email) {
+    if (!email.matches(
+        "([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)")) {
+      throw new NotMatchException("이메일 제한 조건과 맞지 않습니다");
+    }
+    return email;
   }
 
   public Long getSeq() {
