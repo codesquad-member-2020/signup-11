@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageLabel: UILabel {
+final class MessageLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
