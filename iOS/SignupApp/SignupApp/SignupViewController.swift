@@ -9,17 +9,15 @@
 import UIKit
 
 class SignupViewController: UIViewController {
-    private let idTextFieldDelegate = IDTextFieldDelegate()
     @IBOutlet weak var idTextField: IDTextField!
-
-    private let pwTextFieldDelegate = PWTextFieldDelegate()
     @IBOutlet weak var pwTextField: PWTextField!
-    
-    private let pwAgainTextFieldDelegate = PWAgainTextFieldDelegate()
     @IBOutlet weak var pwAgainTextField: PWAgainTextField!
-    
-    private let nameTextFieldDelegate = NameTextFieldDelegate()
     @IBOutlet weak var nameTextField: NameTextField!
+    
+    private let idTextFieldDelegate = IDTextFieldDelegate()
+    private let pwAgainTextFieldDelegate = PWAgainTextFieldDelegate()
+    private let nameTextFieldDelegate = NameTextFieldDelegate()
+    private let pwTextFieldDelegate = PWTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +30,16 @@ class SignupViewController: UIViewController {
         pwAgainTextField.delegate = pwAgainTextFieldDelegate
         nameTextField.delegate = nameTextFieldDelegate
     }
+    
+    @IBAction func nextButtonTouchedUpInside(_ sender: NextButton) {
+        if idTextField.isCorrect, pwTextField.isCorrect,
+            pwAgainTextField.isCorrect, nameTextField.isCorrect {
+            sender.setTitleColor(UIColor.greenColor, for: .normal)
+            sender.tintColor = UIColor.greenColor
+        } else {
+            
+        }
+    }
+    
 }
 
