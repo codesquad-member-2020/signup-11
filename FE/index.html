@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>회원가입</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
@@ -49,9 +49,9 @@
           <input class="form-control" id="name" name="name" placeholder="Name" required />
         </div>
         <div class="form-group birth-group">
-          <label for="birth">생년월일</label>
+          <label for="birth1">생년월일</label>
           <span class="birth-contents">
-            <input class="form-control" id="birth" name="birth" placeholder="birth" required />
+            <input class="form-control" id="birth1" name="birth1" placeholder="년도" required />
             <select id="mm" class="sel" aria-label="월" required>
               <option value="">월</option>
               <option value="01">1</option>
@@ -67,7 +67,7 @@
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-            <input class="form-control" id="birth" name="birth" placeholder="일" required />
+            <input class="form-control" id="birth2" name="birth2" placeholder="일" required />
           </span>
           <span class="message">
             태어난 년도 4자리를 정확하게 입력하세요.
@@ -96,25 +96,27 @@
             형식에 맞지 않는 번호입니다.
           </span>
         </div>
-        <div class="form-group container">
+        <div class="form-group">
           <label for="">관심사</label>
           <div class="tag-container">
-            <div class="tag">
-              <span>Javascript</span>
-              <i class="fas fa-times"></i>
-            </div>
+            <input type="text" class="form-control" name="" id="">
           </div>
           <span class="message">
             형식에 맞지 않는 번호입니다.
           </span>
         </div>
         <div class="form-group term-group">
-          <input type="checkbox" class="form-control" id="terms" name="terms" value="Y" class="chk" required>
-          <label for="terms">약관에 동의합니다.</label>
+          <input type="checkbox" class="form-control" id="terms1" name="terms1" value="Y" class="chk" required>
+          <div class="terms-pop-btn">
+            <button type="button" id="modalBtn">
+              약관에 동의합니다.
+            </button>
+          </div>
+
         </div>
-        <div class="terms-modal">
-          <div class="close-buttom">
-            <button type="button">
+        <div class="terms-modal" id="modal">
+          <div class="close-button">
+            <button type="button" class="closeBtn">
               <i class="fas fa-times"></i>
             </button>
           </div>
@@ -175,7 +177,7 @@
               </ul>
             </div>
             <div class="agree">
-              <button class="agree-button" id="terms" type="button">동의</button>
+              <label for="terms1">약관 동의</label>
             </div>
           </div>
         </div>
@@ -186,8 +188,8 @@
       </form>
     </div>
   </div>
-
-
+  <script src="src/js/signup/interests.js"></script> <!-- 삭제 예정 -->
+  <script src="src/js/signup/terms.js"></script> <!-- 삭제 예정 -->
 </body>
 
 </html>
