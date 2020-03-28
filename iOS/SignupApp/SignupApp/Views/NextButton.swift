@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol NextButtonDelegate {
+    func nextButtonBecomeFirstResponder()
+}
+
 final class NextButton: UIButton {
+    var delegate: NextButtonDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -18,6 +24,7 @@ final class NextButton: UIButton {
     }
 
     override func becomeFirstResponder() -> Bool {
+        delegate?.nextButtonBecomeFirstResponder()
         return true
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, NextButtonDelegate {
     @IBOutlet weak var idTextField: IDTextField!
     @IBOutlet weak var pwTextField: PWTextField!
     @IBOutlet weak var pwAgainTextField: PWAgainTextField!
@@ -23,15 +23,16 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTextFieldsDelegate()
+        setDelegates()
         setNextResponders()
     }
     
-    private func setTextFieldsDelegate() {
+    private func setDelegates() {
         idTextField.delegate = idTextFieldDelegate
         pwTextField.delegate = pwTextFieldDelegate
         pwAgainTextField.delegate = pwAgainTextFieldDelegate
         nameTextField.delegate = nameTextFieldDelegate
+        nextButton.delegate = self
     }
     
     private func setNextResponders() {
@@ -59,6 +60,10 @@ class SignupViewController: UIViewController {
             sender.setTitleColor(UIColor.greenColor, for: .normal)
             sender.tintColor = UIColor.greenColor
         }
+    }
+    
+    func nextButtonBecomeFirstResponder() {
+        nextButtonTouchedUpInside(nextButton)
     }
 }
 
