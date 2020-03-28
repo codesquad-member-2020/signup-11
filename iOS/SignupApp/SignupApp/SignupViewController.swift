@@ -58,16 +58,7 @@ class SignupViewController: UIViewController {
         if allCorrect {
             sender.setTitleColor(UIColor.greenColor, for: .normal)
             sender.tintColor = UIColor.greenColor
-            showupLoginViewController()
         }
-    }
-    
-    func showupLoginViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let loginViewController = storyboard.instantiateViewController(identifier: "loginViewController")
-        addChild(loginViewController)
-        view.addSubview(loginViewController.view)
-        loginViewController.didMove(toParent: self)
     }
 }
 
