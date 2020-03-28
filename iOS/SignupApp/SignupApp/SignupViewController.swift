@@ -13,6 +13,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var pwTextField: PWTextField!
     @IBOutlet weak var pwAgainTextField: PWAgainTextField!
     @IBOutlet weak var nameTextField: NameTextField!
+    @IBOutlet weak var nextButton: NextButton!
     private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     
     private let idTextFieldDelegate = IDTextFieldDelegate()
@@ -23,6 +24,7 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextFieldsDelegate()
+        setNextResponders()
     }
     
     private func setTextFieldsDelegate() {
@@ -30,6 +32,13 @@ class SignupViewController: UIViewController {
         pwTextField.delegate = pwTextFieldDelegate
         pwAgainTextField.delegate = pwAgainTextFieldDelegate
         nameTextField.delegate = nameTextFieldDelegate
+    }
+    
+    private func setNextResponders() {
+        idTextField.nextResonder = pwTextField
+        pwTextField.nextResonder = pwAgainTextField
+        pwAgainTextField.nextResonder = nameTextField
+        nameTextField.nextResonder = nextButton
     }
     
     @IBAction func nextButtonTouchedUpInside(_ sender: NextButton) {

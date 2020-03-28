@@ -27,6 +27,7 @@ extension SignupTextField {
 class SignupTextField: UITextField {
     private(set) var isCorrect = false
     private let messageLabel = MessageLabel()
+    var nextResonder: UIResponder?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

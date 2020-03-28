@@ -19,7 +19,6 @@
 		5A4CA5F1242B7FBF0095FA0C /* NameTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5F0242B7FBF0095FA0C /* NameTextFieldDelegate.swift */; };
 		5A7C6304242CAFBD0073CF72 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6303242CAFBD0073CF72 /* Controller.swift */; };
 		5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6305242CB2D70073CF72 /* MessageLabel.swift */; };
-		5A7C6309242CBE5E0073CF72 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6308242CBE5E0073CF72 /* Tag.swift */; };
 		5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C630A242CC3270073CF72 /* UIColor.swift */; };
 		5A7C6310242D9EEB0073CF72 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C630F242D9EEB0073CF72 /* Network.swift */; };
 		5A7C6312242D9F1B0073CF72 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6311242D9F1B0073CF72 /* DataDecoder.swift */; };
@@ -66,7 +65,6 @@
 		5A4CA5F0242B7FBF0095FA0C /* NameTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldDelegate.swift; sourceTree = "<group>"; };
 		5A7C6303242CAFBD0073CF72 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		5A7C6305242CB2D70073CF72 /* MessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
-		5A7C6308242CBE5E0073CF72 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		5A7C630A242CC3270073CF72 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5A7C630F242D9EEB0073CF72 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		5A7C6311242D9F1B0073CF72 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 		5A7C6307242CBE320073CF72 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5A7C6308242CBE5E0073CF72 /* Tag.swift */,
 				5A7C630A242CC3270073CF72 /* UIColor.swift */,
 				5A7C6311242D9F1B0073CF72 /* DataDecoder.swift */,
 			);
@@ -373,7 +370,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7C6312242D9F1B0073CF72 /* DataDecoder.swift in Sources */,
-				5A7C6309242CBE5E0073CF72 /* Tag.swift in Sources */,
 				5A4CA5DB242B4CEB0095FA0C /* PWTextField.swift in Sources */,
 				5A4CA5EB242B7EE30095FA0C /* IDTextFieldDelegate.swift in Sources */,
 				5A834510242A301B00F20FAA /* SignupViewController.swift in Sources */,

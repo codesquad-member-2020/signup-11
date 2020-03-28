@@ -20,14 +20,16 @@ class SignupTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        Tag.nextTagBecomeFirstResponder(view: textField)
+        if let signupTextField = textField as? SignupTextField {
+            signupTextField.nextResonder?.becomeFirstResponder()
+        }
         return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if let customTextField = textField as? SignupTextField {
-            if Controller.isTextLengthZero(count: customTextField.text?.count) {
-                customTextField.setWrongCaseByNoText()
+        if let signupTextField = textField as? SignupTextField {
+            if Controller.isTextLengthZero(count: signupTextField.text?.count) {
+                signupTextField.setWrongCaseByNoText()
             }
         }
         return true
