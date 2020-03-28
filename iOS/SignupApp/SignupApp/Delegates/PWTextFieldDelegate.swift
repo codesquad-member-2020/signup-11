@@ -17,13 +17,13 @@ class PWTextFieldDelegate: SignupTextFieldDelegate {
         if let pwTextField = textField as? PWTextField {
             if !Controller.isTextCorrectLength(min: 8,
                                                max: 16,
-                                               count: textField.text?.count) {
+                                               count: pwTextField.text?.count) {
                 pwTextField.setWrongCaseByUnsuitableTextLength()
-            } else if !Controller.hasUpperCaseLetter(textField.text) {
+            } else if !Controller.hasUpperCaseLetter(pwTextField.text) {
                 pwTextField.setWrongCaseByNoUpperCapitalLetter()
-            } else if !Controller.hasNumber(textField.text) {
+            } else if !Controller.hasNumber(pwTextField.text) {
                 pwTextField.setWrongCaseByNoNumber()
-            } else if !Controller.hasSpecialCharacter(textField.text) {
+            } else if !Controller.hasSpecialCharacter(pwTextField.text) {
                 pwTextField.setWrongCaseByNoSpecialCharacter()
             } else {
                 pwTextField.setCorrectCase()
