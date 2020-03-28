@@ -27,7 +27,7 @@ final class IDTextField: SignupTextField {
     
     private func setMessageNotCorrectID() {
         let messageNotCorrectID = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-)만 사용 가능합니다."
-        setNotCorrectMessage(text: messageNotCorrectID)
+        setWrongMessage(text: messageNotCorrectID)
     }
     
     func setWrongCaseByOverlappedID() {
@@ -37,6 +37,6 @@ final class IDTextField: SignupTextField {
     
     private func setMessageOverlappedID() {
         let messageNotCorrectID = "이미 사용중인 아이디입니다."
-        setNotCorrectMessage(text: messageNotCorrectID)
+        setWrongMessage(text: messageNotCorrectID)
     }
 }

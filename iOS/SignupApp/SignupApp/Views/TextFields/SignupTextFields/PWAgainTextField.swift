@@ -28,7 +28,7 @@ final class PWAgainTextField: SignupTextField {
     
     private func setMessageNotSamePassword() {
         let messageNotSamePassword = "비밀번호가 일치하지 않습니다."
-        setNotCorrectMessage(text: messageNotSamePassword)
+        setWrongMessage(text: messageNotSamePassword)
     }
     
     func setWrongCaseByWrongPrePassWord() {
@@ -38,6 +38,6 @@ final class PWAgainTextField: SignupTextField {
     
     private func setMessagePrePasswordFirst() {
         let messagePrePasswordFirst = "이전 비밀번호를 먼저 올바르게 입력해주시기 바랍니다."
-        setNotCorrectMessage(text: messagePrePasswordFirst)
+        setWrongMessage(text: messagePrePasswordFirst)
     }
 }

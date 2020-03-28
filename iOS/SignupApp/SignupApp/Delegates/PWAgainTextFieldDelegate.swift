@@ -18,7 +18,6 @@ final class PWAgainTextFieldDelegate: PWTextFieldDelegate {
                 pwAgainTextField.setWrongCaseByNotSamePassword()
             } else {
                 pwAgainTextField.setCorrectCase()
-                return true
             }
         }
         return super.textFieldShouldEndEditing(textField)

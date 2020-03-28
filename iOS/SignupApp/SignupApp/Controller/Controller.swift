@@ -75,4 +75,14 @@ class Controller {
         }
         return lhs == rhs
     }
+    
+    private static let spaceCharacterPattern = "[\\s]"
+    static func isNoHaveSpace(_ text: String?) -> Bool {
+        guard let text = text else { return false }
+        let range = NSRange(location: 0, length: text.count)
+        let regex = try! NSRegularExpression(pattern: spaceCharacterPattern)
+        
+        guard regex.firstMatch(in: text, range: range) == nil else { return false }
+        return true
+    }
 }

@@ -27,7 +27,6 @@ class PWTextFieldDelegate: SignupTextFieldDelegate {
                 pwTextField.setWrongCaseByNoSpecialCharacter()
             } else {
                 pwTextField.setCorrectCase()
-                return true
             }
         }
         return super.textFieldShouldEndEditing(textField)

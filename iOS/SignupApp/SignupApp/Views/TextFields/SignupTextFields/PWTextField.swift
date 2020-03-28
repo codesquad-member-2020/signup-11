@@ -17,7 +17,7 @@ final class PWTextField: SignupTextField {
     
     private func setMessageCorrectTextLength() {
         let messageCorrectTextLength = "8자 이상 16자 이하로 입력해주세요."
-        setNotCorrectMessage(text: messageCorrectTextLength)
+        setWrongMessage(text: messageCorrectTextLength)
     }
     
     func setWrongCaseByNoUpperCapitalLetter() {
@@ -27,7 +27,7 @@ final class PWTextField: SignupTextField {
     
     private func setMessageWriteUpperCapitalLetter() {
         let messageWriteUpperCapitalLetter = "영문 대문자를 최소 1자 이상 포함해주세요. "
-        setNotCorrectMessage(text: messageWriteUpperCapitalLetter)
+        setWrongMessage(text: messageWriteUpperCapitalLetter)
     }
     
     func setWrongCaseByNoNumber() {
@@ -37,7 +37,7 @@ final class PWTextField: SignupTextField {
     
     private func setMessageWriteNumber() {
         let messageWriteNumber = "숫자를 최소 1자 이상 포함해주세요."
-        setNotCorrectMessage(text: messageWriteNumber)
+        setWrongMessage(text: messageWriteNumber)
     }
     
     func setWrongCaseByNoSpecialCharacter() {
@@ -47,7 +47,7 @@ final class PWTextField: SignupTextField {
     
     private func setMessageWriteSpecialCharacter() {
         let messageWriteSpecialCharacter = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
-        setNotCorrectMessage(text: messageWriteSpecialCharacter)
+        setWrongMessage(text: messageWriteSpecialCharacter)
     }
     
     override func setCorrectCase() {

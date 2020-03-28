@@ -11,13 +11,12 @@ import UIKit
 final class NameTextFieldDelegate: SignupTextFieldDelegate {
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let nameTextField = textField as? NameTextField {
-            if Controller.isTextLengthZero(count: nameTextField.text?.count) {
-                nameTextField.setWrongCaseByNoText()
+            if !Controller.isNoHaveSpace(nameTextField.text) {
+                nameTextField.setWrongCaseByNotHaveSpace()
             } else {
                 nameTextField.setCorrectCase()
-                return true
             }
         }
-        return true
+        return super.textFieldShouldEndEditing(textField)
     }
 }

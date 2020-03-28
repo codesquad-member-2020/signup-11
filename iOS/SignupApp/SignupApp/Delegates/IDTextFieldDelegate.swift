@@ -20,7 +20,6 @@ final class IDTextFieldDelegate: SignupTextFieldDelegate {
                         result ? idTextField.setWrongCaseByOverlappedID() : idTextField.setCorrectCase()
                     }
                 }
-                return true
             }
         }
         return super.textFieldShouldEndEditing(textField)

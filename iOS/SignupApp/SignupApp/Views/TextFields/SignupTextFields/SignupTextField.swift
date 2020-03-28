@@ -44,7 +44,7 @@ class SignupTextField: FormTextField {
     
     private func setMessageRequireText() {
         let messageRequireText = "필수 항목입니다."
-        setNotCorrectMessage(text: messageRequireText)
+        setWrongMessage(text: messageRequireText)
     }
     
     func setCorrectCase() {
@@ -80,7 +80,7 @@ class SignupTextField: FormTextField {
         messageLabel.isHidden = false
     }
     
-    func setNotCorrectMessage(text: String) {
+    func setWrongMessage(text: String) {
         messageLabel.text = text
         messageLabel.textColor = UIColor.redColor
         messageLabel.isHidden = false
