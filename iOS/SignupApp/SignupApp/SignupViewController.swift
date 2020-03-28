@@ -68,28 +68,26 @@ class SignupViewController: UIViewController, NextButtonDelegate {
         return true
     }
     
-    @IBAction func nextButtonTouchedUpInside(_ sender: NextButton) {
-        var allCorrect = true
-        for textField in textFields {
-            guard let textField = textField
-                else {
-                    allCorrect = false
-                    break
-            }
-            if !textField.isCorrect {
-                allCorrect = false
-                textField.becomeFirstResponder()
-                break
-            }
-        }
-        if allCorrect {
-            sender.setTitleColor(UIColor.greenColor, for: .normal)
-            sender.tintColor = UIColor.greenColor
+    func nextButtonBecomeFirstResponder() {
+        actionNextButton()
+    }
+    
+    private func actionNextButton() {
+        if isAllCorrect() {
+            performSegue(withIdentifier: "showLoginViewController", sender: nextButton)
+        } else {
+            invalidTextFieldBecomeFirstResponder()
         }
     }
     
-    func nextButtonBecomeFirstResponder() {
-        nextButtonTouchedUpInside(nextButton)
+    private func invalidTextFieldBecomeFirstResponder() {
+        for textField in textFields {
+            guard let textField = textField else { return }
+            if !textField.isCorrect {
+                textField.becomeFirstResponder()
+                return
+            }
+        }
     }
 }
 

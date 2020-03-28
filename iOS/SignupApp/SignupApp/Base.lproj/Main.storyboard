@@ -129,8 +129,7 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButtonTouchedUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nBd-bo-zXm"/>
-                                    <segue destination="Wnz-kV-CCs" kind="show" id="Uk1-IK-7G4"/>
+                                    <segue destination="Wnz-kV-CCs" kind="show" identifier="showLoginViewController" id="Uk1-IK-7G4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -257,9 +256,6 @@
                                 <state key="normal" title="로그인" image="chevron.right.circle.fill" catalog="system">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="loginButtonTouched:" destination="Wnz-kV-CCs" eventType="touchUpInside" id="ZSl-2s-8Vy"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
