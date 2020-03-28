@@ -11,8 +11,8 @@
 		5A4CA5DB242B4CEB0095FA0C /* PWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DA242B4CEB0095FA0C /* PWTextField.swift */; };
 		5A4CA5DD242B4DAE0095FA0C /* PWAgainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DC242B4DAE0095FA0C /* PWAgainTextField.swift */; };
 		5A4CA5DF242B4DF30095FA0C /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DE242B4DF30095FA0C /* NameTextField.swift */; };
-		5A4CA5E4242B5BB20095FA0C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E3242B5BB20095FA0C /* CustomTextField.swift */; };
-		5A4CA5E9242B7E9D0095FA0C /* CustomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E8242B7E9D0095FA0C /* CustomTextFieldDelegate.swift */; };
+		5A4CA5E4242B5BB20095FA0C /* SignupTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E3242B5BB20095FA0C /* SignupTextField.swift */; };
+		5A4CA5E9242B7E9D0095FA0C /* SignupTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E8242B7E9D0095FA0C /* SignupTextFieldDelegate.swift */; };
 		5A4CA5EB242B7EE30095FA0C /* IDTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EA242B7EE30095FA0C /* IDTextFieldDelegate.swift */; };
 		5A4CA5ED242B7F920095FA0C /* PWTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EC242B7F920095FA0C /* PWTextFieldDelegate.swift */; };
 		5A4CA5EF242B7FAA0095FA0C /* PWAgainTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EE242B7FAA0095FA0C /* PWAgainTextFieldDelegate.swift */; };
@@ -58,8 +58,8 @@
 		5A4CA5DA242B4CEB0095FA0C /* PWTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWTextField.swift; sourceTree = "<group>"; };
 		5A4CA5DC242B4DAE0095FA0C /* PWAgainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWAgainTextField.swift; sourceTree = "<group>"; };
 		5A4CA5DE242B4DF30095FA0C /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
-		5A4CA5E3242B5BB20095FA0C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		5A4CA5E8242B7E9D0095FA0C /* CustomTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldDelegate.swift; sourceTree = "<group>"; };
+		5A4CA5E3242B5BB20095FA0C /* SignupTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextField.swift; sourceTree = "<group>"; };
+		5A4CA5E8242B7E9D0095FA0C /* SignupTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextFieldDelegate.swift; sourceTree = "<group>"; };
 		5A4CA5EA242B7EE30095FA0C /* IDTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDTextFieldDelegate.swift; sourceTree = "<group>"; };
 		5A4CA5EC242B7F920095FA0C /* PWTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWTextFieldDelegate.swift; sourceTree = "<group>"; };
 		5A4CA5EE242B7FAA0095FA0C /* PWAgainTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWAgainTextFieldDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		5A4CA5E0242B53C90095FA0C /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
-				5A4CA5E3242B5BB20095FA0C /* CustomTextField.swift */,
+				5A4CA5E3242B5BB20095FA0C /* SignupTextField.swift */,
 				5A4CA5D8242B4C350095FA0C /* IDTextField.swift */,
 				5A4CA5DA242B4CEB0095FA0C /* PWTextField.swift */,
 				5A4CA5DC242B4DAE0095FA0C /* PWAgainTextField.swift */,
@@ -139,7 +139,7 @@
 		5A4CA5E7242B7CED0095FA0C /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				5A4CA5E8242B7E9D0095FA0C /* CustomTextFieldDelegate.swift */,
+				5A4CA5E8242B7E9D0095FA0C /* SignupTextFieldDelegate.swift */,
 				5A4CA5EA242B7EE30095FA0C /* IDTextFieldDelegate.swift */,
 				5A4CA5EC242B7F920095FA0C /* PWTextFieldDelegate.swift */,
 				5A4CA5EE242B7FAA0095FA0C /* PWAgainTextFieldDelegate.swift */,
@@ -381,7 +381,7 @@
 				5A4CA5DF242B4DF30095FA0C /* NameTextField.swift in Sources */,
 				5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */,
 				5A4CA5EF242B7FAA0095FA0C /* PWAgainTextFieldDelegate.swift in Sources */,
-				5A4CA5E4242B5BB20095FA0C /* CustomTextField.swift in Sources */,
+				5A4CA5E4242B5BB20095FA0C /* SignupTextField.swift in Sources */,
 				5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */,
 				5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */,
 				5A4CA5D9242B4C350095FA0C /* IDTextField.swift in Sources */,
@@ -389,7 +389,7 @@
 				5A7C6310242D9EEB0073CF72 /* Network.swift in Sources */,
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
 				5A4CA5ED242B7F920095FA0C /* PWTextFieldDelegate.swift in Sources */,
-				5A4CA5E9242B7E9D0095FA0C /* CustomTextFieldDelegate.swift in Sources */,
+				5A4CA5E9242B7E9D0095FA0C /* SignupTextFieldDelegate.swift in Sources */,
 				5A4CA5F1242B7FBF0095FA0C /* NameTextFieldDelegate.swift in Sources */,
 				5A4CA5DD242B4DAE0095FA0C /* PWAgainTextField.swift in Sources */,
 				5A7C6315242DA3070073CF72 /* IDResponse.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class IDTextFieldDelegate: CustomTextFieldDelegate {
+final class IDTextFieldDelegate: SignupTextFieldDelegate {
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let idTextField = textField as? IDTextField {
             if !Controller.isCorrectID(textField.text) {

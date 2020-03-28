@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PWTextFieldDelegate: CustomTextFieldDelegate {
+class PWTextFieldDelegate: SignupTextFieldDelegate {
     override var textLimit: Int {
         return 16
     }

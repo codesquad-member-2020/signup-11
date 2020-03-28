@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PWAgainTextField: CustomTextField {
+final class PWAgainTextField: SignupTextField {
     @IBOutlet weak var pwTextField: PWTextField!
     
     override func setCorrectCase() {

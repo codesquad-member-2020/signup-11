@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NameTextFieldDelegate: CustomTextFieldDelegate {
+final class NameTextFieldDelegate: SignupTextFieldDelegate {
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let nameTextField = textField as? NameTextField {
             if Controller.isTextLengthZero(count: nameTextField.text?.count) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PWTextField: CustomTextField {
+final class PWTextField: SignupTextField {
     
     func setWrongCaseByUnsuitableTextLength() {
         setWrongCase()

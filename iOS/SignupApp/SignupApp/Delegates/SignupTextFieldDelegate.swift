@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
+class SignupTextFieldDelegate: NSObject, UITextFieldDelegate {
     var textLimit : Int {
         return 20
     }
@@ -25,7 +25,7 @@ class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if let customTextField = textField as? CustomTextField {
+        if let customTextField = textField as? SignupTextField {
             if Controller.isTextLengthZero(count: customTextField.text?.count) {
                 customTextField.setWrongCaseByNoText()
             }

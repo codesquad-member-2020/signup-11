@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTextField: UITextField {
+class SignupTextField: UITextField {
     private(set) var isCorrect = false
     let messageLabel = MessageLabel()
     
@@ -40,23 +40,23 @@ class CustomTextField: UITextField {
     }
 }
 
-extension CustomTextField {
+extension SignupTextField {
     private static let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: CustomTextField.padding)
+        return bounds.inset(by: SignupTextField.padding)
     }
     
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: CustomTextField.padding)
+        return bounds.inset(by: SignupTextField.padding)
     }
     
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: CustomTextField.padding)
+        return bounds.inset(by: SignupTextField.padding)
     }
 }
 
-extension CustomTextField {
+extension SignupTextField {
     @objc func setCorrectCase() {
         setBorderColorGrey()
         setCorrectTrue()
@@ -93,14 +93,14 @@ extension CustomTextField {
     }
 }
 
-extension CustomTextField {
+extension SignupTextField {
     private func setMessageRequireText() {
         let messageRequireText = "필수 항목입니다."
         setNotCorrectMessage(text: messageRequireText)
     }
 }
 
-extension CustomTextField {
+extension SignupTextField {
     func setBorderColorGrey() {
         layer.borderColor = UIColor.greyColor.cgColor
     }
