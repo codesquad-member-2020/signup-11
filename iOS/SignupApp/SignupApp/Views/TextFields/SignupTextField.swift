@@ -54,10 +54,18 @@ class SignupTextField: UITextField {
         messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         messageLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 2).isActive = true
     }
-}
-
-extension SignupTextField {
-    @objc func setCorrectCase() {
+    
+    func setWrongCaseByNoText() {
+        setMessageRequireText()
+        setWrongCase()
+    }
+    
+    private func setMessageRequireText() {
+        let messageRequireText = "필수 항목입니다."
+        setNotCorrectMessage(text: messageRequireText)
+    }
+    
+    func setCorrectCase() {
         setBorderColorGrey()
         setCorrectTrue()
     }
@@ -67,19 +75,24 @@ extension SignupTextField {
         setCorrectFalse()
     }
     
-    func setWrongCaseByNoText() {
-        setMessageRequireText()
-        setWrongCase()
-    }
-
-    func setCorrectTrue() {
+    private func setCorrectTrue() {
         isCorrect = true
     }
     
-    func setCorrectFalse() {
+    private func setCorrectFalse() {
         isCorrect = false
     }
-        
+    
+    private func setBorderColorGrey() {
+        layer.borderColor = UIColor.greyColor.cgColor
+    }
+    
+    private func setBorderColorRed() {
+        layer.borderColor = UIColor.redColor.cgColor
+    }
+    
+// MARK:- Methods related to MessageLabel
+    
     func setCorrectMessage(text: String) {
         messageLabel.text = text
         messageLabel.textColor = UIColor.greenColor
@@ -90,22 +103,5 @@ extension SignupTextField {
         messageLabel.text = text
         messageLabel.textColor = UIColor.redColor
         messageLabel.isHidden = false
-    }
-}
-
-extension SignupTextField {
-    private func setMessageRequireText() {
-        let messageRequireText = "필수 항목입니다."
-        setNotCorrectMessage(text: messageRequireText)
-    }
-}
-
-extension SignupTextField {
-    func setBorderColorGrey() {
-        layer.borderColor = UIColor.greyColor.cgColor
-    }
-    
-    func setBorderColorRed() {
-        layer.borderColor = UIColor.redColor.cgColor
     }
 }
