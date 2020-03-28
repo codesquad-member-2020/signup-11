@@ -17,14 +17,37 @@ final class NextButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        disabled()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        disabled()
     }
 
     override func becomeFirstResponder() -> Bool {
         delegate?.nextButtonBecomeFirstResponder()
         return true
     }
+    
+    func enabled() {
+        setGreenButton()
+        isEnabled = true
+    }
+    
+    private func setGreenButton() {
+        setTitleColor(UIColor.greenColor, for: .normal)
+        tintColor = UIColor.greenColor
+    }
+    
+    func disabled() {
+        setGreyButton()
+        isEnabled = false
+    }
+    
+    private func setGreyButton() {
+        setTitleColor(UIColor.greyColor, for: .disabled)
+        tintColor = UIColor.greyColor
+    }
+    
 }

@@ -9,7 +9,15 @@
 import UIKit
 
 class SignupTextField: FormTextField {
-    private(set) var isCorrect = false
+    static let notificationIsCorrectDidChange = Notification.Name("isCorrectDidChange")
+    private(set) var isCorrect = false {
+        didSet {
+            if isCorrect != oldValue {
+                NotificationCenter.default.post(name: Self.notificationIsCorrectDidChange,
+                                                object: self)
+            }
+        }
+    }
     private let messageLabel = MessageLabel()
     
     override init(frame: CGRect) {
@@ -65,7 +73,7 @@ class SignupTextField: FormTextField {
         layer.borderColor = UIColor.redColor.cgColor
     }
     
-// MARK:- Methods related to MessageLabel
+    // MARK:- Methods related to MessageLabel
     func setCorrectMessage(text: String) {
         messageLabel.text = text
         messageLabel.textColor = UIColor.greenColor

@@ -25,6 +25,7 @@ class SignupViewController: UIViewController, NextButtonDelegate {
         super.viewDidLoad()
         setDelegates()
         setNextResponders()
+        setObserver()
     }
     
     private func setDelegates() {
@@ -40,6 +41,31 @@ class SignupViewController: UIViewController, NextButtonDelegate {
         pwTextField.nextResonder = pwAgainTextField
         pwAgainTextField.nextResonder = nameTextField
         nameTextField.nextResonder = nextButton
+    }
+    
+    private func setObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(changeNextButton),
+                                               name: SignupTextField.notificationIsCorrectDidChange,
+                                               object: nil)
+    }
+    
+    @objc func changeNextButton() {
+        if isAllCorrect() {
+            nextButton.enabled()
+        } else {
+            nextButton.disabled()
+        }
+    }
+    
+    private func isAllCorrect() -> Bool {
+        for textField in textFields {
+            guard let textField = textField else { return false }
+            if !textField.isCorrect {
+                return false
+            }
+        }
+        return true
     }
     
     @IBAction func nextButtonTouchedUpInside(_ sender: NextButton) {
