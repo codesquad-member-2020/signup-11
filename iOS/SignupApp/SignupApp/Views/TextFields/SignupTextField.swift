@@ -8,6 +8,22 @@
 
 import UIKit
 
+extension SignupTextField {
+    private static let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: SignupTextField.padding)
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: SignupTextField.padding)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: SignupTextField.padding)
+    }
+}
+
 class SignupTextField: UITextField {
     private(set) var isCorrect = false
     let messageLabel = MessageLabel()
@@ -37,22 +53,6 @@ class SignupTextField: UITextField {
         messageLabel.trailingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
         messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         messageLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 2).isActive = true
-    }
-}
-
-extension SignupTextField {
-    private static let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-    
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: SignupTextField.padding)
-    }
-    
-    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: SignupTextField.padding)
-    }
-    
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: SignupTextField.padding)
     }
 }
 
