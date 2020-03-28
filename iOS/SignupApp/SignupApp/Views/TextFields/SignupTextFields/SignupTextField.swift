@@ -8,29 +8,18 @@
 
 import UIKit
 
-class SignupTextField: UITextField {
+class SignupTextField: FormTextField {
     private(set) var isCorrect = false
     private let messageLabel = MessageLabel()
-    var nextResonder: UIResponder?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        setMessageLabel()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setup()
-    }
-    
-    private func setup() {
-        setBorder()
         setMessageLabel()
-    }
-    
-    private func setBorder() {
-        layer.borderWidth = 0.9
-        layer.borderColor = UIColor.greyColor.cgColor
     }
     
     private func setMessageLabel() {
@@ -77,7 +66,6 @@ class SignupTextField: UITextField {
     }
     
 // MARK:- Methods related to MessageLabel
-    
     func setCorrectMessage(text: String) {
         messageLabel.text = text
         messageLabel.textColor = UIColor.greenColor
@@ -88,21 +76,5 @@ class SignupTextField: UITextField {
         messageLabel.text = text
         messageLabel.textColor = UIColor.redColor
         messageLabel.isHidden = false
-    }
-}
-
-extension SignupTextField {
-    private static let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-    
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: SignupTextField.padding)
-    }
-    
-    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: SignupTextField.padding)
-    }
-    
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: SignupTextField.padding)
     }
 }

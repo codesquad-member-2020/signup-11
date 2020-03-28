@@ -33,6 +33,8 @@
 		5A834518242A301E00F20FAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A834516242A301E00F20FAA /* LaunchScreen.storyboard */; };
 		5A834523242A301E00F20FAA /* SignupAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834522242A301E00F20FAA /* SignupAppTests.swift */; };
 		5A83452E242A301E00F20FAA /* SignupAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A83452D242A301E00F20FAA /* SignupAppUITests.swift */; };
+		5A834FAF242F5F22006245F2 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FAE242F5F22006245F2 /* LoginTextField.swift */; };
+		5A834FB1242F5FC5006245F2 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB0242F5FC5006245F2 /* FormTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		5A834529242A301E00F20FAA /* SignupAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignupAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A83452D242A301E00F20FAA /* SignupAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAppUITests.swift; sourceTree = "<group>"; };
 		5A83452F242A301E00F20FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A834FAE242F5F22006245F2 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		5A834FB0242F5FC5006245F2 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		5A4CA5E0242B53C90095FA0C /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
+				5A834FB0242F5FC5006245F2 /* FormTextField.swift */,
 				5A834FAA242F5DEB006245F2 /* SignupTextFields */,
 				5A834FAB242F5E1F006245F2 /* LoginTextFields */,
 			);
@@ -250,6 +255,7 @@
 		5A834FAB242F5E1F006245F2 /* LoginTextFields */ = {
 			isa = PBXGroup;
 			children = (
+				5A834FAE242F5F22006245F2 /* LoginTextField.swift */,
 			);
 			path = LoginTextFields;
 			sourceTree = "<group>";
@@ -402,6 +408,8 @@
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
 				5A4CA5ED242B7F920095FA0C /* PWTextFieldDelegate.swift in Sources */,
 				5A4CA5E9242B7E9D0095FA0C /* SignupTextFieldDelegate.swift in Sources */,
+				5A834FAF242F5F22006245F2 /* LoginTextField.swift in Sources */,
+				5A834FB1242F5FC5006245F2 /* FormTextField.swift in Sources */,
 				5A4CA5F1242B7FBF0095FA0C /* NameTextFieldDelegate.swift in Sources */,
 				5A4CA5DD242B4DAE0095FA0C /* PWAgainTextField.swift in Sources */,
 				5A7C6315242DA3070073CF72 /* IDResponse.swift in Sources */,
