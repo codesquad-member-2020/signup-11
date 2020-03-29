@@ -81,6 +81,7 @@ class SignupViewController: UIViewController, NextButtonDelegate {
                                  from: SignupURL.urlStringUserIntitatationInfo,
                                  data: jsonData) { data in
                                     guard let data = data else { return }
+                                    print(String(bytes: data, encoding: .utf8)!)
         }
     }
     
