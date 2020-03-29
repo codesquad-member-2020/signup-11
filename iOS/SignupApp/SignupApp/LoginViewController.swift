@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTouched(_ sender: UIButton) {
-        if let url = URL(string: "https://signup11.herokuapp.com/users/login") {
+        if let url = URL(string: SignupURL.urlStringLoginInfo) {
             let login = Login(userId: idTextField.text!,
                             password: pwTextField.text!)
             let session = URLSession.shared

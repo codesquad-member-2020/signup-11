@@ -73,7 +73,7 @@ class SignupViewController: UIViewController, NextButtonDelegate {
     }
     
     @IBAction func nextButtonTouched(_ sender: NextButton) {
-        if let url = URL(string: "https://signup11.herokuapp.com/users") {
+        if let url = URL(string: SignupURL.urlStringUserIntitatationInfo) {
             let user = User(userId: idTextField.text!,
                                 password: pwTextField.text!,
                                 name: nameTextField.text!)
