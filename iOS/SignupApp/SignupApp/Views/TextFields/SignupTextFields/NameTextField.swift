@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NameTextField: CustomTextField {
+final class NameTextField: SignupTextField {
     override func setCorrectCase() {
         super.setCorrectCase()
         setMessageCorrectName()
@@ -17,5 +17,15 @@ final class NameTextField: CustomTextField {
     private func setMessageCorrectName() {
         let messageCorrectName = "사용가능한 이름입니다."
         setCorrectMessage(text: messageCorrectName)
+    }
+    
+    func setWrongCaseByNotHaveSpace() {
+        super.setWrongCase()
+        setMessageShouldNotHaveSpace()
+    }
+    
+    private func setMessageShouldNotHaveSpace() {
+        let messageShouldNotHaveSpace = "공백이 포함되면 안됩니다."
+        setWrongMessage(text: messageShouldNotHaveSpace)
     }
 }

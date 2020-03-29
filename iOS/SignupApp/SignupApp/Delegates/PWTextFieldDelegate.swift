@@ -8,26 +8,43 @@
 
 import UIKit
 
-class PWTextFieldDelegate: CustomTextFieldDelegate {
+class PWTextFieldDelegate: SignupTextFieldDelegate {
     override var textLimit: Int {
         return 16
+    }
+    
+    override func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let pwTextField = textField as? PWTextField else { return }
+        if !Controller.isTextCorrectLength(min: 8,
+                                           max: 16,
+                                           count: pwTextField.text?.count) {
+            pwTextField.setWrongCaseByUnsuitableTextLength()
+        } else if !Controller.hasUpperCaseLetter(pwTextField.text) {
+            pwTextField.setWrongCaseByNoUpperCapitalLetter()
+        } else if !Controller.hasNumber(pwTextField.text) {
+            pwTextField.setWrongCaseByNoNumber()
+        } else if !Controller.hasSpecialCharacter(pwTextField.text) {
+            pwTextField.setWrongCaseByNoSpecialCharacter()
+        } else {
+            pwTextField.setCorrectCase()
+        }
+        super.textFieldDidChangeSelection(textField)
     }
     
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let pwTextField = textField as? PWTextField {
             if !Controller.isTextCorrectLength(min: 8,
                                                max: 16,
-                                               count: textField.text?.count) {
+                                               count: pwTextField.text?.count) {
                 pwTextField.setWrongCaseByUnsuitableTextLength()
-            } else if !Controller.hasUpperCaseLetter(textField.text) {
+            } else if !Controller.hasUpperCaseLetter(pwTextField.text) {
                 pwTextField.setWrongCaseByNoUpperCapitalLetter()
-            } else if !Controller.hasNumber(textField.text) {
+            } else if !Controller.hasNumber(pwTextField.text) {
                 pwTextField.setWrongCaseByNoNumber()
-            } else if !Controller.hasSpecialCharacter(textField.text) {
+            } else if !Controller.hasSpecialCharacter(pwTextField.text) {
                 pwTextField.setWrongCaseByNoSpecialCharacter()
             } else {
                 pwTextField.setCorrectCase()
-                return true
             }
         }
         return super.textFieldShouldEndEditing(textField)

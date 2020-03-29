@@ -8,16 +8,25 @@
 
 import UIKit
 
-final class NameTextFieldDelegate: CustomTextFieldDelegate {
+final class NameTextFieldDelegate: SignupTextFieldDelegate {
+    override func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let nameTextField = textField as? NameTextField else { return }
+        if !Controller.isNoHaveSpace(nameTextField.text) {
+            nameTextField.setWrongCaseByNotHaveSpace()
+        } else {
+            nameTextField.setCorrectCase()
+        }
+        return super.textFieldDidChangeSelection(textField)
+    }
+    
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let nameTextField = textField as? NameTextField {
-            if Controller.isTextLengthZero(count: nameTextField.text?.count) {
-                nameTextField.setWrongCaseByNoText()
+            if !Controller.isNoHaveSpace(nameTextField.text) {
+                nameTextField.setWrongCaseByNotHaveSpace()
             } else {
                 nameTextField.setCorrectCase()
-                return true
             }
         }
-        return true
+        return super.textFieldShouldEndEditing(textField)
     }
 }

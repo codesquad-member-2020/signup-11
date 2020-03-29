@@ -9,15 +9,10 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var idTextField: UITextField!
-    @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var idTextField: FormTextField!
+    @IBOutlet weak var pwTextField: FormTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    @IBAction func loginButtonTouched(_ sender: UIButton) {
-        
-    }
-    
 }

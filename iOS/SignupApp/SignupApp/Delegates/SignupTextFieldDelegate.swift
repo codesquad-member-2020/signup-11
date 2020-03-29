@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
+class SignupTextFieldDelegate: NSObject, UITextFieldDelegate {
     var textLimit : Int {
         return 20
     }
@@ -20,14 +20,24 @@ class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        Tag.nextTagBecomeFirstResponder(view: textField)
+        if let signupTextField = textField as? SignupTextField {
+            signupTextField.nextResonder?.becomeFirstResponder()
+        }
         return true
     }
     
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if let signupTextField = textField as? SignupTextField {
+            if Controller.isTextLengthZero(count: signupTextField.text?.count) {
+                signupTextField.setWrongCaseByNoText()
+            }
+        }
+    }
+    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if let customTextField = textField as? CustomTextField {
-            if Controller.isTextLengthZero(count: customTextField.text?.count) {
-                customTextField.setWrongCaseByNoText()
+        if let signupTextField = textField as? SignupTextField {
+            if Controller.isTextLengthZero(count: signupTextField.text?.count) {
+                signupTextField.setWrongCaseByNoText()
             }
         }
         return true
