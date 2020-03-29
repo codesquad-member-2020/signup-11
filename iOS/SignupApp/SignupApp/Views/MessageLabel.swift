@@ -22,6 +22,6 @@ final class MessageLabel: UILabel {
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
         isHidden = true
-        font = font.withSize(13)
+        font = font.withSize(12)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController, NextButtonDelegate {
+class SignupViewController: UIViewController {
     @IBOutlet weak var idTextField: IDTextField!
     @IBOutlet weak var pwTextField: PWTextField!
     @IBOutlet weak var pwAgainTextField: PWAgainTextField!
@@ -67,35 +67,17 @@ class SignupViewController: UIViewController, NextButtonDelegate {
         }
         return true
     }
-    
+}
+
+extension SignupViewController: NextButtonDelegate {
     func nextButtonBecomeFirstResponder() {
-        actionNextButton()
-    }
-    
-    @IBAction func nextButtonTouched(_ sender: NextButton) {
-        if let url = URL(string: "https://signup11.herokuapp.com/users") {
-            let user = UserInfo(userId: idTextField.text!,
-                            password: pwTextField.text!,
-                            name: nameTextField.text!)
-            let session = URLSession.shared
-            var request = URLRequest(url: url)
-            if let jsonData = try? JSONEncoder().encode(user) {
-                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                request.addValue("application/json", forHTTPHeaderField: "Accept")
-                request.httpMethod = "POST"
-                request.httpBody = jsonData
-                session.dataTask(with: request) { (data, urlResponse, error) in
-                    guard let data = data else { return }
-                    print(String(bytes: data, encoding: .utf8)!)
-                }.resume()
-            }
-        }
-    }
-    
-    private func actionNextButton() {
         if nextButton.isEnabled {
-            nextButtonTouched(nextButton)
-            performSegue(withIdentifier: "showLoginViewController", sender: nextButton)
+            createUser { result in
+                guard let result = result, result else { return }
+                DispatchQueue.main.async {
+                    self.showLoginViewController()
+                }
+            }
         } else {
             invalidTextFieldBecomeFirstResponder()
         }
@@ -110,5 +92,37 @@ class SignupViewController: UIViewController, NextButtonDelegate {
             }
         }
     }
+    
+    func nextButtonTapped() {
+        createUser { result in
+            guard let result = result, result else { return }
+            DispatchQueue.main.async {
+                self.showLoginViewController()
+            }
+        }
+    }
+    
+    private func createUser(resultHandler: @escaping (Bool?) -> ()) {
+        let user = User(userId: idTextField.text!,
+                        password: pwTextField.text!,
+                        name: nameTextField.text!)
+        guard let jsonData = DataCoder.encodeJSONData(user) else { return }
+        Network.excuteURLSession(method: .post,
+                                 from: SignupURL.urlStringUserIntitatationInfo,
+                                 data: jsonData) { data in
+                                    guard let data = data else { return }
+                                    guard let userResponse = DataCoder.decodeJSONData(type: Response.self,
+                                                                                      data: data,
+                                                                                      dateDecodingStrategy: nil)
+                                        else { return }
+                                    resultHandler(userResponse.success)
+        }
+    }
+    
+    private func showLoginViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let loginViewController = storyboard.instantiateViewController(identifier: "loginViewController")
+        navigationController?.pushViewController(loginViewController,
+                                                 animated: true)
+    }
 }
-

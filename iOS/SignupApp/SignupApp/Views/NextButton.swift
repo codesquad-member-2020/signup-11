@@ -10,6 +10,7 @@ import UIKit
 
 protocol NextButtonDelegate {
     func nextButtonBecomeFirstResponder()
+    func nextButtonTapped()
 }
 
 final class NextButton: UIButton {
@@ -17,27 +18,25 @@ final class NextButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        disabled()
+        setup()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setup()
+    }
+    
+    deinit {
+        removeTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func buttonTapped() {
+        delegate?.nextButtonTapped()
+    }
+    
+    private func setup() {
+        addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         disabled()
-    }
-
-    override func becomeFirstResponder() -> Bool {
-        delegate?.nextButtonBecomeFirstResponder()
-        return true
-    }
-    
-    func enabled() {
-        setGreenButton()
-        isEnabled = true
-    }
-    
-    private func setGreenButton() {
-        setTitleColor(UIColor.greenColor, for: .normal)
-        tintColor = UIColor.greenColor
     }
     
     func disabled() {
@@ -50,4 +49,18 @@ final class NextButton: UIButton {
         tintColor = UIColor.greyColor
     }
     
+    func enabled() {
+        setGreenButton()
+        isEnabled = true
+    }
+    
+    private func setGreenButton() {
+        setTitleColor(UIColor.greenColor, for: .normal)
+        tintColor = UIColor.greenColor
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        delegate?.nextButtonBecomeFirstResponder()
+        return true
+    }
 }

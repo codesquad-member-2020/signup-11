@@ -128,10 +128,6 @@
                                 <state key="normal" title="다음" image="chevron.right.circle.fill" catalog="system">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="nextButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ty2-LK-hIs"/>
-                                    <segue destination="Wnz-kV-CCs" kind="show" identifier="showLoginViewController" id="Uk1-IK-7G4"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -190,7 +186,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGl-HE-62i" userLabel="Title Label">
-                                <rect key="frame" x="150" y="114" width="75.333333333333314" height="35"/>
+                                <rect key="frame" x="150" y="70" width="75.333333333333314" height="35"/>
                                 <attributedString key="attributedText">
                                     <fragment content="로그인">
                                         <attributes>
@@ -203,7 +199,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxr-aG-Y5n" userLabel="ID Label">
-                                <rect key="frame" x="43.333333333333336" y="184" width="39.000000000000007" height="18"/>
+                                <rect key="frame" x="43.333333333333336" y="140" width="39.000000000000007" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="아이디">
                                         <attributes>
@@ -215,7 +211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ps-fP-yES" userLabel="ID Text Field" customClass="FormTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="207" width="288.33333333333326" height="37"/>
+                                <rect key="frame" x="43.333333333333343" y="163" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2ps-fP-yES" secondAttribute="height" multiplier="288:37" id="OP1-ku-S5c"/>
@@ -224,7 +220,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR1-kf-waD" userLabel="PW Label">
-                                <rect key="frame" x="43.333333333333343" y="274" width="52" height="18"/>
+                                <rect key="frame" x="43.333333333333343" y="230" width="52" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="비밀번호">
                                         <attributes>
@@ -236,7 +232,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-bR-gNl" userLabel="PW Text Field" customClass="FormTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="297" width="288.33333333333326" height="37"/>
+                                <rect key="frame" x="43.333333333333343" y="253" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pCy-bR-gNl" secondAttribute="height" multiplier="288:37" id="lek-u1-KVT"/>
@@ -245,7 +241,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emM-Ro-bbC">
-                                <rect key="frame" x="145.33333333333334" y="366" width="84.333333333333343" height="44.333333333333314"/>
+                                <rect key="frame" x="145.33333333333334" y="322" width="84.333333333333343" height="44.333333333333314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="emM-Ro-bbC" secondAttribute="height" multiplier="19:10" id="DYu-dv-agt"/>
