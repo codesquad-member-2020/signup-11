@@ -29,11 +29,13 @@ class Controller {
     
     static func isOverlappedID(_ id: String?, resultHandler: @escaping (Bool?) -> ()) {
         guard let id = id else { return }
-        DataCoder.decodeJSONData(from: "\(SignupURL.urlStringUserIDInfo)\(id)",
-            type: IDResponse.self,
-            dateDecodingStrategy: nil) { (idResponse) in
-                guard let idResponse = idResponse else { return }
-                resultHandler(idResponse.success)
+        Network.excuteURLSession(method: .get,
+                                 from: "\(SignupURL.urlStringUserIDInfo)\(id)", data: nil) { data in
+            guard let data = data else { return }
+            guard let idResponse = DataCoder.decodeJSONData(type: Response.self,
+                                                          data: data,
+                                                          dateDecodingStrategy: nil) else { return }
+                                    resultHandler(idResponse.success)
         }
     }
     

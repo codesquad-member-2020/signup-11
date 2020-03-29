@@ -9,24 +9,19 @@
 import Foundation
 
 final class DataCoder {
-    static func decodeJSONData<T>(from urlString: String,
-                                  type: T.Type,
-                                  dateDecodingStrategy: JSONDecoder.DateDecodingStrategy?,
-                                  completionHandler: @escaping (T?) -> ())
+    static func decodeJSONData<T>(type: T.Type,
+                                  data: Data,
+                                  dateDecodingStrategy: JSONDecoder.DateDecodingStrategy?) -> T?
         where T: Decodable {
-            Network.excuteURLSessionGETMethod(from: urlString) { (data) in
-                guard let data = data else { return }
-                let jsonDecoder: JSONDecoder = {
-                    let jsonDecoder = JSONDecoder()
-                    if let dateDecodingStrategy = dateDecodingStrategy {
-                        jsonDecoder.dateDecodingStrategy = dateDecodingStrategy
-                    }
-                    return jsonDecoder
-                }()
-                if let T = try? jsonDecoder.decode(T.self, from: data) {
-                    completionHandler(T)
+            let jsonDecoder: JSONDecoder = {
+                let jsonDecoder = JSONDecoder()
+                if let dateDecodingStrategy = dateDecodingStrategy {
+                    jsonDecoder.dateDecodingStrategy = dateDecodingStrategy
                 }
-            }
+                return jsonDecoder
+            }()
+            guard let T = try? jsonDecoder.decode(T.self, from: data) else { return nil }
+            return T
     }
     
     static func encodeJSONData<T>(_ value: T) -> Data? where T: Encodable {

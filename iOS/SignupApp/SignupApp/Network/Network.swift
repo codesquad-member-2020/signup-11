@@ -9,10 +9,25 @@
 import Foundation
 
 final class Network {
-    static func excuteURLSessionGETMethod(from urlString: String,
+    enum HTTPMethod: String {
+        case get = "GET"
+        case post = "POST"
+        var toString: String {
+            return self.rawValue
+        }
+    }
+    
+    static func excuteURLSession(method: HTTPMethod,
+                                 from urlString: String,
+                                 data: Data?,
                                  completionHandler: @escaping (Data?) -> ()) {
         guard let url = URL(string: urlString) else { return }
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        var request = URLRequest(url: url)
+        request.httpMethod = method.toString
+        request.httpBody = data
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard error == nil else { return }
             guard let data = data else { return }
             completionHandler(data)
