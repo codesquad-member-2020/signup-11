@@ -72,8 +72,29 @@ class SignupViewController: UIViewController, NextButtonDelegate {
         actionNextButton()
     }
     
+    @IBAction func nextButtonTouched(_ sender: NextButton) {
+        if let url = URL(string: "https://signup11.herokuapp.com/users") {
+            let user = User(userId: idTextField.text!,
+                            password: pwTextField.text!,
+                            name: nameTextField.text!)
+            let session = URLSession.shared
+            var request = URLRequest(url: url)
+            if let jsonData = try? JSONEncoder().encode(user) {
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.addValue("application/json", forHTTPHeaderField: "Accept")
+                request.httpMethod = "POST"
+                request.httpBody = jsonData
+                session.dataTask(with: request) { (data, urlResponse, error) in
+                    guard let data = data else { return }
+                    print(String(bytes: data, encoding: .utf8)!)
+                }.resume()
+            }
+        }
+    }
+    
     private func actionNextButton() {
         if nextButton.isEnabled {
+            nextButtonTouched(nextButton)
             performSegue(withIdentifier: "showLoginViewController", sender: nextButton)
         } else {
             invalidTextFieldBecomeFirstResponder()
