@@ -73,7 +73,7 @@ class SignupViewController: UIViewController, NextButtonDelegate {
     }
     
     private func actionNextButton() {
-        if isAllCorrect() {
+        if nextButton.isEnabled {
             performSegue(withIdentifier: "showLoginViewController", sender: nextButton)
         } else {
             invalidTextFieldBecomeFirstResponder()
