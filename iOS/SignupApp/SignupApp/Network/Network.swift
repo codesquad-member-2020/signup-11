@@ -9,10 +9,10 @@
 import Foundation
 
 final class Network {
-    enum HTTPMethod: String {
+    enum HTTPMethod: String, CustomStringConvertible {
         case get = "GET"
         case post = "POST"
-        var toString: String {
+        var description: String {
             return self.rawValue
         }
     }
@@ -23,7 +23,7 @@ final class Network {
                                  completionHandler: @escaping (Data?) -> ()) {
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url)
-        request.httpMethod = method.toString
+        request.httpMethod = method.description
         request.httpBody = data
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
