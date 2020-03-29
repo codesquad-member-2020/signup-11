@@ -24,15 +24,15 @@ class PWTextFieldDelegate: SignupTextFieldDelegate {
     
     override func judgeCurrentText(of textField: UITextField) {
         guard let pwTextField = textField as? PWTextField else { return }
-        if !Controller.isTextCorrectLength(min: 8,
+        if Controller.isNotCorrectLength(min: 8,
                                            max: 16,
                                            count: pwTextField.text?.count) {
             pwTextField.setWrongCaseByUnsuitableTextLength()
-        } else if !Controller.hasUpperCaseLetter(pwTextField.text) {
+        } else if Controller.hasNoUpperCaseLetter(pwTextField.text) {
             pwTextField.setWrongCaseByNoUpperCapitalLetter()
-        } else if !Controller.hasNumber(pwTextField.text) {
+        } else if Controller.hasNoNumber(pwTextField.text) {
             pwTextField.setWrongCaseByNoNumber()
-        } else if !Controller.hasSpecialCharacter(pwTextField.text) {
+        } else if Controller.hasNoSpecialCharacter(pwTextField.text) {
             pwTextField.setWrongCaseByNoSpecialCharacter()
         } else {
             pwTextField.setCorrectCase()

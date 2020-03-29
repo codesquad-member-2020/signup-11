@@ -14,9 +14,9 @@ class Controller {
         return count == 0
     }
     
-    static func isTextCorrectLength(min: Int = 1, max: Int, count: Int?) -> Bool {
+    static func isNotCorrectLength(min: Int = 1, max: Int, count: Int?) -> Bool {
         guard let count = count else { return false }
-        return min <= count && count <= max
+        return min > count || max < count
     }
     
     private static let correctIDPattern = "^[a-z0-9_\\-]{5,20}$"
@@ -40,31 +40,31 @@ class Controller {
     }
     
     private static let hasUpperCaseLetterPattern = "[A-Z]"
-    static func hasUpperCaseLetter(_ text: String?) -> Bool {
+    static func hasNoUpperCaseLetter(_ text: String?) -> Bool {
         guard let text = text else { return false }
         let range = NSRange(location: 0, length: text.count)
         let regex = try! NSRegularExpression(pattern: hasUpperCaseLetterPattern)
-        guard regex.firstMatch(in: text, range: range) != nil
+        guard regex.firstMatch(in: text, range: range) == nil
             else { return false }
         return true
     }
     
     private static let hasNumberPattern = "[0-9]"
-    static func hasNumber(_ text: String?) -> Bool {
+    static func hasNoNumber(_ text: String?) -> Bool {
         guard let text = text else { return false }
         let range = NSRange(location: 0, length: text.count)
         let regex = try! NSRegularExpression(pattern: hasNumberPattern)
-        guard regex.firstMatch(in: text, range: range) != nil
+        guard regex.firstMatch(in: text, range: range) == nil
             else { return false }
         return true
     }
     
     private static let hasSpecialCharacterPattern = "[!@#$%]"
-    static func hasSpecialCharacter(_ text: String?) -> Bool {
+    static func hasNoSpecialCharacter(_ text: String?) -> Bool {
         guard let text = text else { return false }
         let range = NSRange(location: 0, length: text.count)
         let regex = try! NSRegularExpression(pattern: hasSpecialCharacterPattern)
-        guard regex.firstMatch(in: text, range: range) != nil
+        guard regex.firstMatch(in: text, range: range) == nil
             else { return false }
         return true
     }
