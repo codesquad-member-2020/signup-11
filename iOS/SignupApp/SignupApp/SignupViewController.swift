@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController, NextButtonDelegate {
+class SignupViewController: UIViewController {
     @IBOutlet weak var idTextField: IDTextField!
     @IBOutlet weak var pwTextField: PWTextField!
     @IBOutlet weak var pwAgainTextField: PWAgainTextField!
@@ -67,22 +67,38 @@ class SignupViewController: UIViewController, NextButtonDelegate {
         }
         return true
     }
-    
+}
+
+extension SignupViewController: NextButtonDelegate {
     func nextButtonBecomeFirstResponder() {
-        actionNextButton()
-    }
-    
-    private func actionNextButton() {
         if nextButton.isEnabled {
             createUser { result in
-                guard let result = result, !result  else { return }
+                guard let result = result, result else { return }
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "showLoginViewController",
-                                      sender: self.nextButton)
+                    self.showLoginViewController()
                 }
             }
         } else {
             invalidTextFieldBecomeFirstResponder()
+        }
+    }
+    
+    private func invalidTextFieldBecomeFirstResponder() {
+        for textField in textFields {
+            guard let textField = textField else { return }
+            if !textField.isCorrect {
+                textField.becomeFirstResponder()
+                return
+            }
+        }
+    }
+    
+    func nextButtonTapped() {
+        createUser { result in
+            guard let result = result, result else { return }
+            DispatchQueue.main.async {
+                self.showLoginViewController()
+            }
         }
     }
     
@@ -103,14 +119,10 @@ class SignupViewController: UIViewController, NextButtonDelegate {
         }
     }
     
-    private func invalidTextFieldBecomeFirstResponder() {
-        for textField in textFields {
-            guard let textField = textField else { return }
-            if !textField.isCorrect {
-                textField.becomeFirstResponder()
-                return
-            }
-        }
+    private func showLoginViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let loginViewController = storyboard.instantiateViewController(identifier: "loginViewController")
+        navigationController?.pushViewController(loginViewController,
+                                                 animated: true)
     }
 }
-
