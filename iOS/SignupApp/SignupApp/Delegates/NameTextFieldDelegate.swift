@@ -10,22 +10,21 @@ import UIKit
 
 final class NameTextFieldDelegate: SignupTextFieldDelegate {
     override func textFieldDidChangeSelection(_ textField: UITextField) {
+        judgeCurrentText(of: textField)
+    }
+    
+    override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        judgeCurrentText(of: textField)
+        return true
+    }
+    
+    override func judgeCurrentText(of textField: UITextField) {
         guard let nameTextField = textField as? NameTextField else { return }
         if !Controller.isNoHaveSpace(nameTextField.text) {
             nameTextField.setWrongCaseByNotHaveSpace()
         } else {
             nameTextField.setCorrectCase()
         }
-        return super.textFieldDidChangeSelection(textField)
-    }
-    
-    override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        guard let nameTextField = textField as? NameTextField else { return false }
-        if !Controller.isNoHaveSpace(nameTextField.text) {
-            nameTextField.setWrongCaseByNotHaveSpace()
-        } else {
-            nameTextField.setCorrectCase()
-        }
-        return super.textFieldShouldEndEditing(textField)
+        super.judgeCurrentText(of: textField)
     }
 }

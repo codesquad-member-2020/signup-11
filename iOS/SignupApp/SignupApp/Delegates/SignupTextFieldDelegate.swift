@@ -27,17 +27,18 @@ class SignupTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        judgeCurrentText(of: textField)
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        judgeCurrentText(of: textField)
+        return true
+    }
+    
+    func judgeCurrentText(of textField: UITextField) {
         guard let signupTextField = textField as? SignupTextField else { return }
         if Controller.isTextLengthZero(count: signupTextField.text?.count) {
             signupTextField.setWrongCaseByNoText()
         }
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        guard let signupTextField = textField as? SignupTextField else { return false }
-        if Controller.isTextLengthZero(count: signupTextField.text?.count) {
-            signupTextField.setWrongCaseByNoText()
-        }
-        return true
     }
 }
