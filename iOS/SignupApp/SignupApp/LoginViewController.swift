@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet weak var idTextField: FormTextField!
     @IBOutlet weak var pwTextField: FormTextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,17 +22,16 @@ class LoginViewController: UIViewController {
                             password: pwTextField.text!)
             let session = URLSession.shared
             var request = URLRequest(url: url)
-            if let jsonData = try? JSONEncoder().encode(user) {
-                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                request.addValue("application/json", forHTTPHeaderField: "Accept")
-                request.httpMethod = "POST"
-                request.httpBody = jsonData
-                session.dataTask(with: request) { (data, urlResponse, error) in
-                    guard error == nil else { return }
-                    guard let data = data else { return }
-                    print(String(bytes: data, encoding: .utf8)!)
-                }.resume()
-            }
+            guard let jsonData = DataCoder.encodeJSONData(user) else { return }
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            request.httpMethod = "POST"
+            request.httpBody = jsonData
+            session.dataTask(with: request) { (data, urlResponse, error) in
+                guard error == nil else { return }
+                guard let data = data else { return }
+                print(String(bytes: data, encoding: .utf8)!)
+            }.resume()
         }
     }
     
