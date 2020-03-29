@@ -13,11 +13,7 @@ final class Network {
                                  completionHandler: @escaping (Data?) -> ()) {
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard error == nil
-                else {
-                    print(error!.localizedDescription)
-                    return
-            }
+            guard error == nil else { return }
             guard let data = data else { return }
             completionHandler(data)
         }.resume()

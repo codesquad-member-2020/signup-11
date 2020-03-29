@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
                 request.httpMethod = "POST"
                 request.httpBody = jsonData
                 session.dataTask(with: request) { (data, urlResponse, error) in
+                    guard error == nil else { return }
                     guard let data = data else { return }
                     print(String(bytes: data, encoding: .utf8)!)
                 }.resume()
