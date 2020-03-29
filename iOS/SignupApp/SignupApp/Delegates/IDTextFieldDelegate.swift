@@ -11,7 +11,7 @@ import UIKit
 final class IDTextFieldDelegate: SignupTextFieldDelegate {
     override func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let idTextField = textField as? IDTextField else { return }
-        if !Controller.isCorrectID(idTextField.text) {
+        if Controller.isNotCorrectID(idTextField.text) {
             idTextField.setWrongCaseByWrongID()
         } else {
             Controller.isOverlappedID(idTextField.text) { (result) in
@@ -26,7 +26,7 @@ final class IDTextFieldDelegate: SignupTextFieldDelegate {
     
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if let idTextField = textField as? IDTextField {
-            if !Controller.isCorrectID(idTextField.text) {
+            if Controller.isNotCorrectID(idTextField.text) {
                 idTextField.setWrongCaseByWrongID()
             } else {
                 Controller.isOverlappedID(idTextField.text) { (result) in
