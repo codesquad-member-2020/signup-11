@@ -27,10 +27,9 @@ class SignupTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if let signupTextField = textField as? SignupTextField {
-            if Controller.isTextLengthZero(count: signupTextField.text?.count) {
-                signupTextField.setWrongCaseByNoText()
-            }
+        guard let signupTextField = textField as? SignupTextField else { return }
+        if Controller.isTextLengthZero(count: signupTextField.text?.count) {
+            signupTextField.setWrongCaseByNoText()
         }
     }
     
