@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormTextField: UITextField {
+class FormField: UITextField {
     var nextResonder: UIResponder?
     
     override init(frame: CGRect) {
@@ -33,14 +33,14 @@ class FormTextField: UITextField {
     private static let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: FormTextField.padding)
+        return bounds.inset(by: FormField.padding)
     }
     
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: FormTextField.padding)
+        return bounds.inset(by: FormField.padding)
     }
     
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: FormTextField.padding)
+        return bounds.inset(by: FormField.padding)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PWAgainTextFieldDelegate: SignupTextFieldDelegate {
+final class RePasswordFieldDelegate: SignupFieldDelegate {
     override func textFieldDidChangeSelection(_ textField: UITextField) {
         judgeCurrentText(of: textField)
     }
@@ -19,7 +19,7 @@ final class PWAgainTextFieldDelegate: SignupTextFieldDelegate {
     }
     
     override func judgeCurrentText(of textField: UITextField) {
-        guard let pwAgainTextField = textField as? PWAgainTextField else { return }
+        guard let pwAgainTextField = textField as? RePasswordField else { return }
         if !pwAgainTextField.pwTextField.isCorrect {
             pwAgainTextField.setWrongCaseByWrongPrePassWord()
         } else if Controller.isNotSameText(lhs: pwAgainTextField.pwTextField.text,

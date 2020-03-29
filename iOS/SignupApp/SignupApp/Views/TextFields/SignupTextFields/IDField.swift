@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class IDTextField: SignupTextField {
+final class IDField: SignupField {
     
     override func setCorrectCase() {
         super.setCorrectCase()

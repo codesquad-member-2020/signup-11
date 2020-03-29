@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupTextFieldDelegate: NSObject, UITextFieldDelegate {
+class SignupFieldDelegate: NSObject, UITextFieldDelegate {
     var textLimit : Int {
         return 20
     }
@@ -20,7 +20,7 @@ class SignupTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let signupTextField = textField as? SignupTextField {
+        if let signupTextField = textField as? SignupField {
             signupTextField.nextResonder?.becomeFirstResponder()
         }
         return true
@@ -36,7 +36,7 @@ class SignupTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func judgeCurrentText(of textField: UITextField) {
-        guard let signupTextField = textField as? SignupTextField else { return }
+        guard let signupTextField = textField as? SignupField else { return }
         if Controller.isTextLengthZero(count: signupTextField.text?.count) {
             signupTextField.setWrongCaseByNoText()
         }

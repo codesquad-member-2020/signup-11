@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class IDTextFieldDelegate: SignupTextFieldDelegate {
+final class IDFieldDelegate: SignupFieldDelegate {
     override func textFieldDidChangeSelection(_ textField: UITextField) {
         judgeCurrentText(of: textField)
     }
@@ -19,7 +19,7 @@ final class IDTextFieldDelegate: SignupTextFieldDelegate {
     }
     
     override func judgeCurrentText(of textField: UITextField) {
-        guard let idTextField = textField as? IDTextField else { return }
+        guard let idTextField = textField as? IDField else { return }
         if Controller.isNotCorrectID(idTextField.text) {
             idTextField.setWrongCaseByWrongID()
         } else {

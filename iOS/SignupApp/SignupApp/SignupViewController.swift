@@ -9,17 +9,17 @@
 import UIKit
 
 class SignupViewController: UIViewController {
-    @IBOutlet weak var idTextField: IDTextField!
-    @IBOutlet weak var pwTextField: PWTextField!
-    @IBOutlet weak var pwAgainTextField: PWAgainTextField!
-    @IBOutlet weak var nameTextField: NameTextField!
+    @IBOutlet weak var idTextField: IDField!
+    @IBOutlet weak var pwTextField: PasswordField!
+    @IBOutlet weak var pwAgainTextField: RePasswordField!
+    @IBOutlet weak var nameTextField: NameField!
     @IBOutlet weak var nextButton: NextButton!
     private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     
-    private let idTextFieldDelegate = IDTextFieldDelegate()
-    private let pwAgainTextFieldDelegate = PWAgainTextFieldDelegate()
-    private let nameTextFieldDelegate = NameTextFieldDelegate()
-    private let pwTextFieldDelegate = PWTextFieldDelegate()
+    private let idTextFieldDelegate = IDFieldDelegate()
+    private let pwAgainTextFieldDelegate = RePasswordFieldDelegate()
+    private let nameTextFieldDelegate = NameFieldDelegate()
+    private let pwTextFieldDelegate = PasswordFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class SignupViewController: UIViewController {
     private func setObserver() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(changeNextButton),
-                                               name: SignupTextField.notificationIsCorrectDidChange,
+                                               name: SignupField.notificationIsCorrectDidChange,
                                                object: nil)
     }
     

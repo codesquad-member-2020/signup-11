@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WRZ-xE-Phm">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +11,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SignupViewController" customModule="SignupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-yl-ijN" userLabel="Title Label">
-                                <rect key="frame" x="137" y="114" width="101" height="35"/>
+                                <rect key="frame" x="249.5" y="70" width="101" height="35"/>
                                 <attributedString key="attributedText">
                                     <fragment content="회원가입">
                                         <attributes>
@@ -29,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyt-DX-jIP" userLabel="ID Label">
-                                <rect key="frame" x="43.333333333333336" y="184" width="39.000000000000007" height="18"/>
+                                <rect key="frame" x="69" y="140" width="39" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="아이디">
                                         <attributes>
@@ -40,8 +39,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-au-aDX" userLabel="ID Text Field" customClass="IDTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="207" width="288.33333333333326" height="37"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-au-aDX" userLabel="ID Text Field" customClass="IDField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="69" y="163" width="462" height="59.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2G8-au-aDX" secondAttribute="height" multiplier="288:37" id="dvg-cT-FnJ"/>
@@ -50,7 +49,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czv-n5-9Uf" userLabel="PW Label">
-                                <rect key="frame" x="43.333333333333343" y="274" width="52" height="18"/>
+                                <rect key="frame" x="69" y="252.5" width="52" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="비밀번호">
                                         <attributes>
@@ -61,8 +60,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-hh-w0t" userLabel="PW Text Field" customClass="PWTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="297" width="288.33333333333326" height="37"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-hh-w0t" userLabel="PW Text Field" customClass="PasswordField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="69" y="275.5" width="462" height="59"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pSj-hh-w0t" secondAttribute="height" multiplier="288:37" id="AOV-ZY-h9T"/>
@@ -71,7 +70,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-D0-lcL" userLabel="PW Again Label">
-                                <rect key="frame" x="43.333333333333343" y="364" width="95" height="18"/>
+                                <rect key="frame" x="69" y="364.5" width="95" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="비밀번호 재확인">
                                         <attributes>
@@ -82,8 +81,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-HE-YkU" userLabel="PW Again Text Field" customClass="PWAgainTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="387" width="288.33333333333326" height="37.333333333333314"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-HE-YkU" userLabel="PW Again Text Field" customClass="RePasswordField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="69" y="387.5" width="462" height="59.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gaU-HE-YkU" secondAttribute="height" multiplier="288:37" id="SFg-Ku-I7p"/>
@@ -95,7 +94,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-gP-4Fv" userLabel="Name Label">
-                                <rect key="frame" x="43.333333333333336" y="454.33333333333331" width="26.000000000000007" height="18"/>
+                                <rect key="frame" x="69" y="477" width="26" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="이름">
                                         <attributes>
@@ -106,8 +105,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9X-kA-2Sd" userLabel="Name Text Field" customClass="NameTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="477.33333333333331" width="288.33333333333326" height="36.999999999999943"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9X-kA-2Sd" userLabel="Name Text Field" customClass="NameField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="69" y="500" width="462" height="59"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="l9X-kA-2Sd" secondAttribute="height" multiplier="288:37" id="ua0-n0-aeI"/>
@@ -116,7 +115,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRE-h7-TXu" customClass="NextButton" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="145.33333333333334" y="546.33333333333337" width="84.333333333333343" height="44.333333333333371"/>
+                                <rect key="frame" x="232.5" y="591" width="135" height="71"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cRE-h7-TXu" secondAttribute="height" multiplier="19:10" id="m5O-bH-51O"/>
@@ -182,11 +181,11 @@
             <objects>
                 <viewController storyboardIdentifier="loginViewController" id="Wnz-kV-CCs" customClass="LoginViewController" customModule="SignupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7P4-la-Qo5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGl-HE-62i" userLabel="Title Label">
-                                <rect key="frame" x="150" y="70" width="75.333333333333314" height="35"/>
+                                <rect key="frame" x="262.5" y="26" width="75" height="35"/>
                                 <attributedString key="attributedText">
                                     <fragment content="로그인">
                                         <attributes>
@@ -199,7 +198,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxr-aG-Y5n" userLabel="ID Label">
-                                <rect key="frame" x="43.333333333333336" y="140" width="39.000000000000007" height="18"/>
+                                <rect key="frame" x="69" y="96" width="39" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="아이디">
                                         <attributes>
@@ -210,8 +209,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ps-fP-yES" userLabel="ID Text Field" customClass="FormTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="163" width="288.33333333333326" height="37"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ps-fP-yES" userLabel="ID Text Field" customClass="FormField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="69" y="119" width="462" height="59.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2ps-fP-yES" secondAttribute="height" multiplier="288:37" id="OP1-ku-S5c"/>
@@ -220,7 +219,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR1-kf-waD" userLabel="PW Label">
-                                <rect key="frame" x="43.333333333333343" y="230" width="52" height="18"/>
+                                <rect key="frame" x="69" y="208.5" width="52" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="비밀번호">
                                         <attributes>
@@ -231,8 +230,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-bR-gNl" userLabel="PW Text Field" customClass="FormTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="253" width="288.33333333333326" height="37"/>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-bR-gNl" userLabel="PW Text Field" customClass="FormField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="69" y="231.5" width="462" height="59"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pCy-bR-gNl" secondAttribute="height" multiplier="288:37" id="lek-u1-KVT"/>
@@ -241,7 +240,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emM-Ro-bbC">
-                                <rect key="frame" x="145.33333333333334" y="322" width="84.333333333333343" height="44.333333333333314"/>
+                                <rect key="frame" x="232.5" y="322.5" width="135" height="71"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="emM-Ro-bbC" secondAttribute="height" multiplier="19:10" id="DYu-dv-agt"/>

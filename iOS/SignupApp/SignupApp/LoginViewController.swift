@@ -9,8 +9,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var idTextField: FormTextField!
-    @IBOutlet weak var pwTextField: FormTextField!
+    @IBOutlet weak var idTextField: FormField!
+    @IBOutlet weak var pwTextField: FormField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

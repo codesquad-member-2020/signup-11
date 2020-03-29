@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PWTextField: SignupTextField {
+final class PasswordField: SignupField {
     
     func setWrongCaseByUnsuitableTextLength() {
         setWrongCase()

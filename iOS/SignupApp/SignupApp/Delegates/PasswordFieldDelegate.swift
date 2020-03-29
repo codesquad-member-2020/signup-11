@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PWTextFieldDelegate: SignupTextFieldDelegate {
+class PasswordFieldDelegate: SignupFieldDelegate {
     override var textLimit: Int {
         return 16
     }
@@ -23,7 +23,7 @@ class PWTextFieldDelegate: SignupTextFieldDelegate {
     }
     
     override func judgeCurrentText(of textField: UITextField) {
-        guard let pwTextField = textField as? PWTextField else { return }
+        guard let pwTextField = textField as? PasswordField else { return }
         if Controller.isNotCorrectLength(min: 8,
                                            max: 16,
                                            count: pwTextField.text?.count) {

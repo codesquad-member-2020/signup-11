@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupTextField: FormTextField {
+class SignupField: FormField {
     static let notificationIsCorrectDidChange = Notification.Name("isCorrectDidChange")
     private(set) var isCorrect = false {
         didSet {
