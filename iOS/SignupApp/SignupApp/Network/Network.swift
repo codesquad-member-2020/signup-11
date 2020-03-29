@@ -9,6 +9,10 @@
 import Foundation
 
 final class Network {
+    private static let jsonType = "application/json"
+    private static let headerContentType = "Content-Type"
+    private static let headerAccept = "Accept"
+    
     enum HTTPMethod: String, CustomStringConvertible {
         case get = "GET"
         case post = "POST"
@@ -25,8 +29,8 @@ final class Network {
         var request = URLRequest(url: url)
         request.httpMethod = method.description
         request.httpBody = data
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue(jsonType, forHTTPHeaderField: headerContentType)
+        request.addValue(jsonType, forHTTPHeaderField: headerAccept)
         URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard error == nil else { return }
             guard let data = data else { return }
