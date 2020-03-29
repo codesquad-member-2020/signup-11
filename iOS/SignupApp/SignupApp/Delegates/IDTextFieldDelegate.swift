@@ -25,15 +25,14 @@ final class IDTextFieldDelegate: SignupTextFieldDelegate {
     }
     
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if let idTextField = textField as? IDTextField {
-            if Controller.isNotCorrectID(idTextField.text) {
-                idTextField.setWrongCaseByWrongID()
-            } else {
-                Controller.isOverlappedID(idTextField.text) { (result) in
-                    guard let result = result else { return }
-                    DispatchQueue.main.async {
-                        result ? idTextField.setWrongCaseByOverlappedID() : idTextField.setCorrectCase()
-                    }
+        guard let idTextField = textField as? IDTextField else { return false }
+        if Controller.isNotCorrectID(idTextField.text) {
+            idTextField.setWrongCaseByWrongID()
+        } else {
+            Controller.isOverlappedID(idTextField.text) { (result) in
+                guard let result = result else { return }
+                DispatchQueue.main.async {
+                    result ? idTextField.setWrongCaseByOverlappedID() : idTextField.setCorrectCase()
                 }
             }
         }

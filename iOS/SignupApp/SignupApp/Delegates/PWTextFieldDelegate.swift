@@ -32,20 +32,19 @@ class PWTextFieldDelegate: SignupTextFieldDelegate {
     }
     
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if let pwTextField = textField as? PWTextField {
-            if !Controller.isTextCorrectLength(min: 8,
-                                               max: 16,
-                                               count: pwTextField.text?.count) {
-                pwTextField.setWrongCaseByUnsuitableTextLength()
-            } else if !Controller.hasUpperCaseLetter(pwTextField.text) {
-                pwTextField.setWrongCaseByNoUpperCapitalLetter()
-            } else if !Controller.hasNumber(pwTextField.text) {
-                pwTextField.setWrongCaseByNoNumber()
-            } else if !Controller.hasSpecialCharacter(pwTextField.text) {
-                pwTextField.setWrongCaseByNoSpecialCharacter()
-            } else {
-                pwTextField.setCorrectCase()
-            }
+        guard let pwTextField = textField as? PWTextField else { return false }
+        if !Controller.isTextCorrectLength(min: 8,
+                                           max: 16,
+                                           count: pwTextField.text?.count) {
+            pwTextField.setWrongCaseByUnsuitableTextLength()
+        } else if !Controller.hasUpperCaseLetter(pwTextField.text) {
+            pwTextField.setWrongCaseByNoUpperCapitalLetter()
+        } else if !Controller.hasNumber(pwTextField.text) {
+            pwTextField.setWrongCaseByNoNumber()
+        } else if !Controller.hasSpecialCharacter(pwTextField.text) {
+            pwTextField.setWrongCaseByNoSpecialCharacter()
+        } else {
+            pwTextField.setCorrectCase()
         }
         return super.textFieldShouldEndEditing(textField)
     }
