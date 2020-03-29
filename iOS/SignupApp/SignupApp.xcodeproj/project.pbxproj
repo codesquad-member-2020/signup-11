@@ -21,7 +21,7 @@
 		5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6305242CB2D70073CF72 /* MessageLabel.swift */; };
 		5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C630A242CC3270073CF72 /* UIColor.swift */; };
 		5A7C6310242D9EEB0073CF72 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C630F242D9EEB0073CF72 /* Network.swift */; };
-		5A7C6312242D9F1B0073CF72 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6311242D9F1B0073CF72 /* DataDecoder.swift */; };
+		5A7C6312242D9F1B0073CF72 /* DataCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6311242D9F1B0073CF72 /* DataCoder.swift */; };
 		5A7C6315242DA3070073CF72 /* IDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6314242DA3070073CF72 /* IDResponse.swift */; };
 		5A7C6317242DCBAA0073CF72 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6316242DCBAA0073CF72 /* NextButton.swift */; };
 		5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6318242DE2C00073CF72 /* LoginViewController.swift */; };
@@ -70,7 +70,7 @@
 		5A7C6305242CB2D70073CF72 /* MessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		5A7C630A242CC3270073CF72 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5A7C630F242D9EEB0073CF72 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		5A7C6311242D9F1B0073CF72 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
+		5A7C6311242D9F1B0073CF72 /* DataCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoder.swift; sourceTree = "<group>"; };
 		5A7C6314242DA3070073CF72 /* IDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDResponse.swift; sourceTree = "<group>"; };
 		5A7C6316242DCBAA0073CF72 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		5A7C6318242DE2C00073CF72 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7C630A242CC3270073CF72 /* UIColor.swift */,
-				5A7C6311242D9F1B0073CF72 /* DataDecoder.swift */,
+				5A7C6311242D9F1B0073CF72 /* DataCoder.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A7C6312242D9F1B0073CF72 /* DataDecoder.swift in Sources */,
+				5A7C6312242D9F1B0073CF72 /* DataCoder.swift in Sources */,
 				5A4CA5DB242B4CEB0095FA0C /* PWTextField.swift in Sources */,
 				5A4CA5EB242B7EE30095FA0C /* IDTextFieldDelegate.swift in Sources */,
 				5A834510242A301B00F20FAA /* SignupViewController.swift in Sources */,

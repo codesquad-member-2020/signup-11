@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class DataDecoder {
+final class DataCoder {
     static func decodeJSONData<T>(from urlString: String,
                                   type: T.Type,
                                   dateDecodingStrategy: JSONDecoder.DateDecodingStrategy?,

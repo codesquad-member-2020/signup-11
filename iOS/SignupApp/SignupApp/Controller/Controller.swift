@@ -30,7 +30,7 @@ class Controller {
     static func isOverlappedID(_ id: String?, resultHandler: @escaping (Bool?) -> ()) {
         guard let id = id else { return }
         let urlString = "https://signup11.herokuapp.com/api/userId/"
-        DataDecoder.decodeJSONData(from: "\(urlString)\(id)",
+        DataCoder.decodeJSONData(from: "\(urlString)\(id)",
             type: IDResponse.self,
             dateDecodingStrategy: nil) { (idResponse) in
                 guard let idResponse = idResponse else { return }
