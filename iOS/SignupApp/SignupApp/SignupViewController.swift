@@ -72,7 +72,21 @@ class SignupViewController: UIViewController, NextButtonDelegate {
         actionNextButton()
     }
     
-    @IBAction func nextButtonTouched(_ sender: NextButton) {
+    private func actionNextButton() {
+        if nextButton.isEnabled {
+            createUser { result in
+                guard let result = result, !result  else { return }
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "showLoginViewController",
+                                      sender: self.nextButton)
+                }
+            }
+        } else {
+            invalidTextFieldBecomeFirstResponder()
+        }
+    }
+    
+    private func createUser(resultHandler: @escaping (Bool?) -> ()) {
         let user = User(userId: idTextField.text!,
                         password: pwTextField.text!,
                         name: nameTextField.text!)
@@ -81,16 +95,11 @@ class SignupViewController: UIViewController, NextButtonDelegate {
                                  from: SignupURL.urlStringUserIntitatationInfo,
                                  data: jsonData) { data in
                                     guard let data = data else { return }
-                                    print(String(bytes: data, encoding: .utf8)!)
-        }
-    }
-    
-    private func actionNextButton() {
-        if nextButton.isEnabled {
-            nextButtonTouched(nextButton)
-            performSegue(withIdentifier: "showLoginViewController", sender: nextButton)
-        } else {
-            invalidTextFieldBecomeFirstResponder()
+                                    guard let userResponse = DataCoder.decodeJSONData(type: Response.self,
+                                                                                      data: data,
+                                                                                      dateDecodingStrategy: nil)
+                                        else { return }
+                                    resultHandler(userResponse.success)
         }
     }
     
