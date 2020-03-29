@@ -69,21 +69,17 @@ class Controller {
         return true
     }
     
-    static func isSameText(lhs: String?, rhs: String?) -> Bool {
-        guard let lhs = lhs, let rhs = rhs
-            else {
-                return false
-        }
-        return lhs == rhs
+    static func isNotSameText(lhs: String?, rhs: String?) -> Bool {
+        guard let lhs = lhs, let rhs = rhs else { return false }
+        return lhs != rhs
     }
     
     private static let spaceCharacterPattern = "[\\s]"
-    static func isNoHaveSpace(_ text: String?) -> Bool {
+    static func hasSpace(_ text: String?) -> Bool {
         guard let text = text else { return false }
         let range = NSRange(location: 0, length: text.count)
         let regex = try! NSRegularExpression(pattern: spaceCharacterPattern)
-        
-        guard regex.firstMatch(in: text, range: range) == nil else { return false }
+        guard regex.firstMatch(in: text, range: range) != nil else { return false }
         return true
     }
 }

@@ -19,7 +19,7 @@ final class NameTextField: SignupTextField {
         setCorrectMessage(text: messageCorrectName)
     }
     
-    func setWrongCaseByNotHaveSpace() {
+    func setWrongCaseByHasSpace() {
         super.setWrongCase()
         setMessageShouldNotHaveSpace()
     }

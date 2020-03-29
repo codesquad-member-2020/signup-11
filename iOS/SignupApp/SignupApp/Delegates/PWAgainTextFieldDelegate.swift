@@ -22,7 +22,7 @@ final class PWAgainTextFieldDelegate: SignupTextFieldDelegate {
         guard let pwAgainTextField = textField as? PWAgainTextField else { return }
         if !pwAgainTextField.pwTextField.isCorrect {
             pwAgainTextField.setWrongCaseByWrongPrePassWord()
-        } else if !Controller.isSameText(lhs: pwAgainTextField.pwTextField.text,
+        } else if Controller.isNotSameText(lhs: pwAgainTextField.pwTextField.text,
                                          rhs: pwAgainTextField.text) {
             pwAgainTextField.setWrongCaseByNotSamePassword()
         } else {

@@ -20,8 +20,8 @@ final class NameTextFieldDelegate: SignupTextFieldDelegate {
     
     override func judgeCurrentText(of textField: UITextField) {
         guard let nameTextField = textField as? NameTextField else { return }
-        if !Controller.isNoHaveSpace(nameTextField.text) {
-            nameTextField.setWrongCaseByNotHaveSpace()
+        if Controller.hasSpace(nameTextField.text) {
+            nameTextField.setWrongCaseByHasSpace()
         } else {
             nameTextField.setCorrectCase()
         }
