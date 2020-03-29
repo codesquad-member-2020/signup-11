@@ -1,0 +1,225 @@
+.clearfix {
+  overflow: hidden;
+}
+
+.wrap {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.link {
+  padding: 20px 0;
+}
+
+.link-list {
+  display: block;
+}
+
+.link-list li {
+  float: right;
+}
+
+.link-list li:last-child {
+  margin-right: 6px;
+}
+
+.form-title h1 {
+  text-align: center;
+  color: #07A600;
+  font-size: 2em;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label,
+.form-group input,
+.form-group select {
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin: 50px 0 10px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  padding: 15px 10px;
+  font-size: 1em;
+}
+
+.message {
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  font-size: 0.8em;
+  color: #07A600;
+}
+
+.birth-contents {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gender-group select {
+  height: 53px;
+}
+
+.term-group {
+  display: table;
+  margin-top: 40px;
+}
+
+.term-group input {
+  position: absolute;
+  z-index: -1;
+  margin-top: 11px;
+}
+
+.term-group label {
+  padding-left: 10px;
+}
+
+.term-group input,
+.terms-pop-btn {
+  cursor: pointer;
+}
+
+.terms-pop-btn {
+  margin-left: 12px;
+  padding: 10px;
+}
+
+.terms-pop-btn button {
+  outline: none;
+  border: none;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.term-group label {
+  font-size: 0.9em;
+}
+
+.join-button {
+  margin: 20px -5px 40px;
+  display: flex;
+}
+
+.join-button button,
+.userLogin {
+  padding: 15px 0;
+  margin: 0 5px;
+  width: 100%;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color: #07A600;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.tag-container {
+  overflow: auto;
+  display: flex;
+  border: 1px solid #d1d1d1;
+  padding: 15px 10px;
+  font-size: 1em;
+}
+
+.tag-container .tag {
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  background-color: #f2f2f2;
+}
+
+.tag i {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.tag-container input {
+  flex: 1;
+  padding: 0;
+  border: none;
+}
+
+/* 약관 */
+#modal {
+  display: none;
+}
+
+.terms-modal {
+  padding: 20px 10px;
+  background-color: #dedede;
+}
+
+.close-button {
+  position: relative;
+}
+
+.close-button button {
+  position: absolute;
+  top: -12px;
+  right: -6px;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.terms-contents {
+  margin-bottom: 20px;
+}
+
+.terms-title h3 {
+  margin-bottom: 10px;
+}
+
+.terms-contents ul {
+  height: 100px;
+  overflow: scroll;
+  background-color: #fff;
+  padding: 20px 10px;
+}
+
+.agree {
+  text-align: center;
+}
+
+.agree label {
+  padding: 10px 20px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  background-color: #07A600;
+}
+
+/* login css */
+.login {
+  padding: 20px 0;
+}
+
+.login h1,
+.login .form-group label {
+  color: transparent;
+  text-indent: -9999px;
+  height: 0;
+  margin: 0 0 10px;
+}
+
+.userLogin {
+  margin: 20px 0 0;
+}

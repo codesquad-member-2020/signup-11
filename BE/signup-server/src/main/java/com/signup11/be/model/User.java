@@ -47,7 +47,7 @@ public class User {
     this.birth = birth;
     this.gender = gender;
     this.email = checkEmail(email);
-    this.phone = phone;
+    this.phone = checkPhone(phone);
     this.createdDate = defaultIfNull(createdDate, now());
   }
 
@@ -74,7 +74,7 @@ public class User {
   }
 
   private String checkPhone(String phone) {
-    if(!phone.matches("^010-\\d{3,4}-\\d{4}$")) {
+    if(!phone.matches("^010\\d{3,4}\\d{4}$")) {
       throw new NotMatchException("전화번호 제한 조건과 맞지 않습니다");
     }
     return phone;
