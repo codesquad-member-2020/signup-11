@@ -9,7 +9,7 @@
 import Foundation
 
 final class Network {
-    static func excuteURLSession(from urlString: String,
+    static func excuteURLSessionGETMethod(from urlString: String,
                                  completionHandler: @escaping (Data?) -> ()) {
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in

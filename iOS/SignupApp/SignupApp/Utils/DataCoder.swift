@@ -14,7 +14,7 @@ final class DataCoder {
                                   dateDecodingStrategy: JSONDecoder.DateDecodingStrategy?,
                                   completionHandler: @escaping (T?) -> ())
         where T: Decodable {
-            Network.excuteURLSession(from: urlString) { (data) in
+            Network.excuteURLSessionGETMethod(from: urlString) { (data) in
                 guard let data = data else { return }
                 let jsonDecoder: JSONDecoder = {
                     let jsonDecoder = JSONDecoder()
