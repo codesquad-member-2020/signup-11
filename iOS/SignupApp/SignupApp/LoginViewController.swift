@@ -18,11 +18,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTouched(_ sender: UIButton) {
         if let url = URL(string: "https://signup11.herokuapp.com/users/login") {
-            let user = User(userId: idTextField.text!,
+            let login = Login(userId: idTextField.text!,
                             password: pwTextField.text!)
             let session = URLSession.shared
             var request = URLRequest(url: url)
-            guard let jsonData = DataCoder.encodeJSONData(user) else { return }
+            guard let jsonData = DataCoder.encodeJSONData(login) else { return }
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             request.httpMethod = "POST"

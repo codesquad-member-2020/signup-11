@@ -74,7 +74,7 @@ class SignupViewController: UIViewController, NextButtonDelegate {
     
     @IBAction func nextButtonTouched(_ sender: NextButton) {
         if let url = URL(string: "https://signup11.herokuapp.com/users") {
-            let user = UserInfo(userId: idTextField.text!,
+            let user = User(userId: idTextField.text!,
                                 password: pwTextField.text!,
                                 name: nameTextField.text!)
             let session = URLSession.shared
