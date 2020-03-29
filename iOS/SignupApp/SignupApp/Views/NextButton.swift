@@ -30,23 +30,13 @@ final class NextButton: UIButton {
         removeTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
-    private func setup() {
-        addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        disabled()
-    }
-    
     @objc private func buttonTapped() {
         delegate?.nextButtonTapped()
     }
-
-    func enabled() {
-        setGreenButton()
-        isEnabled = true
-    }
     
-    private func setGreenButton() {
-        setTitleColor(UIColor.greenColor, for: .normal)
-        tintColor = UIColor.greenColor
+    private func setup() {
+        addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        disabled()
     }
     
     func disabled() {
@@ -57,6 +47,16 @@ final class NextButton: UIButton {
     private func setGreyButton() {
         setTitleColor(UIColor.greyColor, for: .disabled)
         tintColor = UIColor.greyColor
+    }
+    
+    func enabled() {
+        setGreenButton()
+        isEnabled = true
+    }
+    
+    private func setGreenButton() {
+        setTitleColor(UIColor.greenColor, for: .normal)
+        tintColor = UIColor.greenColor
     }
     
     override func becomeFirstResponder() -> Bool {
