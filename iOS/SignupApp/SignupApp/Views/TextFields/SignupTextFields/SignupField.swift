@@ -37,24 +37,16 @@ class SignupField: FormField {
         messageLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 2).isActive = true
     }
     
-    func setWrongCaseByNoText() {
-        setMessageRequireText()
-        setWrongCase()
-    }
-    
-    private func setMessageRequireText() {
-        let messageRequireText = "필수 항목입니다."
-        setWrongMessage(text: messageRequireText)
-    }
-    
-    func setCorrectCase() {
-        setBorderColorGrey()
-        setCorrectTrue()
-    }
-    
-    func setWrongCase() {
+    func setWrongCase(message: String) {
+        setWrongMessage(text: message)
         setBorderColorRed()
         setCorrectFalse()
+    }
+    
+    func setCorrectCase(message: String) {
+        setCorrectMessage(text: message)
+        setBorderColorGrey()
+        setCorrectTrue()
     }
     
     private func setCorrectTrue() {
@@ -74,13 +66,13 @@ class SignupField: FormField {
     }
     
     // MARK:- Methods related to MessageLabel
-    func setCorrectMessage(text: String) {
+    private func setCorrectMessage(text: String) {
         messageLabel.text = text
         messageLabel.textColor = UIColor.greenColor
         messageLabel.isHidden = false
     }
     
-    func setWrongMessage(text: String) {
+    private func setWrongMessage(text: String) {
         messageLabel.text = text
         messageLabel.textColor = UIColor.redColor
         messageLabel.isHidden = false

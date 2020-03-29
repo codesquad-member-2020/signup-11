@@ -35,10 +35,11 @@ class SignupFieldDelegate: NSObject, UITextFieldDelegate {
         return true
     }
     
+    static let messageRequireText = "필수 항목입니다."
     func judgeCurrentText(of textField: UITextField) {
         guard let signupTextField = textField as? SignupField else { return }
         if Controller.isTextLengthZero(count: signupTextField.text?.count) {
-            signupTextField.setWrongCaseByNoText()
+            signupTextField.setWrongCase(message: Self.messageRequireText)
         }
     }
 }

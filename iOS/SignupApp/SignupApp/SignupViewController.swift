@@ -9,10 +9,10 @@
 import UIKit
 
 class SignupViewController: UIViewController {
-    @IBOutlet weak var idTextField: IDField!
-    @IBOutlet weak var pwTextField: PasswordField!
+    @IBOutlet weak var idTextField: SignupField!
+    @IBOutlet weak var pwTextField: SignupField!
     @IBOutlet weak var pwAgainTextField: RePasswordField!
-    @IBOutlet weak var nameTextField: NameField!
+    @IBOutlet weak var nameTextField: SignupField!
     @IBOutlet weak var nextButton: NextButton!
     private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     

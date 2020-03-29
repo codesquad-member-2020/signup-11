@@ -22,20 +22,25 @@ final class PasswordFieldDelegate: SignupFieldDelegate {
         return true
     }
     
+    private static let messageCorrectTextLength = "8자 이상 16자 이하로 입력해주세요."
+    private static let messageWriteUpperCapitalLetter = "영문 대문자를 최소 1자 이상 포함해주세요. "
+    private static let messageWriteNumber = "숫자를 최소 1자 이상 포함해주세요."
+    private static let messageWriteSpecialCharacter = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
+    private static let messageCorrectPassword = "안전한 비밀번호입니다."
     override func judgeCurrentText(of textField: UITextField) {
-        guard let pwTextField = textField as? PasswordField else { return }
+        guard let pwTextField = textField as? SignupField else { return }
         if Controller.isNotCorrectLength(min: 8,
-                                           max: 16,
-                                           count: pwTextField.text?.count) {
-            pwTextField.setWrongCaseByUnsuitableTextLength()
+                                         max: 16,
+                                         count: pwTextField.text?.count) {
+            pwTextField.setWrongCase(message: Self.messageCorrectTextLength)
         } else if Controller.hasNoUpperCaseLetter(pwTextField.text) {
-            pwTextField.setWrongCaseByNoUpperCapitalLetter()
+            pwTextField.setWrongCase(message: Self.messageWriteUpperCapitalLetter)
         } else if Controller.hasNoNumber(pwTextField.text) {
-            pwTextField.setWrongCaseByNoNumber()
+            pwTextField.setWrongCase(message: Self.messageWriteNumber)
         } else if Controller.hasNoSpecialCharacter(pwTextField.text) {
-            pwTextField.setWrongCaseByNoSpecialCharacter()
+            pwTextField.setWrongCase(message: Self.messageWriteSpecialCharacter)
         } else {
-            pwTextField.setCorrectCase()
+            pwTextField.setCorrectCase(message: Self.messageCorrectPassword)
         }
         super.judgeCurrentText(of: textField)
     }

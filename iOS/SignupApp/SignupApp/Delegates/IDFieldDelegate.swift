@@ -18,15 +18,22 @@ final class IDFieldDelegate: SignupFieldDelegate {
         return true
     }
     
+    private static let messageNotCorrectID = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-)만 사용 가능합니다."
+    private static let messageOverlappedID = "이미 사용중인 아이디입니다."
+    private static let messageCorrectID = "사용 가능한 아이디입니다."
     override func judgeCurrentText(of textField: UITextField) {
-        guard let idTextField = textField as? IDField else { return }
+        guard let idTextField = textField as? SignupField else { return }
         if Controller.isNotCorrectID(idTextField.text) {
-            idTextField.setWrongCaseByWrongID()
+            idTextField.setWrongCase(message: Self.messageNotCorrectID)
         } else {
             Controller.isOverlappedID(idTextField.text) { (result) in
                 guard let result = result else { return }
                 DispatchQueue.main.async {
-                    result ? idTextField.setWrongCaseByOverlappedID() : idTextField.setCorrectCase()
+                    if result {
+                        idTextField.setWrongCase(message: Self.messageOverlappedID)
+                    } else {
+                        idTextField.setCorrectCase(message: Self.messageCorrectID)
+                    }
                 }
             }
         }

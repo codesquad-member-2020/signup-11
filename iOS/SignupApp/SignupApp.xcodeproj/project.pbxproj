@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A4CA5D9242B4C350095FA0C /* IDField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5D8242B4C350095FA0C /* IDField.swift */; };
-		5A4CA5DB242B4CEB0095FA0C /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DA242B4CEB0095FA0C /* PasswordField.swift */; };
 		5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */; };
-		5A4CA5DF242B4DF30095FA0C /* NameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DE242B4DF30095FA0C /* NameField.swift */; };
 		5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E3242B5BB20095FA0C /* SignupField.swift */; };
 		5A4CA5E9242B7E9D0095FA0C /* SignupFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E8242B7E9D0095FA0C /* SignupFieldDelegate.swift */; };
 		5A4CA5EB242B7EE30095FA0C /* IDFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EA242B7EE30095FA0C /* IDFieldDelegate.swift */; };
@@ -57,10 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A4CA5D8242B4C350095FA0C /* IDField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDField.swift; sourceTree = "<group>"; };
-		5A4CA5DA242B4CEB0095FA0C /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordField.swift; sourceTree = "<group>"; };
-		5A4CA5DE242B4DF30095FA0C /* NameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameField.swift; sourceTree = "<group>"; };
 		5A4CA5E3242B5BB20095FA0C /* SignupField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupField.swift; sourceTree = "<group>"; };
 		5A4CA5E8242B7E9D0095FA0C /* SignupFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFieldDelegate.swift; sourceTree = "<group>"; };
 		5A4CA5EA242B7EE30095FA0C /* IDFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDFieldDelegate.swift; sourceTree = "<group>"; };
@@ -250,10 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				5A4CA5E3242B5BB20095FA0C /* SignupField.swift */,
-				5A4CA5D8242B4C350095FA0C /* IDField.swift */,
-				5A4CA5DA242B4CEB0095FA0C /* PasswordField.swift */,
 				5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */,
-				5A4CA5DE242B4DF30095FA0C /* NameField.swift */,
 			);
 			path = SignupTextFields;
 			sourceTree = "<group>";
@@ -390,17 +381,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7C6312242D9F1B0073CF72 /* DataCoder.swift in Sources */,
-				5A4CA5DB242B4CEB0095FA0C /* PasswordField.swift in Sources */,
 				5A4CA5EB242B7EE30095FA0C /* IDFieldDelegate.swift in Sources */,
 				5A834510242A301B00F20FAA /* SignupViewController.swift in Sources */,
 				5A83450C242A301B00F20FAA /* AppDelegate.swift in Sources */,
-				5A4CA5DF242B4DF30095FA0C /* NameField.swift in Sources */,
 				5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */,
 				5A4CA5EF242B7FAA0095FA0C /* RePasswordFieldDelegate.swift in Sources */,
 				5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */,
 				5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */,
 				5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */,
-				5A4CA5D9242B4C350095FA0C /* IDField.swift in Sources */,
 				5A7C6317242DCBAA0073CF72 /* NextButton.swift in Sources */,
 				5A7C6310242D9EEB0073CF72 /* Network.swift in Sources */,
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
