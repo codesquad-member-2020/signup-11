@@ -2,8 +2,8 @@
 
 /* reset */
 * {
-  box-sizing: border-box;
-  font-family: Apple SD Gothic Neo, Malgun Gothic, sans-serif;
+	box-sizing: border-box;
+	font-family: Apple SD Gothic Neo, Malgun Gothic, sans-serif;
 }
 
 html,
@@ -108,7 +108,6 @@ nav,
 section {
   display: block;
 }
-
 body {
   line-height: 1;
 }
