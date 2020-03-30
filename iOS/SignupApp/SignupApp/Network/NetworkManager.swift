@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Network {
+final class NetworkManager {
     private static let jsonType = "application/json"
     private static let headerContentType = "Content-Type"
     private static let headerAccept = "Accept"

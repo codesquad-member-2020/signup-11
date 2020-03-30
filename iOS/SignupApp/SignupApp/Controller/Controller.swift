@@ -29,7 +29,7 @@ class Controller {
     
     static func isOverlappedID(_ id: String?, resultHandler: @escaping (Bool?) -> ()) {
         guard let id = id else { return }
-        Network.excuteURLSession(method: .get,
+        NetworkManager.excuteURLSession(method: .get,
                                  from: "\(SignupURL.urlStringUserIDInfo)\(id)", data: nil) { data in
             guard let data = data else { return }
             guard let idResponse = DataCoder.decodeJSONData(type: Response.self,

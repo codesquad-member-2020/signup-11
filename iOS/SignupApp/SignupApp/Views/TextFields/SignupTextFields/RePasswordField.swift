@@ -11,3 +11,4 @@ import UIKit
 final class RePasswordField: SignupField {
     @IBOutlet weak var pwTextField: SignupField!
 }
+

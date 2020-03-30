@@ -107,7 +107,7 @@ extension SignupViewController: NextButtonDelegate {
                         password: pwTextField.text!,
                         name: nameTextField.text!)
         guard let jsonData = DataCoder.encodeJSONData(user) else { return }
-        Network.excuteURLSession(method: .post,
+        NetworkManager.excuteURLSession(method: .post,
                                  from: SignupURL.urlStringUserIntitatationInfo,
                                  data: jsonData) { data in
                                     guard let data = data else { return }

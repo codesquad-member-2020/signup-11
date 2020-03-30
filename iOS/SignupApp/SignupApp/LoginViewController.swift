@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         let login = Login(userId: idTextField.text!,
                           password: pwTextField.text!)
         guard let jsonData = DataCoder.encodeJSONData(login) else { return }
-        Network.excuteURLSession(method: .post,
+        NetworkManager.excuteURLSession(method: .post,
                                  from: SignupURL.urlStringLoginInfo,
                                  data: jsonData) { data in
                                     guard let data = data else { return }
