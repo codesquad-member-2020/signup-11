@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol NextButtonDelegate {
+protocol NextButtonDelegate: class {
     func nextButtonBecomeFirstResponder()
     func nextButtonTapped()
 }
 
 final class NextButton: UIButton {
-    var delegate: NextButtonDelegate?
+    weak var delegate: NextButtonDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
