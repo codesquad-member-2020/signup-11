@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol NextButtonDelegate: class {
-    func nextButtonBecomeFirstResponder()
-    func nextButtonTapped()
+protocol CompleteButtonDelegate: class {
+    func completeButtonBecomeFirstResponder()
+    func completeButtonTapped()
 }
 
-final class NextButton: UIButton {
-    weak var delegate: NextButtonDelegate?
+final class CompleteButton: UIButton {
+    weak var delegate: CompleteButtonDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +31,7 @@ final class NextButton: UIButton {
     }
     
     @objc private func buttonTapped() {
-        delegate?.nextButtonTapped()
+        delegate?.completeButtonTapped()
     }
     
     private func setup() {
@@ -60,7 +60,7 @@ final class NextButton: UIButton {
     }
     
     override func becomeFirstResponder() -> Bool {
-        delegate?.nextButtonBecomeFirstResponder()
+        delegate?.completeButtonBecomeFirstResponder()
         return true
     }
 }

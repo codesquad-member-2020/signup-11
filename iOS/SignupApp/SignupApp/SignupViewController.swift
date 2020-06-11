@@ -13,7 +13,7 @@ final class SignupViewController: UIViewController {
     @IBOutlet weak var pwTextField: SignupField!
     @IBOutlet weak var pwAgainTextField: RePasswordField!
     @IBOutlet weak var nameTextField: SignupField!
-    @IBOutlet weak var nextButton: NextButton!
+    @IBOutlet weak var completeButton: CompleteButton!
     private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     
     private let idTextFieldDelegate = IDValidator()
@@ -48,20 +48,20 @@ final class SignupViewController: UIViewController {
     }
 
     private func setNextButtonDelegate() {
-        nextButton.delegate = self
+        completeButton.delegate = self
     }
     
     private func setNextResponders() {
         idTextField.nextResonder = pwTextField
         pwTextField.nextResonder = pwAgainTextField
         pwAgainTextField.nextResonder = nameTextField
-        nameTextField.nextResonder = nextButton
+        nameTextField.nextResonder = completeButton
     }
 }
 
-extension SignupViewController: NextButtonDelegate {
-    func nextButtonBecomeFirstResponder() {
-        if nextButton.isEnabled {
+extension SignupViewController: CompleteButtonDelegate {
+    func completeButtonBecomeFirstResponder() {
+        if completeButton.isEnabled {
             createUser { result in
                 guard let result = result, result else { return }
                 DispatchQueue.main.async {
@@ -83,7 +83,7 @@ extension SignupViewController: NextButtonDelegate {
         }
     }
     
-    func nextButtonTapped() {
+    func completeButtonTapped() {
         createUser { result in
             guard let result = result, result else { return }
             DispatchQueue.main.async {
@@ -124,9 +124,9 @@ extension SignupViewController: SignupFieldDelegate {
     
     private func changeNextButton() {
         if isAllCorrect() {
-            nextButton.enabled()
+            completeButton.enabled()
         } else {
-            nextButton.disabled()
+            completeButton.disabled()
         }
     }
     

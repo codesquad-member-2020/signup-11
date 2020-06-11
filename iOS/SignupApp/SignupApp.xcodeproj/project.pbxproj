@@ -19,7 +19,7 @@
 		5A7C6310242D9EEB0073CF72 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */; };
 		5A7C6312242D9F1B0073CF72 /* DataCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6311242D9F1B0073CF72 /* DataCoder.swift */; };
 		5A7C6315242DA3070073CF72 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6314242DA3070073CF72 /* Response.swift */; };
-		5A7C6317242DCBAA0073CF72 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6316242DCBAA0073CF72 /* NextButton.swift */; };
+		5A7C6317242DCBAA0073CF72 /* CompleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6316242DCBAA0073CF72 /* CompleteButton.swift */; };
 		5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6318242DE2C00073CF72 /* LoginViewController.swift */; };
 		5A83450C242A301B00F20FAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A83450B242A301B00F20FAA /* AppDelegate.swift */; };
 		5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A83450D242A301B00F20FAA /* SceneDelegate.swift */; };
@@ -65,7 +65,7 @@
 		5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5A7C6311242D9F1B0073CF72 /* DataCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoder.swift; sourceTree = "<group>"; };
 		5A7C6314242DA3070073CF72 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		5A7C6316242DCBAA0073CF72 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		5A7C6316242DCBAA0073CF72 /* CompleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButton.swift; sourceTree = "<group>"; };
 		5A7C6318242DE2C00073CF72 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A834508242A301B00F20FAA /* SignupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A83450B242A301B00F20FAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		5A4CA5D7242B4BE60095FA0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5A7C6316242DCBAA0073CF72 /* NextButton.swift */,
+				5A7C6316242DCBAA0073CF72 /* CompleteButton.swift */,
 				5A7C6305242CB2D70073CF72 /* MessageLabel.swift */,
 				5A4CA5E0242B53C90095FA0C /* TextFields */,
 			);
@@ -378,7 +378,7 @@
 				5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */,
 				5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */,
 				5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */,
-				5A7C6317242DCBAA0073CF72 /* NextButton.swift in Sources */,
+				5A7C6317242DCBAA0073CF72 /* CompleteButton.swift in Sources */,
 				5A7C6310242D9EEB0073CF72 /* NetworkManager.swift in Sources */,
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
 				5A4CA5ED242B7F920095FA0C /* PasswordValidator.swift in Sources */,
