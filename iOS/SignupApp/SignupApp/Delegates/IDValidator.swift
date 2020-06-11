@@ -19,27 +19,18 @@ final class IDValidator: SignupValidator {
     }
     
     private static let messageNotCorrectID = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-)만 사용 가능합니다."
-    private static let messageIsValidatingOverlapped = "사용가능한 아이디이지만, 현재 아이디 중복 검사 중입니다."
     private static let messageOverlappedID = "이미 사용중인 아이디입니다."
     private static let messageCorrectID = "사용 가능한 아이디입니다."
     override func validateCurrentText(of textField: UITextField) {
         guard let signupField = textField as? SignupField else { return }
         guard isCorrectID(signupField.text)
             else { signupField.setWrongCase(message: Self.messageNotCorrectID); return }
-        signupField.setWrongCase(message: Self.messageIsValidatingOverlapped)
         
         validateOverlappedID(signupField.text) { isOverlapped in
             guard let isOverlapped = isOverlapped else { return }
             self.setCaseBy(isOverlapped, signupField: signupField)
         }
         super.validateCurrentText(of: textField)
-    }
-    
-    private static let correctIDPattern = "^[a-z0-9_\\-]{5,20}$"
-    private func isCorrectID(_ text: String?) -> Bool {
-        guard let text = text else { return false }
-        
-        return text.range(of: Self.correctIDPattern, options: .regularExpression) != nil
     }
     
     private func validateOverlappedID(_ id: String?, resultHandler: @escaping (Bool?) -> ()) {
@@ -55,6 +46,13 @@ final class IDValidator: SignupValidator {
                     ) else { return }
                 resultHandler(idResponse.success)
         }
+    }
+    
+    private static let correctIDPattern = "^[a-z0-9_\\-]{5,20}$"
+    private func isCorrectID(_ text: String?) -> Bool {
+        guard let text = text else { return false }
+        
+        return text.range(of: Self.correctIDPattern, options: .regularExpression) != nil
     }
     
     private func setCaseBy(_ isOverlapped: Bool, signupField: SignupField) {
