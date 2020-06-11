@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class IDFieldDelegate: SignupFieldDelegate {
+final class IDValidator: SignupValidator {
     override func textFieldDidChangeSelection(_ textField: UITextField) {
         validateCurrentText(of: textField)
     }

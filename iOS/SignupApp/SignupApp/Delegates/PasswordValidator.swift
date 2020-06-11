@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PasswordFieldDelegate: SignupFieldDelegate {
+final class PasswordValidator: SignupValidator {
     override var textLimit: Int {
         return 16
     }

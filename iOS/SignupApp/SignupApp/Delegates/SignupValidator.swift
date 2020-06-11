@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupFieldDelegate: NSObject, UITextFieldDelegate {
+class SignupValidator: NSObject, UITextFieldDelegate {
     var textLimit : Int {
         return 20
     }

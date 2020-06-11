@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RePasswordFieldDelegate: SignupFieldDelegate {
+final class RePasswordValidator: SignupValidator {
     override func textFieldDidChangeSelection(_ textField: UITextField) {
         validateCurrentText(of: textField)
     }

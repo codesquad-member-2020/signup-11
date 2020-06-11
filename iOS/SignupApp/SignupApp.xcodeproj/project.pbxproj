@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */; };
 		5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E3242B5BB20095FA0C /* SignupField.swift */; };
-		5A4CA5E9242B7E9D0095FA0C /* SignupFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E8242B7E9D0095FA0C /* SignupFieldDelegate.swift */; };
-		5A4CA5EB242B7EE30095FA0C /* IDFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EA242B7EE30095FA0C /* IDFieldDelegate.swift */; };
-		5A4CA5ED242B7F920095FA0C /* PasswordFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EC242B7F920095FA0C /* PasswordFieldDelegate.swift */; };
-		5A4CA5EF242B7FAA0095FA0C /* RePasswordFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EE242B7FAA0095FA0C /* RePasswordFieldDelegate.swift */; };
-		5A4CA5F1242B7FBF0095FA0C /* NameFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5F0242B7FBF0095FA0C /* NameFieldDelegate.swift */; };
+		5A4CA5E9242B7E9D0095FA0C /* SignupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */; };
+		5A4CA5EB242B7EE30095FA0C /* IDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EA242B7EE30095FA0C /* IDValidator.swift */; };
+		5A4CA5ED242B7F920095FA0C /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EC242B7F920095FA0C /* PasswordValidator.swift */; };
+		5A4CA5EF242B7FAA0095FA0C /* RePasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EE242B7FAA0095FA0C /* RePasswordValidator.swift */; };
+		5A4CA5F1242B7FBF0095FA0C /* NameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5F0242B7FBF0095FA0C /* NameValidator.swift */; };
 		5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6305242CB2D70073CF72 /* MessageLabel.swift */; };
 		5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C630A242CC3270073CF72 /* UIColor.swift */; };
 		5A7C6310242D9EEB0073CF72 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */; };
@@ -55,11 +55,11 @@
 /* Begin PBXFileReference section */
 		5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordField.swift; sourceTree = "<group>"; };
 		5A4CA5E3242B5BB20095FA0C /* SignupField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupField.swift; sourceTree = "<group>"; };
-		5A4CA5E8242B7E9D0095FA0C /* SignupFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFieldDelegate.swift; sourceTree = "<group>"; };
-		5A4CA5EA242B7EE30095FA0C /* IDFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDFieldDelegate.swift; sourceTree = "<group>"; };
-		5A4CA5EC242B7F920095FA0C /* PasswordFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldDelegate.swift; sourceTree = "<group>"; };
-		5A4CA5EE242B7FAA0095FA0C /* RePasswordFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordFieldDelegate.swift; sourceTree = "<group>"; };
-		5A4CA5F0242B7FBF0095FA0C /* NameFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameFieldDelegate.swift; sourceTree = "<group>"; };
+		5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupValidator.swift; sourceTree = "<group>"; };
+		5A4CA5EA242B7EE30095FA0C /* IDValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDValidator.swift; sourceTree = "<group>"; };
+		5A4CA5EC242B7F920095FA0C /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		5A4CA5EE242B7FAA0095FA0C /* RePasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordValidator.swift; sourceTree = "<group>"; };
+		5A4CA5F0242B7FBF0095FA0C /* NameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidator.swift; sourceTree = "<group>"; };
 		5A7C6305242CB2D70073CF72 /* MessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		5A7C630A242CC3270073CF72 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -134,11 +134,11 @@
 		5A4CA5E7242B7CED0095FA0C /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				5A4CA5E8242B7E9D0095FA0C /* SignupFieldDelegate.swift */,
-				5A4CA5EA242B7EE30095FA0C /* IDFieldDelegate.swift */,
-				5A4CA5EC242B7F920095FA0C /* PasswordFieldDelegate.swift */,
-				5A4CA5EE242B7FAA0095FA0C /* RePasswordFieldDelegate.swift */,
-				5A4CA5F0242B7FBF0095FA0C /* NameFieldDelegate.swift */,
+				5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */,
+				5A4CA5EA242B7EE30095FA0C /* IDValidator.swift */,
+				5A4CA5EC242B7F920095FA0C /* PasswordValidator.swift */,
+				5A4CA5EE242B7FAA0095FA0C /* RePasswordValidator.swift */,
+				5A4CA5F0242B7FBF0095FA0C /* NameValidator.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -370,21 +370,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7C6312242D9F1B0073CF72 /* DataCoder.swift in Sources */,
-				5A4CA5EB242B7EE30095FA0C /* IDFieldDelegate.swift in Sources */,
+				5A4CA5EB242B7EE30095FA0C /* IDValidator.swift in Sources */,
 				5A834510242A301B00F20FAA /* SignupViewController.swift in Sources */,
 				5A83450C242A301B00F20FAA /* AppDelegate.swift in Sources */,
 				5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */,
-				5A4CA5EF242B7FAA0095FA0C /* RePasswordFieldDelegate.swift in Sources */,
+				5A4CA5EF242B7FAA0095FA0C /* RePasswordValidator.swift in Sources */,
 				5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */,
 				5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */,
 				5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */,
 				5A7C6317242DCBAA0073CF72 /* NextButton.swift in Sources */,
 				5A7C6310242D9EEB0073CF72 /* NetworkManager.swift in Sources */,
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
-				5A4CA5ED242B7F920095FA0C /* PasswordFieldDelegate.swift in Sources */,
-				5A4CA5E9242B7E9D0095FA0C /* SignupFieldDelegate.swift in Sources */,
+				5A4CA5ED242B7F920095FA0C /* PasswordValidator.swift in Sources */,
+				5A4CA5E9242B7E9D0095FA0C /* SignupValidator.swift in Sources */,
 				5A834FB1242F5FC5006245F2 /* FormField.swift in Sources */,
-				5A4CA5F1242B7FBF0095FA0C /* NameFieldDelegate.swift in Sources */,
+				5A4CA5F1242B7FBF0095FA0C /* NameValidator.swift in Sources */,
 				5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */,
 				5A834FB72430490D006245F2 /* Login.swift in Sources */,
 				5A7C6315242DA3070073CF72 /* Response.swift in Sources */,

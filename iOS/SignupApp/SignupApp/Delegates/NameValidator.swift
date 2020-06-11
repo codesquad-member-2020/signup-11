@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NameFieldDelegate: SignupFieldDelegate {
+final class NameValidator: SignupValidator {
     override func textFieldDidChangeSelection(_ textField: UITextField) {
         validateCurrentText(of: textField)
     }
