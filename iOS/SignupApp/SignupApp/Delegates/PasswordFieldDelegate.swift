@@ -29,19 +29,49 @@ final class PasswordFieldDelegate: SignupFieldDelegate {
     private static let messageCorrectPassword = "안전한 비밀번호입니다."
     override func validateCurrentText(of textField: UITextField) {
         guard let pwTextField = textField as? SignupField else { return }
-        if Controller.isNotCorrectLength(min: 8,
-                                         max: 16,
-                                         count: pwTextField.text?.count) {
-            pwTextField.setWrongCase(message: Self.messageCorrectTextLength)
-        } else if Controller.hasNoUpperCaseLetter(pwTextField.text) {
-            pwTextField.setWrongCase(message: Self.messageWriteUpperCapitalLetter)
-        } else if Controller.hasNoNumber(pwTextField.text) {
-            pwTextField.setWrongCase(message: Self.messageWriteNumber)
-        } else if Controller.hasNoSpecialCharacter(pwTextField.text) {
-            pwTextField.setWrongCase(message: Self.messageWriteSpecialCharacter)
-        } else {
-            pwTextField.setCorrectCase(message: Self.messageCorrectPassword)
-        }
+        guard isCorrectLength(min: 8, max: 16, count: pwTextField.text?.count)
+            else { pwTextField.setWrongCase(message: Self.messageCorrectTextLength); return }
+        guard hasUpperCaseLetter(pwTextField.text)
+            else { pwTextField.setWrongCase(message: Self.messageWriteUpperCapitalLetter); return }
+        guard hasNumber(pwTextField.text)
+            else { pwTextField.setWrongCase(message: Self.messageWriteNumber); return }
+        guard hasSpecialCharacter(pwTextField.text)
+            else { pwTextField.setWrongCase(message: Self.messageWriteSpecialCharacter); return }
+        
+        pwTextField.setCorrectCase(message: Self.messageCorrectPassword)
         super.validateCurrentText(of: textField)
+    }
+    
+    private func isCorrectLength(min: Int = 1, max: Int, count: Int?) -> Bool {
+        guard let count = count else { return false }
+        
+        return count >= min && count <= max
+    }
+    
+    private static let hasUpperCaseLetterPattern = "[A-Z]"
+    private func hasUpperCaseLetter(_ text: String?) -> Bool {
+        guard let text = text else { return false }
+        
+        let range = NSRange(location: 0, length: text.count)
+        let regex = try! NSRegularExpression(pattern: Self.hasUpperCaseLetterPattern)
+        return regex.firstMatch(in: text, range: range) != nil
+    }
+    
+    private static let hasNumberPattern = "[0-9]"
+    private func hasNumber(_ text: String?) -> Bool {
+        guard let text = text else { return false }
+        
+        let range = NSRange(location: 0, length: text.count)
+        let regex = try! NSRegularExpression(pattern: Self.hasNumberPattern)
+        return regex.firstMatch(in: text, range: range) != nil
+    }
+    
+    private static let hasSpecialCharacterPattern = "[!@#$%]"
+    private func hasSpecialCharacter(_ text: String?) -> Bool {
+        guard let text = text else { return false }
+        
+        let range = NSRange(location: 0, length: text.count)
+        let regex = try! NSRegularExpression(pattern: Self.hasSpecialCharacterPattern)
+        return regex.firstMatch(in: text, range: range) != nil
     }
 }

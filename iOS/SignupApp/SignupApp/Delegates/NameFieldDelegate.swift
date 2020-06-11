@@ -22,11 +22,19 @@ final class NameFieldDelegate: SignupFieldDelegate {
     static let messageCorrectName = "사용가능한 이름입니다."
     override func validateCurrentText(of textField: UITextField) {
         guard let nameTextField = textField as? SignupField else { return }
-        if Controller.hasSpace(nameTextField.text) {
-            nameTextField.setWrongCase(message: Self.messageShouldNotHaveSpace)
-        } else {
-            nameTextField.setCorrectCase(message: Self.messageCorrectName)
-        }
+        guard hasNoSpace(nameTextField.text)
+            else { nameTextField.setWrongCase(message: Self.messageShouldNotHaveSpace); return }
+        
+        nameTextField.setCorrectCase(message: Self.messageCorrectName)
         super.validateCurrentText(of: textField)
+    }
+    
+    private static let spaceCharacterPattern = "[\\s]"
+    private func hasNoSpace(_ text: String?) -> Bool {
+        guard let text = text else { return false }
+        
+        let range = NSRange(location: 0, length: text.count)
+        let regex = try! NSRegularExpression(pattern: Self.spaceCharacterPattern)
+        return regex.firstMatch(in: text, range: range) == nil
     }
 }

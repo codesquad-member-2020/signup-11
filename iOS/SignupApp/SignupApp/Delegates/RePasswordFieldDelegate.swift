@@ -23,14 +23,17 @@ final class RePasswordFieldDelegate: SignupFieldDelegate {
     private static let messageSamePassword = "비밀번호가 일치합니다."
     override func validateCurrentText(of textField: UITextField) {
         guard let pwAgainTextField = textField as? RePasswordField else { return }
-        if !pwAgainTextField.pwTextField.isCorrect {
-            pwAgainTextField.setWrongCase(message: Self.messagePrePasswordFirst)
-        } else if Controller.isNotSameText(lhs: pwAgainTextField.pwTextField.text,
-                                           rhs: pwAgainTextField.text) {
-            pwAgainTextField.setWrongCase(message: Self.messageNotSamePassword)
-        } else {
-            pwAgainTextField.setCorrectCase(message: Self.messageSamePassword)
-        }
+        guard pwAgainTextField.pwTextField.isCorrect
+            else { pwAgainTextField.setWrongCase(message: Self.messagePrePasswordFirst); return }
+        guard isSameText(lhs: pwAgainTextField.pwTextField.text, rhs: pwAgainTextField.text)
+            else { pwAgainTextField.setWrongCase(message: Self.messageNotSamePassword); return }
+        
+        pwAgainTextField.setCorrectCase(message: Self.messageSamePassword)
         super.validateCurrentText(of: textField)
+    }
+    
+    private func isSameText(lhs: String?, rhs: String?) -> Bool {
+        guard let lhs = lhs, let rhs = rhs else { return false }
+        return lhs == rhs
     }
 }

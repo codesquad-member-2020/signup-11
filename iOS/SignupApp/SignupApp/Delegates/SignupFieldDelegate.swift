@@ -38,8 +38,13 @@ class SignupFieldDelegate: NSObject, UITextFieldDelegate {
     static let messageRequireText = "필수 항목입니다."
     func validateCurrentText(of textField: UITextField) {
         guard let signupTextField = textField as? SignupField else { return }
-        if Controller.isTextLengthZero(count: signupTextField.text?.count) {
-            signupTextField.setWrongCase(message: Self.messageRequireText)
-        }
+        guard isTextLengthZero(count: signupTextField.text?.count) else { return }
+        
+        signupTextField.setWrongCase(message: Self.messageRequireText)
+    }
+    
+    private func isTextLengthZero(count: Int?) -> Bool {
+        guard let count = count else { return false }
+        return count == 0
     }
 }
