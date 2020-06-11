@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WRZ-xE-Phm">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-yl-ijN" userLabel="Title Label">
-                                <rect key="frame" x="137" y="70" width="101" height="35"/>
+                                <rect key="frame" x="137" y="114" width="101" height="35"/>
                                 <attributedString key="attributedText">
                                     <fragment content="회원가입">
                                         <attributes>
@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyt-DX-jIP" userLabel="ID Label">
-                                <rect key="frame" x="43.333333333333336" y="140" width="39.000000000000007" height="18"/>
+                                <rect key="frame" x="43.333333333333336" y="184" width="39.000000000000007" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="아이디">
                                         <attributes>
@@ -40,8 +40,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-au-aDX" userLabel="ID Text Field" customClass="IDTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="163" width="288.33333333333326" height="37"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2G8-au-aDX" userLabel="ID Text Field" customClass="SignupField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="43.333333333333343" y="207" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2G8-au-aDX" secondAttribute="height" multiplier="288:37" id="dvg-cT-FnJ"/>
@@ -50,7 +50,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czv-n5-9Uf" userLabel="PW Label">
-                                <rect key="frame" x="43.333333333333343" y="230" width="52" height="18"/>
+                                <rect key="frame" x="43.333333333333343" y="274" width="52" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="비밀번호">
                                         <attributes>
@@ -61,8 +61,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-hh-w0t" userLabel="PW Text Field" customClass="PWTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="253" width="288.33333333333326" height="37"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSj-hh-w0t" userLabel="PW Text Field" customClass="SignupField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="43.333333333333343" y="297" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pSj-hh-w0t" secondAttribute="height" multiplier="288:37" id="AOV-ZY-h9T"/>
@@ -71,7 +71,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-D0-lcL" userLabel="PW Again Label">
-                                <rect key="frame" x="43.333333333333343" y="320" width="95" height="18"/>
+                                <rect key="frame" x="43.333333333333343" y="364" width="95" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="비밀번호 재확인">
                                         <attributes>
@@ -82,8 +82,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-HE-YkU" userLabel="PW Again Text Field" customClass="PWAgainTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="343" width="288.33333333333326" height="37.333333333333314"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-HE-YkU" userLabel="PW Again Text Field" customClass="RePasswordField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="43.333333333333343" y="387" width="288.33333333333326" height="37.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gaU-HE-YkU" secondAttribute="height" multiplier="288:37" id="SFg-Ku-I7p"/>
@@ -95,7 +95,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-gP-4Fv" userLabel="Name Label">
-                                <rect key="frame" x="43.333333333333336" y="410.33333333333331" width="26.000000000000007" height="18"/>
+                                <rect key="frame" x="43.333333333333336" y="454.33333333333331" width="26.000000000000007" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="이름">
                                         <attributes>
@@ -106,8 +106,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9X-kA-2Sd" userLabel="Name Text Field" customClass="NameTextField" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="43.333333333333343" y="433.33333333333331" width="288.33333333333326" height="37"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9X-kA-2Sd" userLabel="Name Text Field" customClass="SignupField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="43.333333333333343" y="477.33333333333331" width="288.33333333333326" height="36.999999999999943"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="l9X-kA-2Sd" secondAttribute="height" multiplier="288:37" id="ua0-n0-aeI"/>
@@ -115,8 +115,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRE-h7-TXu" customClass="NextButton" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="145.33333333333334" y="502.33333333333331" width="84.333333333333343" height="44.333333333333314"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRE-h7-TXu" customClass="CompleteButton" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="145.33333333333334" y="546.33333333333337" width="84.333333333333343" height="44.333333333333371"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cRE-h7-TXu" secondAttribute="height" multiplier="19:10" id="m5O-bH-51O"/>
@@ -125,12 +125,9 @@
                                 <color key="tintColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="다음" image="chevron.right.circle.fill" catalog="system">
+                                <state key="normal" title="완료" image="chevron.right.circle.fill" catalog="system">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="nextButtonTouchedUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nBd-bo-zXm"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -167,7 +164,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MbR-Yo-naW"/>
                     <connections>
+                        <outlet property="completeButton" destination="cRE-h7-TXu" id="WXj-nG-cy5"/>
                         <outlet property="idTextField" destination="2G8-au-aDX" id="enB-SF-Kk6"/>
                         <outlet property="nameTextField" destination="l9X-kA-2Sd" id="qmA-VS-orR"/>
                         <outlet property="pwAgainTextField" destination="gaU-HE-YkU" id="Y5X-CI-kEr"/>
@@ -176,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.40000000000001" y="129.31034482758622"/>
+            <point key="canvasLocation" x="1080.8" y="129.31034482758622"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="yZA-kc-k2H">
@@ -187,7 +186,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGl-HE-62i" userLabel="Title Label">
-                                <rect key="frame" x="150" y="80" width="75.333333333333314" height="35"/>
+                                <rect key="frame" x="150" y="70" width="75" height="35"/>
                                 <attributedString key="attributedText">
                                     <fragment content="로그인">
                                         <attributes>
@@ -200,7 +199,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxr-aG-Y5n" userLabel="ID Label">
-                                <rect key="frame" x="55.333333333333343" y="150" width="39" height="18"/>
+                                <rect key="frame" x="43.333333333333336" y="140" width="39.000000000000007" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="아이디">
                                         <attributes>
@@ -211,8 +210,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ps-fP-yES" userLabel="ID Text Field">
-                                <rect key="frame" x="55.333333333333343" y="173" width="264.33333333333326" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ps-fP-yES" userLabel="ID Text Field" customClass="FormField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="43.333333333333343" y="163" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2ps-fP-yES" secondAttribute="height" multiplier="288:37" id="OP1-ku-S5c"/>
@@ -221,7 +220,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR1-kf-waD" userLabel="PW Label">
-                                <rect key="frame" x="55.333333333333343" y="237" width="52" height="18"/>
+                                <rect key="frame" x="43.333333333333343" y="230" width="52" height="18"/>
                                 <attributedString key="attributedText">
                                     <fragment content="비밀번호">
                                         <attributes>
@@ -232,8 +231,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-bR-gNl" userLabel="PW Text Field">
-                                <rect key="frame" x="55.333333333333343" y="260" width="264.33333333333326" height="34"/>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-bR-gNl" userLabel="PW Text Field" customClass="FormField" customModule="SignupApp" customModuleProvider="target">
+                                <rect key="frame" x="43.333333333333343" y="253" width="288.33333333333326" height="37"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pCy-bR-gNl" secondAttribute="height" multiplier="288:37" id="lek-u1-KVT"/>
@@ -241,8 +240,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emM-Ro-bbC" customClass="NextButton" customModule="SignupApp" customModuleProvider="target">
-                                <rect key="frame" x="148" y="326" width="79" height="41.666666666666686"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emM-Ro-bbC">
+                                <rect key="frame" x="145.33333333333334" y="322" width="84.333333333333343" height="44.333333333333314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="emM-Ro-bbC" secondAttribute="height" multiplier="19:10" id="DYu-dv-agt"/>
@@ -255,34 +254,34 @@
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonTouched:" destination="Wnz-kV-CCs" eventType="touchUpInside" id="ZSl-2s-8Vy"/>
+                                    <action selector="loginButtonTouched:" destination="Wnz-kV-CCs" eventType="touchUpInside" id="gou-fZ-beS"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XGl-HE-62i" firstAttribute="top" secondItem="7ZU-CS-wJy" secondAttribute="top" constant="36" id="3nZ-Yo-Fvk"/>
+                            <constraint firstItem="XGl-HE-62i" firstAttribute="top" secondItem="7ZU-CS-wJy" secondAttribute="top" constant="26" id="3nZ-Yo-Fvk"/>
                             <constraint firstItem="emM-Ro-bbC" firstAttribute="centerX" secondItem="7P4-la-Qo5" secondAttribute="centerX" id="43n-0m-9PO"/>
                             <constraint firstItem="pCy-bR-gNl" firstAttribute="width" secondItem="pCy-bR-gNl" secondAttribute="height" multiplier="288:37" id="6Jl-GF-QxC"/>
                             <constraint firstItem="7ZU-CS-wJy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wxr-aG-Y5n" secondAttribute="trailing" symbolic="YES" id="8Vi-4L-1N0"/>
                             <constraint firstItem="pCy-bR-gNl" firstAttribute="leading" secondItem="xR1-kf-waD" secondAttribute="leading" id="Fa9-Ge-nk6"/>
                             <constraint firstItem="pCy-bR-gNl" firstAttribute="centerX" secondItem="7P4-la-Qo5" secondAttribute="centerX" id="Fh7-ct-aXH"/>
                             <constraint firstItem="xR1-kf-waD" firstAttribute="top" secondItem="2ps-fP-yES" secondAttribute="bottom" constant="30" id="Gks-we-39y"/>
-                            <constraint firstItem="emM-Ro-bbC" firstAttribute="width" secondItem="pCy-bR-gNl" secondAttribute="width" multiplier="0.3" id="Hit-Ol-Hm8"/>
-                            <constraint firstItem="emM-Ro-bbC" firstAttribute="width" secondItem="emM-Ro-bbC" secondAttribute="height" multiplier="19:10" id="MAD-7T-ZPo"/>
+                            <constraint firstItem="pCy-bR-gNl" firstAttribute="width" secondItem="emM-Ro-bbC" secondAttribute="width" multiplier="3.428" id="MVm-4f-WvQ"/>
                             <constraint firstItem="7ZU-CS-wJy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xR1-kf-waD" secondAttribute="trailing" symbolic="YES" id="RTv-zZ-8bY"/>
                             <constraint firstItem="2ps-fP-yES" firstAttribute="top" secondItem="wxr-aG-Y5n" secondAttribute="bottom" constant="5" id="WAw-Se-8vs"/>
+                            <constraint firstItem="7ZU-CS-wJy" firstAttribute="width" secondItem="2ps-fP-yES" secondAttribute="width" multiplier="1.3" id="c2u-q6-wc6"/>
                             <constraint firstItem="pCy-bR-gNl" firstAttribute="top" secondItem="xR1-kf-waD" secondAttribute="bottom" constant="5" id="d0g-JC-Efv"/>
                             <constraint firstItem="wxr-aG-Y5n" firstAttribute="top" secondItem="XGl-HE-62i" secondAttribute="bottom" constant="35" id="dWF-8g-nv4"/>
                             <constraint firstItem="2ps-fP-yES" firstAttribute="leading" secondItem="wxr-aG-Y5n" secondAttribute="leading" id="dZm-Fj-HI9"/>
                             <constraint firstItem="2ps-fP-yES" firstAttribute="centerX" secondItem="7P4-la-Qo5" secondAttribute="centerX" id="ha2-ha-TuK"/>
                             <constraint firstItem="emM-Ro-bbC" firstAttribute="top" secondItem="pCy-bR-gNl" secondAttribute="bottom" constant="32" id="lCb-iS-vP3"/>
-                            <constraint firstItem="2ps-fP-yES" firstAttribute="width" secondItem="2ps-fP-yES" secondAttribute="height" multiplier="288:37" id="mlq-ny-nL0"/>
                             <constraint firstItem="XGl-HE-62i" firstAttribute="centerX" secondItem="7P4-la-Qo5" secondAttribute="centerX" id="nbV-Ik-HDg"/>
                             <constraint firstItem="2ps-fP-yES" firstAttribute="width" secondItem="pCy-bR-gNl" secondAttribute="width" id="slc-Tl-j8Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7ZU-CS-wJy"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gq2-ya-va3"/>
                     <connections>
                         <outlet property="idTextField" destination="2ps-fP-yES" id="usb-YG-IbY"/>
                         <outlet property="pwTextField" destination="pCy-bR-gNl" id="nfp-73-nDx"/>
@@ -290,10 +289,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldB-GE-KYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="129"/>
+            <point key="canvasLocation" x="1930.4000000000001" y="128.57142857142858"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N5a-Jc-pb0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WRZ-xE-Phm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1x0-GS-1oW">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YC8-Wu-GHc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSS-bl-U4t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="129.31034482758622"/>
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.right.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="chevron.right.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
