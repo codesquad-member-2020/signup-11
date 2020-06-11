@@ -22,7 +22,10 @@ final class IDValidator: SignupValidator {
     private static let messageOverlappedID = "이미 사용중인 아이디입니다."
     private static let messageCorrectID = "사용 가능한 아이디입니다."
     override func validateCurrentText(of textField: UITextField) {
-        guard let signupField = textField as? SignupField else { return }
+        super.validateCurrentText(of: textField)
+        guard let signupField = textField as? SignupField,
+            !signupField.isEqual(message: SignupValidator.messageRequireText) else { return }
+        
         guard isCorrectID(signupField.text)
             else { signupField.setWrongCase(message: Self.messageNotCorrectID); return }
         
@@ -30,7 +33,6 @@ final class IDValidator: SignupValidator {
             guard let isOverlapped = isOverlapped else { return }
             self.setCaseBy(isOverlapped, signupField: signupField)
         }
-        super.validateCurrentText(of: textField)
     }
     
     private func validateOverlappedID(_ id: String?, resultHandler: @escaping (Bool?) -> ()) {

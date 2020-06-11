@@ -21,12 +21,14 @@ final class NameValidator: SignupValidator {
     static let messageShouldNotHaveSpace = "공백이 포함되면 안됩니다."
     static let messageCorrectName = "사용가능한 이름입니다."
     override func validateCurrentText(of textField: UITextField) {
-        guard let nameTextField = textField as? SignupField else { return }
+        super.validateCurrentText(of: textField)
+        guard let nameTextField = textField as? SignupField,
+            !nameTextField.isEqual(message: SignupValidator.messageRequireText) else { return }
+        
         guard hasNoSpace(nameTextField.text)
             else { nameTextField.setWrongCase(message: Self.messageShouldNotHaveSpace); return }
         
         nameTextField.setCorrectCase(message: Self.messageCorrectName)
-        super.validateCurrentText(of: textField)
     }
     
     private static let spaceCharacterPattern = "[\\s]"

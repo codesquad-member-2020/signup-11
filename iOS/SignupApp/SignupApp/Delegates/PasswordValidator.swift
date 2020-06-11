@@ -28,7 +28,10 @@ final class PasswordValidator: SignupValidator {
     private static let messageWriteSpecialCharacter = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
     private static let messageCorrectPassword = "안전한 비밀번호입니다."
     override func validateCurrentText(of textField: UITextField) {
-        guard let pwTextField = textField as? SignupField else { return }
+        super.validateCurrentText(of: textField)
+        guard let pwTextField = textField as? SignupField,
+            !pwTextField.isEqual(message: SignupValidator.messageRequireText) else { return }
+        
         guard isCorrectLength(min: 8, max: 16, count: pwTextField.text?.count)
             else { pwTextField.setWrongCase(message: Self.messageCorrectTextLength); return }
         guard hasUpperCaseLetter(pwTextField.text)
@@ -39,7 +42,6 @@ final class PasswordValidator: SignupValidator {
             else { pwTextField.setWrongCase(message: Self.messageWriteSpecialCharacter); return }
         
         pwTextField.setCorrectCase(message: Self.messageCorrectPassword)
-        super.validateCurrentText(of: textField)
     }
     
     private func isCorrectLength(min: Int = 1, max: Int, count: Int?) -> Bool {

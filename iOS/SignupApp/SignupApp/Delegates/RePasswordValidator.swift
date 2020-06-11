@@ -22,14 +22,16 @@ final class RePasswordValidator: SignupValidator {
     private static let messageNotSamePassword = "비밀번호가 일치하지 않습니다."
     private static let messageSamePassword = "비밀번호가 일치합니다."
     override func validateCurrentText(of textField: UITextField) {
-        guard let pwAgainTextField = textField as? RePasswordField else { return }
+        super.validateCurrentText(of: textField)
+        guard let pwAgainTextField = textField as? RePasswordField,
+            !pwAgainTextField.isEqual(message: SignupValidator.messageRequireText) else { return }
+        
         guard pwAgainTextField.pwTextField.isCorrect
             else { pwAgainTextField.setWrongCase(message: Self.messagePrePasswordFirst); return }
         guard isSameText(lhs: pwAgainTextField.pwTextField.text, rhs: pwAgainTextField.text)
             else { pwAgainTextField.setWrongCase(message: Self.messageNotSamePassword); return }
         
         pwAgainTextField.setCorrectCase(message: Self.messageSamePassword)
-        super.validateCurrentText(of: textField)
     }
     
     private func isSameText(lhs: String?, rhs: String?) -> Bool {
