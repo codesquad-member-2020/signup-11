@@ -25,14 +25,29 @@ final class SignupViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         setNextResponders()
-        setObserver()
     }
     
     private func setDelegates() {
+        setUITextFieldDelegates()
+        setSignupFieldDelegates()
+        setNextButtonDelegate()
+    }
+    
+    private func setUITextFieldDelegates() {
         idTextField.delegate = idTextFieldDelegate
         pwTextField.delegate = pwTextFieldDelegate
         pwAgainTextField.delegate = pwAgainTextFieldDelegate
         nameTextField.delegate = nameTextFieldDelegate
+    }
+    
+    private func setSignupFieldDelegates() {
+        idTextField.signupFieldDelegate = self
+        pwTextField.signupFieldDelegate = self
+        pwAgainTextField.signupFieldDelegate = self
+        nameTextField.signupFieldDelegate = self
+    }
+
+    private func setNextButtonDelegate() {
         nextButton.delegate = self
     }
     
@@ -41,31 +56,6 @@ final class SignupViewController: UIViewController {
         pwTextField.nextResonder = pwAgainTextField
         pwAgainTextField.nextResonder = nameTextField
         nameTextField.nextResonder = nextButton
-    }
-    
-    private func setObserver() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(changeNextButton),
-                                               name: SignupField.notificationIsCorrectDidChange,
-                                               object: nil)
-    }
-    
-    @objc func changeNextButton() {
-        if isAllCorrect() {
-            nextButton.enabled()
-        } else {
-            nextButton.disabled()
-        }
-    }
-    
-    private func isAllCorrect() -> Bool {
-        for textField in textFields {
-            guard let textField = textField else { return false }
-            if !textField.isCorrect {
-                return false
-            }
-        }
-        return true
     }
 }
 
@@ -108,14 +98,14 @@ extension SignupViewController: NextButtonDelegate {
                         name: nameTextField.text!)
         guard let jsonData = DataCoder.encodeJSONData(user) else { return }
         NetworkManager.excuteURLSession(method: .post,
-                                 from: SignupURL.urlStringUserIntitatationInfo,
-                                 data: jsonData) { data in
-                                    guard let data = data else { return }
-                                    guard let userResponse = DataCoder.decodeJSONData(type: Response.self,
-                                                                                      data: data,
-                                                                                      dateDecodingStrategy: nil)
-                                        else { return }
-                                    resultHandler(userResponse.success)
+                                        from: SignupURL.urlStringUserIntitatationInfo,
+                                        data: jsonData) { data in
+                                            guard let data = data else { return }
+                                            guard let userResponse = DataCoder.decodeJSONData(type: Response.self,
+                                                                                              data: data,
+                                                                                              dateDecodingStrategy: nil)
+                                                else { return }
+                                            resultHandler(userResponse.success)
         }
     }
     
@@ -124,5 +114,27 @@ extension SignupViewController: NextButtonDelegate {
         let loginViewController = storyboard.instantiateViewController(identifier: "loginViewController")
         navigationController?.pushViewController(loginViewController,
                                                  animated: true)
+    }
+}
+
+extension SignupViewController: SignupFieldDelegate {
+    func signupFieldIsCorrectDidChange() {
+        changeNextButton()
+    }
+    
+    private func changeNextButton() {
+        if isAllCorrect() {
+            nextButton.enabled()
+        } else {
+            nextButton.disabled()
+        }
+    }
+    
+    private func isAllCorrect() -> Bool {
+        for textField in textFields {
+            guard let textField = textField else { return false }
+            guard textField.isCorrect else { return false }
+        }
+        return true
     }
 }

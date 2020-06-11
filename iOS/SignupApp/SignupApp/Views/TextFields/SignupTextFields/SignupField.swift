@@ -8,17 +8,20 @@
 
 import UIKit
 
+protocol SignupFieldDelegate: class {
+    func signupFieldIsCorrectDidChange()
+}
+
 class SignupField: FormField {
     static let notificationIsCorrectDidChange = Notification.Name("isCorrectDidChange")
     private(set) var isCorrect = false {
         didSet {
-            if isCorrect != oldValue {
-                NotificationCenter.default.post(name: Self.notificationIsCorrectDidChange,
-                                                object: self)
-            }
+            guard isCorrect != oldValue else { return }
+            signupFieldDelegate?.signupFieldIsCorrectDidChange()
         }
     }
     private let messageLabel = MessageLabel()
+    weak var signupFieldDelegate: SignupFieldDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
