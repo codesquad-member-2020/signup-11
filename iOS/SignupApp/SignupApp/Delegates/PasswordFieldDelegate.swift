@@ -14,11 +14,11 @@ final class PasswordFieldDelegate: SignupFieldDelegate {
     }
     
     override func textFieldDidChangeSelection(_ textField: UITextField) {
-        judgeCurrentText(of: textField)
+        validateCurrentText(of: textField)
     }
     
     override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        judgeCurrentText(of: textField)
+        validateCurrentText(of: textField)
         return true
     }
     
@@ -27,7 +27,7 @@ final class PasswordFieldDelegate: SignupFieldDelegate {
     private static let messageWriteNumber = "숫자를 최소 1자 이상 포함해주세요."
     private static let messageWriteSpecialCharacter = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
     private static let messageCorrectPassword = "안전한 비밀번호입니다."
-    override func judgeCurrentText(of textField: UITextField) {
+    override func validateCurrentText(of textField: UITextField) {
         guard let pwTextField = textField as? SignupField else { return }
         if Controller.isNotCorrectLength(min: 8,
                                          max: 16,
@@ -42,6 +42,6 @@ final class PasswordFieldDelegate: SignupFieldDelegate {
         } else {
             pwTextField.setCorrectCase(message: Self.messageCorrectPassword)
         }
-        super.judgeCurrentText(of: textField)
+        super.validateCurrentText(of: textField)
     }
 }

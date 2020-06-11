@@ -27,16 +27,16 @@ class SignupFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        judgeCurrentText(of: textField)
+        validateCurrentText(of: textField)
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        judgeCurrentText(of: textField)
+        validateCurrentText(of: textField)
         return true
     }
     
     static let messageRequireText = "필수 항목입니다."
-    func judgeCurrentText(of textField: UITextField) {
+    func validateCurrentText(of textField: UITextField) {
         guard let signupTextField = textField as? SignupField else { return }
         if Controller.isTextLengthZero(count: signupTextField.text?.count) {
             signupTextField.setWrongCase(message: Self.messageRequireText)
