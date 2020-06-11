@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+final class SignupViewController: UIViewController {
     @IBOutlet weak var idTextField: SignupField!
     @IBOutlet weak var pwTextField: SignupField!
     @IBOutlet weak var pwAgainTextField: RePasswordField!

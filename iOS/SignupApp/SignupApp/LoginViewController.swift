@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     @IBOutlet weak var idTextField: FormField!
     @IBOutlet weak var pwTextField: FormField!
     
