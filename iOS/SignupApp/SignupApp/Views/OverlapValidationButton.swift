@@ -25,11 +25,11 @@ final class OverlapValidationButton: UIButton {
             from: "\(SignupURL.urlStringUserIDInfo)\(id)", data: nil) { data in
                 guard let data = data else { return }
                 guard let idResponse = DataCoder.decodeJSONData(
-                    type: Response.self,
+                    type: IDResponse.self,
                     data: data,
                     dateDecodingStrategy: nil
                     ) else { return }
-                completion(idResponse.success)
+                completion(idResponse.isOverlapped)
         }
     }
 }

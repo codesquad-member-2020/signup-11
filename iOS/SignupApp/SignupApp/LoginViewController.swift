@@ -33,7 +33,7 @@ final class LoginViewController: UIViewController {
                                  from: SignupURL.urlStringLoginInfo,
                                  data: jsonData) { data in
                                     guard let data = data else { return }
-                                    guard let loginResponse = DataCoder.decodeJSONData(type: Response.self,
+                                    guard let loginResponse = DataCoder.decodeJSONData(type: LoginResponse.self,
                                                                                        data: data,
                                                                                        dateDecodingStrategy: nil) else { return }
                                     resultHandler(loginResponse.success)

@@ -118,11 +118,11 @@ extension SignupViewController: CompleteButtonDelegate {
                                         from: SignupURL.urlStringUserIntitatationInfo,
                                         data: jsonData) { data in
                                             guard let data = data else { return }
-                                            guard let userResponse = DataCoder.decodeJSONData(type: Response.self,
+                                            guard let createUserResponse = DataCoder.decodeJSONData(type: CreateUserResponse.self,
                                                                                               data: data,
                                                                                               dateDecodingStrategy: nil)
                                                 else { return }
-                                            resultHandler(userResponse.success)
+                                            resultHandler(createUserResponse.success)
         }
     }
     
