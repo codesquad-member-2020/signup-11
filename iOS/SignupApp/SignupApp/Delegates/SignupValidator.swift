@@ -36,11 +36,14 @@ class SignupValidator: NSObject, UITextFieldDelegate {
     }
     
     static let messageRequireText = "필수 항목입니다."
-    func validateCurrentText(of textField: UITextField) {
-        guard let signupTextField = textField as? SignupField else { return }
-        guard isTextLengthZero(count: signupTextField.text?.count) else { return }
-        
-        signupTextField.setWrongCase(message: Self.messageRequireText)
+    @discardableResult
+    func validateCurrentText(of textField: UITextField) -> Bool {
+        guard let signupTextField = textField as? SignupField else { return false }
+        guard !isTextLengthZero(count: signupTextField.text?.count) else {
+            signupTextField.setWrongCase(message: Self.messageRequireText)
+            return false
+        }
+        return true
     }
     
     private func isTextLengthZero(count: Int?) -> Bool {

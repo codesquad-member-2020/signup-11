@@ -21,16 +21,21 @@ final class IDValidator: SignupValidator {
     private static let messageNotCorrectID = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-)만 사용 가능합니다."
     private static let messageOverlappedID = "이미 사용중인 아이디입니다."
     private static let messageCorrectID = "사용 가능한 아이디입니다."
-    override func validateCurrentText(of textField: UITextField) {
-        guard let signupField = textField as? SignupField else { return }
-        guard isCorrectID(signupField.text)
-            else { signupField.setWrongCase(message: Self.messageNotCorrectID); return }
+    @discardableResult
+    override func validateCurrentText(of textField: UITextField) -> Bool {
+        guard super.validateCurrentText(of: textField) else { return false }
+        
+        guard let signupField = textField as? SignupField else { return false }
+        guard isCorrectID(signupField.text) else {
+            signupField.setWrongCase(message: Self.messageNotCorrectID)
+            return false
+        }
         
         validateOverlappedID(signupField.text) { isOverlapped in
             guard let isOverlapped = isOverlapped else { return }
             self.setCaseBy(isOverlapped, signupField: signupField)
         }
-        super.validateCurrentText(of: textField)
+        return true
     }
     
     private func validateOverlappedID(_ id: String?, resultHandler: @escaping (Bool?) -> ()) {
