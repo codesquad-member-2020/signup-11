@@ -23,4 +23,12 @@ final class IDField: SignupField {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    func setWrongCaseOverlappedID() {
+        super.setWrongCase(message: "이미 사용중인 아이디입니다.")
+    }
+
+    override func setCorrectCase(message: String = "사용 가능한 아이디입니다.") {
+        super.setCorrectCase(message: message)
+    }
 }

@@ -64,12 +64,12 @@ final class SignupViewController: UIViewController {
         sender.validateOverlappedID(idTextField.text) { isOverlapped in
             if isOverlapped {
                 DispatchQueue.main.async {
-                    self.idTextField.setWrongCase(message: IDValidator.messageOverlappedID)
+                    self.idTextField.setWrongCaseOverlappedID()
                 }
                 return
             }
             DispatchQueue.main.async {
-                self.idTextField.setCorrectCase(message: IDValidator.messageCorrectID)
+                self.idTextField.setCorrectCase()
                 self.idTextField.status = .isCorrect
             }
         }
