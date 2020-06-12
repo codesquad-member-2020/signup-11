@@ -24,7 +24,9 @@ final class IDValidator: SignupValidator {
     override func validateCurrentText(of textField: UITextField) -> Bool {
         guard super.validateCurrentText(of: textField) else { return false }
         
-        guard let idField = textField as? IDField else { return false }
+        guard let idField = textField as? IDField,
+            idField.status != .isCorrect else { return false }
+        
         if isCorrectID(idField.text) {
             idField.setWrongCase(message: Self.messageRequireValidation)
             idField.status = .isCorrectButNotCheckOverlapValidation
