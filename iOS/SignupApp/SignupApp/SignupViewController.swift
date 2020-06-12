@@ -9,7 +9,7 @@
 import UIKit
 
 final class SignupViewController: UIViewController {
-    @IBOutlet weak var idTextField: SignupField!
+    @IBOutlet weak var idTextField: IDField!
     @IBOutlet weak var pwTextField: SignupField!
     @IBOutlet weak var pwAgainTextField: RePasswordField!
     @IBOutlet weak var nameTextField: SignupField!
@@ -56,6 +56,23 @@ final class SignupViewController: UIViewController {
         pwTextField.nextResonder = pwAgainTextField
         pwAgainTextField.nextResonder = nameTextField
         nameTextField.nextResonder = completeButton
+    }
+    
+    @IBAction func validatationButtonDidTouch(_ sender: OverlapValidationButton) {
+        guard idTextField.status == .isCorrectButNotCheckOverlapValidation else { return }
+        
+        sender.validateOverlappedID(idTextField.text) { isOverlapped in
+            if isOverlapped {
+                DispatchQueue.main.async {
+                    self.idTextField.setWrongCase(message: IDValidator.messageOverlappedID)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                self.idTextField.setCorrectCase(message: IDValidator.messageCorrectID)
+                self.idTextField.status = .isCorrect
+            }
+        }
     }
 }
 

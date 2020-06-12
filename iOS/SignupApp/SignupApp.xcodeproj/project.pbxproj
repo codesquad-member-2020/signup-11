@@ -14,6 +14,8 @@
 		5A4CA5ED242B7F920095FA0C /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EC242B7F920095FA0C /* PasswordValidator.swift */; };
 		5A4CA5EF242B7FAA0095FA0C /* RePasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EE242B7FAA0095FA0C /* RePasswordValidator.swift */; };
 		5A4CA5F1242B7FBF0095FA0C /* NameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5F0242B7FBF0095FA0C /* NameValidator.swift */; };
+		5A6716D8249346280075B510 /* OverlapValidationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6716D7249346280075B510 /* OverlapValidationButton.swift */; };
+		5A6716DA24934D260075B510 /* IDField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6716D924934D260075B510 /* IDField.swift */; };
 		5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C6305242CB2D70073CF72 /* MessageLabel.swift */; };
 		5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C630A242CC3270073CF72 /* UIColor.swift */; };
 		5A7C6310242D9EEB0073CF72 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */; };
@@ -60,6 +62,8 @@
 		5A4CA5EC242B7F920095FA0C /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		5A4CA5EE242B7FAA0095FA0C /* RePasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordValidator.swift; sourceTree = "<group>"; };
 		5A4CA5F0242B7FBF0095FA0C /* NameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidator.swift; sourceTree = "<group>"; };
+		5A6716D7249346280075B510 /* OverlapValidationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapValidationButton.swift; sourceTree = "<group>"; };
+		5A6716D924934D260075B510 /* IDField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDField.swift; sourceTree = "<group>"; };
 		5A7C6305242CB2D70073CF72 /* MessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		5A7C630A242CC3270073CF72 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		5A4CA5D7242B4BE60095FA0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A6716D7249346280075B510 /* OverlapValidationButton.swift */,
 				5A7C6316242DCBAA0073CF72 /* CompleteButton.swift */,
 				5A7C6305242CB2D70073CF72 /* MessageLabel.swift */,
 				5A4CA5E0242B53C90095FA0C /* TextFields */,
@@ -234,6 +239,7 @@
 			children = (
 				5A4CA5E3242B5BB20095FA0C /* SignupField.swift */,
 				5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */,
+				5A6716D924934D260075B510 /* IDField.swift */,
 			);
 			path = SignupTextFields;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 			files = (
 				5A7C6312242D9F1B0073CF72 /* DataCoder.swift in Sources */,
 				5A4CA5EB242B7EE30095FA0C /* IDValidator.swift in Sources */,
+				5A6716D8249346280075B510 /* OverlapValidationButton.swift in Sources */,
 				5A834510242A301B00F20FAA /* SignupViewController.swift in Sources */,
 				5A83450C242A301B00F20FAA /* AppDelegate.swift in Sources */,
 				5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */,
@@ -383,6 +390,7 @@
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
 				5A4CA5ED242B7F920095FA0C /* PasswordValidator.swift in Sources */,
 				5A4CA5E9242B7E9D0095FA0C /* SignupValidator.swift in Sources */,
+				5A6716DA24934D260075B510 /* IDField.swift in Sources */,
 				5A834FB1242F5FC5006245F2 /* FormField.swift in Sources */,
 				5A4CA5F1242B7FBF0095FA0C /* NameValidator.swift in Sources */,
 				5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */,

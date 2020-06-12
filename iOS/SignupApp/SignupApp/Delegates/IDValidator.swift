@@ -19,38 +19,22 @@ final class IDValidator: SignupValidator {
     }
     
     private static let messageNotCorrectID = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-)만 사용 가능합니다."
-    private static let messageOverlappedID = "이미 사용중인 아이디입니다."
-    private static let messageCorrectID = "사용 가능한 아이디입니다."
+    private static let messageRequireValidation = "사용 가능하지만 아이디 중복 검사를 진행하셔야 합니다."
+    static let messageOverlappedID = "이미 사용중인 아이디입니다."
+    static let messageCorrectID = "사용 가능한 아이디입니다."
     @discardableResult
     override func validateCurrentText(of textField: UITextField) -> Bool {
         guard super.validateCurrentText(of: textField) else { return false }
         
-        guard let signupField = textField as? SignupField else { return false }
-        guard isCorrectID(signupField.text) else {
-            signupField.setWrongCase(message: Self.messageNotCorrectID)
-            return false
+        guard let idField = textField as? IDField else { return false }
+        if isCorrectID(idField.text) {
+            idField.setWrongCase(message: Self.messageRequireValidation)
+            idField.status = .isCorrectButNotCheckOverlapValidation
+        } else {
+            idField.setWrongCase(message: Self.messageNotCorrectID)
+            idField.status = .isNotCorrect
         }
-        
-        validateOverlappedID(signupField.text) { isOverlapped in
-            guard let isOverlapped = isOverlapped else { return }
-            self.setCaseBy(isOverlapped, signupField: signupField)
-        }
-        return true
-    }
-    
-    private func validateOverlappedID(_ id: String?, resultHandler: @escaping (Bool?) -> ()) {
-        guard let id = id else { return }
-        NetworkManager.excuteURLSession(
-            method: .get,
-            from: "\(SignupURL.urlStringUserIDInfo)\(id)", data: nil) { data in
-                guard let data = data else { return }
-                guard let idResponse = DataCoder.decodeJSONData(
-                    type: Response.self,
-                    data: data,
-                    dateDecodingStrategy: nil
-                    ) else { return }
-                resultHandler(idResponse.success)
-        }
+        return false
     }
     
     private static let correctIDPattern = "^[a-z0-9_\\-]{5,20}$"
@@ -58,15 +42,5 @@ final class IDValidator: SignupValidator {
         guard let text = text else { return false }
         
         return text.range(of: Self.correctIDPattern, options: .regularExpression) != nil
-    }
-    
-    private func setCaseBy(_ isOverlapped: Bool, signupField: SignupField) {
-        DispatchQueue.main.async {
-            if isOverlapped {
-                signupField.setWrongCase(message: Self.messageOverlappedID)
-                return
-            }
-            signupField.setCorrectCase(message: Self.messageCorrectID)
-        }
     }
 }
