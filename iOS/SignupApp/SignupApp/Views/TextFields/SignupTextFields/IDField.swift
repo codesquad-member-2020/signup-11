@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class IDField: SignupField, IDTextableView {
+final class IDField: SignupField, IDableView {
     var status = Status.isNotCorrect
 
     override init(frame: CGRect) {

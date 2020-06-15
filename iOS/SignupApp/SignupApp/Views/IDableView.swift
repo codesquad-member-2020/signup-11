@@ -14,6 +14,6 @@ enum Status {
     case isCorrect
 }
 
-protocol IDTextableView: SignupTextableView {
+protocol IDableView: SignupTextableView {
     var status: Status {get set}
 }

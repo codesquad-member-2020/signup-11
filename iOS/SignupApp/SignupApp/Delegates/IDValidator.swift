@@ -22,7 +22,7 @@ final class IDValidator: SignupValidator {
     override func validateText(of signupTextableView: SignupTextableView?) {
         guard let signupTextableView = signupTextableView else { return }
         
-        guard let idTextableView = signupTextableView as? IDTextableView,
+        guard let idTextableView = signupTextableView as? IDableView,
         idTextableView.status != .isCorrect else { return }
         
         if isCorrectID(idTextableView.text) {

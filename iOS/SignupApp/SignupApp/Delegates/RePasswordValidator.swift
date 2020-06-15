@@ -17,20 +17,21 @@ final class RePasswordValidator: SignupValidator {
     private static let messagePrePasswordFirst = "이전 비밀번호를 먼저 올바르게 입력해주시기 바랍니다."
     private static let messageNotSamePassword = "비밀번호가 일치하지 않습니다."
     private static let messageSamePassword = "비밀번호가 일치합니다."
-
+    
     override func validateText(of signupTextableView: SignupTextableView?) {
         guard let signupTextableView = signupTextableView else { return }
+        guard let rePasswordableView = signupTextableView as? RePasswordableView else { return }
         
-        guard let pwAgainTextField = signupTextableView as? RePasswordField else { return }
-        
-        if !pwAgainTextField.pwTextField.isCorrect{
-            pwAgainTextField.setWrongCase(message: Self.messagePrePasswordFirst)
-        } else if !isSameText(lhs: pwAgainTextField.pwTextField.text, rhs: pwAgainTextField.text) {
-            pwAgainTextField.setWrongCase(message: Self.messageNotSamePassword)
+        if !isSameText(lhs: rePasswordableView.passwordTextableView?.text, rhs: rePasswordableView.text) {
+            rePasswordableView.setWrongCase(message: Self.messageNotSamePassword)
         } else {
-            pwAgainTextField.setCorrectCase(message: Self.messageSamePassword)
+            rePasswordableView.setCorrectCase(message: Self.messageSamePassword)
         }
         
-        super.validateText(of: pwAgainTextField)
+        super.validateText(of: rePasswordableView)
     }
 }
+
+//if !pwAgainTextField.passwordTextableView.isCorrect{
+//         pwAgainTextField.setWrongCase(message: Self.messagePrePasswordFirst)
+//}

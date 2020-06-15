@@ -23,8 +23,13 @@ final class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setRePasswordField()
         setDelegates()
         setNextResponders()
+    }
+    
+    private func setRePasswordField() {
+        pwAgainTextField.passwordTextableView = pwTextField
     }
     
     private func setDelegates() {

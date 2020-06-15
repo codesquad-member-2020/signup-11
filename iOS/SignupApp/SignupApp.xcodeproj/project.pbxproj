@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5A35D407249799CD0038AD6F /* SignupTextableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D406249799CD0038AD6F /* SignupTextableView.swift */; };
-		5A35D40924979E990038AD6F /* IDTextableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D40824979E990038AD6F /* IDTextableView.swift */; };
+		5A35D40924979E990038AD6F /* IDableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D40824979E990038AD6F /* IDableView.swift */; };
+		5A35D40B2497A18D0038AD6F /* RePasswordableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */; };
 		5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */; };
 		5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E3242B5BB20095FA0C /* SignupField.swift */; };
 		5A4CA5E9242B7E9D0095FA0C /* SignupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */; };
@@ -60,7 +61,8 @@
 
 /* Begin PBXFileReference section */
 		5A35D406249799CD0038AD6F /* SignupTextableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextableView.swift; sourceTree = "<group>"; };
-		5A35D40824979E990038AD6F /* IDTextableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDTextableView.swift; sourceTree = "<group>"; };
+		5A35D40824979E990038AD6F /* IDableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDableView.swift; sourceTree = "<group>"; };
+		5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordableView.swift; sourceTree = "<group>"; };
 		5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordField.swift; sourceTree = "<group>"; };
 		5A4CA5E3242B5BB20095FA0C /* SignupField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupField.swift; sourceTree = "<group>"; };
 		5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupValidator.swift; sourceTree = "<group>"; };
@@ -132,7 +134,8 @@
 				5A7C6305242CB2D70073CF72 /* MessageLabel.swift */,
 				5A4CA5E0242B53C90095FA0C /* TextFields */,
 				5A35D406249799CD0038AD6F /* SignupTextableView.swift */,
-				5A35D40824979E990038AD6F /* IDTextableView.swift */,
+				5A35D40824979E990038AD6F /* IDableView.swift */,
+				5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,7 +394,7 @@
 				5A4CA5EB242B7EE30095FA0C /* IDValidator.swift in Sources */,
 				5A6716D8249346280075B510 /* OverlapValidationButton.swift in Sources */,
 				5A834510242A301B00F20FAA /* SignupViewController.swift in Sources */,
-				5A35D40924979E990038AD6F /* IDTextableView.swift in Sources */,
+				5A35D40924979E990038AD6F /* IDableView.swift in Sources */,
 				5A83450C242A301B00F20FAA /* AppDelegate.swift in Sources */,
 				5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */,
 				5A4CA5EF242B7FAA0095FA0C /* RePasswordValidator.swift in Sources */,
@@ -399,6 +402,7 @@
 				5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */,
 				5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */,
 				5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */,
+				5A35D40B2497A18D0038AD6F /* RePasswordableView.swift in Sources */,
 				5A7C6317242DCBAA0073CF72 /* CompleteButton.swift in Sources */,
 				5A7C6310242D9EEB0073CF72 /* NetworkManager.swift in Sources */,
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
