@@ -9,24 +9,19 @@
 import UIKit
 
 final class NameValidator: SignupValidator {
-    override func textFieldDidChangeSelection(_ textField: UITextField) {
-        validateCurrentText(of: textField)
-    }
+    private static let messageShouldNotHaveSpace = "공백이 포함되면 안됩니다."
+    private static let messageCorrectName = "사용가능한 이름입니다."
     
-    override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        validateCurrentText(of: textField)
-        return true
-    }
-    
-    static let messageShouldNotHaveSpace = "공백이 포함되면 안됩니다."
-    static let messageCorrectName = "사용가능한 이름입니다."
-    override func validateCurrentText(of textField: UITextField) {
-        guard let nameTextField = textField as? SignupField else { return }
-        guard hasNoSpace(nameTextField.text)
-            else { nameTextField.setWrongCase(message: Self.messageShouldNotHaveSpace); return }
+    override func validateText(of signupTextableView: SignupTextableView?) {
+        guard let signupTextableView = signupTextableView else { return }
         
-        nameTextField.setCorrectCase(message: Self.messageCorrectName)
-        super.validateCurrentText(of: textField)
+        if !hasNoSpace(signupTextableView.text) {
+            signupTextableView.setWrongCase(message: Self.messageShouldNotHaveSpace)
+        } else {
+            signupTextableView.setCorrectCase(message: Self.messageCorrectName)
+        }
+        
+        super.validateText(of: signupTextableView)
     }
     
     private static let spaceCharacterPattern = "[\\s]"

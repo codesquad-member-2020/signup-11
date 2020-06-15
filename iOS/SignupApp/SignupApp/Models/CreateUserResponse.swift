@@ -1,13 +1,13 @@
 //
-//  IDResponse.swift
+//  CreateUserResponse.swift
 //  SignupApp
 //
-//  Created by kimdo2297 on 2020/03/27.
+//  Created by kimdo2297 on 2020/06/12.
 //  Copyright © 2020 Jason. All rights reserved.
 //
 
 import Foundation
 
-struct Response: Codable {
+struct CreateUserResponse: Codable {
     let success: Bool
 }

@@ -12,9 +12,8 @@ protocol SignupFieldDelegate: class {
     func signupFieldIsCorrectDidChange()
 }
 
-class SignupField: FormField {
-    static let notificationIsCorrectDidChange = Notification.Name("isCorrectDidChange")
-    private(set) var isCorrect = false {
+class SignupField: FormField, SignupTextableView {
+    var isCorrect = false {
         didSet {
             guard isCorrect != oldValue else { return }
             signupFieldDelegate?.signupFieldIsCorrectDidChange()
@@ -35,7 +34,9 @@ class SignupField: FormField {
     
     private func setMessageLabel() {
         addSubview(messageLabel)
-        messageLabel.trailingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+        messageLabel.trailingAnchor.constraint(
+            greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor
+        ).isActive = true
         messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         messageLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 2).isActive = true
     }

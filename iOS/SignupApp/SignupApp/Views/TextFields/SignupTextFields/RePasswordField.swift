@@ -8,7 +8,6 @@
 
 import UIKit
 
-final class RePasswordField: SignupField {
-    @IBOutlet weak var pwTextField: SignupField!
+final class RePasswordField: SignupField, RePasswordableView {
+    var passwordTextableView: SignupTextableView?
 }
-

@@ -29,15 +29,21 @@ final class LoginViewController: UIViewController {
         let login = Login(userId: idTextField.text!,
                           password: pwTextField.text!)
         guard let jsonData = DataCoder.encodeJSONData(login) else { return }
-        NetworkManager.excuteURLSession(method: .post,
-                                 from: SignupURL.urlStringLoginInfo,
-                                 data: jsonData) { data in
-                                    guard let data = data else { return }
-                                    guard let loginResponse = DataCoder.decodeJSONData(type: Response.self,
-                                                                                       data: data,
-                                                                                       dateDecodingStrategy: nil) else { return }
-                                    resultHandler(loginResponse.success)
-                                    
+        
+        NetworkManager.excuteURLSession(
+            method: .post,
+            from: SignupURL.urlStringLoginInfo,
+            data: jsonData
+        ) { data in
+            guard let data = data else { return }
+            guard let loginResponse = DataCoder.decodeJSONData(
+                type: LoginResponse.self,
+                data: data,
+                dateDecodingStrategy: nil
+                ) else { return }
+            
+            resultHandler(loginResponse.success)
+            
         }
     }
     

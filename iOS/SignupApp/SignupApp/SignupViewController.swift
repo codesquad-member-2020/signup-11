@@ -9,7 +9,7 @@
 import UIKit
 
 final class SignupViewController: UIViewController {
-    @IBOutlet weak var idTextField: SignupField!
+    @IBOutlet weak var idTextField: IDField!
     @IBOutlet weak var pwTextField: SignupField!
     @IBOutlet weak var pwAgainTextField: RePasswordField!
     @IBOutlet weak var nameTextField: SignupField!
@@ -23,8 +23,13 @@ final class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setRePasswordField()
         setDelegates()
         setNextResponders()
+    }
+    
+    private func setRePasswordField() {
+        pwAgainTextField.passwordTextableView = pwTextField
     }
     
     private func setDelegates() {
@@ -46,7 +51,7 @@ final class SignupViewController: UIViewController {
         pwAgainTextField.signupFieldDelegate = self
         nameTextField.signupFieldDelegate = self
     }
-
+    
     private func setNextButtonDelegate() {
         completeButton.delegate = self
     }
@@ -56,6 +61,23 @@ final class SignupViewController: UIViewController {
         pwTextField.nextResonder = pwAgainTextField
         pwAgainTextField.nextResonder = nameTextField
         nameTextField.nextResonder = completeButton
+    }
+    
+    @IBAction func validatationButtonDidTouch(_ sender: OverlapValidationButton) {
+        guard idTextField.status == .isCorrectButNotCheckOverlapValidation else { return }
+        
+        sender.validateOverlappedID(idTextField.text) { isOverlapped in
+            if isOverlapped {
+                DispatchQueue.main.async {
+                    self.idTextField.setWrongCaseOverlappedID()
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                self.idTextField.setCorrectCase()
+                self.idTextField.status = .isCorrect
+            }
+        }
     }
 }
 
@@ -97,15 +119,19 @@ extension SignupViewController: CompleteButtonDelegate {
                         password: pwTextField.text!,
                         name: nameTextField.text!)
         guard let jsonData = DataCoder.encodeJSONData(user) else { return }
-        NetworkManager.excuteURLSession(method: .post,
-                                        from: SignupURL.urlStringUserIntitatationInfo,
-                                        data: jsonData) { data in
-                                            guard let data = data else { return }
-                                            guard let userResponse = DataCoder.decodeJSONData(type: Response.self,
-                                                                                              data: data,
-                                                                                              dateDecodingStrategy: nil)
-                                                else { return }
-                                            resultHandler(userResponse.success)
+        
+        NetworkManager.excuteURLSession(
+            method: .post,
+            from: SignupURL.urlStringUserIntitatationInfo,
+            data: jsonData
+        ) { data in
+            guard let data = data else { return }
+            guard let createUserResponse = DataCoder.decodeJSONData(
+                type: CreateUserResponse.self,
+                data: data,
+                dateDecodingStrategy: nil) else { return }
+            
+            resultHandler(createUserResponse.success)
         }
     }
     

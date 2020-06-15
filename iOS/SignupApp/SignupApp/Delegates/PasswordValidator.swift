@@ -13,33 +13,29 @@ final class PasswordValidator: SignupValidator {
         return 16
     }
     
-    override func textFieldDidChangeSelection(_ textField: UITextField) {
-        validateCurrentText(of: textField)
-    }
-    
-    override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        validateCurrentText(of: textField)
-        return true
-    }
-    
     private static let messageCorrectTextLength = "8자 이상 16자 이하로 입력해주세요."
     private static let messageWriteUpperCapitalLetter = "영문 대문자를 최소 1자 이상 포함해주세요. "
     private static let messageWriteNumber = "숫자를 최소 1자 이상 포함해주세요."
     private static let messageWriteSpecialCharacter = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
     private static let messageCorrectPassword = "안전한 비밀번호입니다."
-    override func validateCurrentText(of textField: UITextField) {
-        guard let pwTextField = textField as? SignupField else { return }
-        guard isCorrectLength(min: 8, max: 16, count: pwTextField.text?.count)
-            else { pwTextField.setWrongCase(message: Self.messageCorrectTextLength); return }
-        guard hasUpperCaseLetter(pwTextField.text)
-            else { pwTextField.setWrongCase(message: Self.messageWriteUpperCapitalLetter); return }
-        guard hasNumber(pwTextField.text)
-            else { pwTextField.setWrongCase(message: Self.messageWriteNumber); return }
-        guard hasSpecialCharacter(pwTextField.text)
-            else { pwTextField.setWrongCase(message: Self.messageWriteSpecialCharacter); return }
+    
+    override func validateText(of signupTextableView: SignupTextableView?) {
+        guard let signupTextableView = signupTextableView else { return }
         
-        pwTextField.setCorrectCase(message: Self.messageCorrectPassword)
-        super.validateCurrentText(of: textField)
+        if !isCorrectLength(min: 8, max: 16, count: signupTextableView.text?.count) {
+            signupTextableView.setWrongCase(message: Self.messageCorrectTextLength)
+            
+        } else if !hasUpperCaseLetter(signupTextableView.text) {
+            signupTextableView.setWrongCase(message: Self.messageWriteUpperCapitalLetter)
+        } else if !hasNumber(signupTextableView.text) {
+            signupTextableView.setWrongCase(message: Self.messageWriteNumber)
+        } else if !hasSpecialCharacter(signupTextableView.text) {
+            signupTextableView.setWrongCase(message: Self.messageWriteSpecialCharacter)
+        } else {
+            signupTextableView.setCorrectCase(message: Self.messageCorrectPassword)
+        }
+        
+        super.validateText(of: signupTextableView)
     }
     
     private func isCorrectLength(min: Int = 1, max: Int, count: Int?) -> Bool {
@@ -75,3 +71,4 @@ final class PasswordValidator: SignupValidator {
         return regex.firstMatch(in: text, range: range) != nil
     }
 }
+
