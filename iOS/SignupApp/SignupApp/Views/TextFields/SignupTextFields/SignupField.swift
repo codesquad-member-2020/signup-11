@@ -13,7 +13,7 @@ protocol SignupFieldDelegate: class {
 }
 
 class SignupField: FormField, SignupTextableView {
-    private(set) var isCorrect = false {
+    var isCorrect = false {
         didSet {
             guard isCorrect != oldValue else { return }
             signupFieldDelegate?.signupFieldIsCorrectDidChange()

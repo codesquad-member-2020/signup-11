@@ -20,9 +20,12 @@ final class RePasswordValidator: SignupValidator {
     
     override func validateText(of signupTextableView: SignupTextableView?) {
         guard let signupTextableView = signupTextableView else { return }
-        guard let rePasswordableView = signupTextableView as? RePasswordableView else { return }
-        
-        if !isSameText(lhs: rePasswordableView.passwordTextableView?.text, rhs: rePasswordableView.text) {
+        guard let rePasswordableView = signupTextableView as? RePasswordableView,
+            let passwordTextableView = rePasswordableView.passwordTextableView else { return }
+ 
+        if !passwordTextableView.isCorrect {
+                 rePasswordableView.setWrongCase(message: Self.messagePrePasswordFirst)
+        } else if !isSameText(lhs: passwordTextableView.text, rhs: rePasswordableView.text) {
             rePasswordableView.setWrongCase(message: Self.messageNotSamePassword)
         } else {
             rePasswordableView.setCorrectCase(message: Self.messageSamePassword)
@@ -31,7 +34,3 @@ final class RePasswordValidator: SignupValidator {
         super.validateText(of: rePasswordableView)
     }
 }
-
-//if !pwAgainTextField.passwordTextableView.isCorrect{
-//         pwAgainTextField.setWrongCase(message: Self.messagePrePasswordFirst)
-//}

@@ -9,6 +9,7 @@
 import UIKit
 
 protocol SignupTextableView where Self: UIView {
+    var isCorrect: Bool {get set}
     var text: String? {get set}
     
     func setWrongCase(message: String)
