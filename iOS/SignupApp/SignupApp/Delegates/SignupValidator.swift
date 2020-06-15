@@ -38,7 +38,7 @@ extension SignupValidator: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let signupTextField = textField as? SignupField {
+        if let signupTextField = textField as? FormField {
             signupTextField.nextResonder?.becomeFirstResponder()
         }
         return true
