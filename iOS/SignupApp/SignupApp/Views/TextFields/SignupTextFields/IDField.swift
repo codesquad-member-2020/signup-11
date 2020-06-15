@@ -8,12 +8,7 @@
 
 import UIKit
 
-final class IDField: SignupField {
-    enum Status {
-        case isNotCorrect
-        case isCorrectButNotCheckOverlapValidation
-        case isCorrect
-    }
+final class IDField: SignupField, IDTextableView {
     var status = Status.isNotCorrect
 
     override init(frame: CGRect) {

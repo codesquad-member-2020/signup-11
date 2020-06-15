@@ -22,17 +22,17 @@ final class IDValidator: SignupValidator {
     override func validateText(of signupTextableView: SignupTextableView?) {
         guard let signupTextableView = signupTextableView else { return }
         
-        guard let idField = signupTextableView as? IDField,
-        idField.status != .isCorrect else { return }
+        guard let idTextableView = signupTextableView as? IDTextableView,
+        idTextableView.status != .isCorrect else { return }
         
-        if isCorrectID(idField.text) {
-            idField.setWrongCase(message: Self.messageRequireValidation)
-            idField.status = .isCorrectButNotCheckOverlapValidation
+        if isCorrectID(idTextableView.text) {
+            idTextableView.setWrongCase(message: Self.messageRequireValidation)
+            idTextableView.status = .isCorrectButNotCheckOverlapValidation
         } else {
-            idField.setWrongCase(message: Self.messageNotCorrectID)
-            idField.status = .isNotCorrect
+            idTextableView.setWrongCase(message: Self.messageNotCorrectID)
+            idTextableView.status = .isNotCorrect
         }
         
-        super.validateText(of: idField)
+        super.validateText(of: idTextableView)
     }
 }
