@@ -9,15 +9,6 @@
 import UIKit
 
 final class IDValidator: SignupValidator {
-    override func textFieldDidChangeSelection(_ textField: UITextField) {
-        validateCurrentText(of: textField)
-    }
-    
-    override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        validateCurrentText(of: textField)
-        return true
-    }
-    
     private static let messageNotCorrectID = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-)만 사용 가능합니다."
     private static let messageRequireValidation = "사용 가능하지만 아이디 중복 검사를 진행하셔야 합니다."
     @discardableResult

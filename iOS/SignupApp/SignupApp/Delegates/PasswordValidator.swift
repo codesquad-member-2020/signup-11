@@ -13,15 +13,6 @@ final class PasswordValidator: SignupValidator {
         return 16
     }
     
-    override func textFieldDidChangeSelection(_ textField: UITextField) {
-        validateCurrentText(of: textField)
-    }
-    
-    override func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        validateCurrentText(of: textField)
-        return true
-    }
-    
     private static let messageCorrectTextLength = "8자 이상 16자 이하로 입력해주세요."
     private static let messageWriteUpperCapitalLetter = "영문 대문자를 최소 1자 이상 포함해주세요. "
     private static let messageWriteNumber = "숫자를 최소 1자 이상 포함해주세요."
