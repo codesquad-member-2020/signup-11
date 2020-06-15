@@ -9,9 +9,11 @@
 import Foundation
 
 final class DataCoder {
-    static func decodeJSONData<T>(type: T.Type,
-                                  data: Data,
-                                  dateDecodingStrategy: JSONDecoder.DateDecodingStrategy?) -> T? where T: Decodable {
+    static func decodeJSONData<T>(
+        type: T.Type,
+        data: Data,
+        dateDecodingStrategy: JSONDecoder.DateDecodingStrategy?
+    ) -> T? where T: Decodable {
         let jsonDecoder: JSONDecoder = {
             let jsonDecoder = JSONDecoder()
             if let dateDecodingStrategy = dateDecodingStrategy {

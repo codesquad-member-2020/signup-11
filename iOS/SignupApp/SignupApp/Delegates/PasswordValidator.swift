@@ -71,3 +71,4 @@ final class PasswordValidator: SignupValidator {
         return regex.firstMatch(in: text, range: range) != nil
     }
 }
+

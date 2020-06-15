@@ -51,7 +51,7 @@ final class SignupViewController: UIViewController {
         pwAgainTextField.signupFieldDelegate = self
         nameTextField.signupFieldDelegate = self
     }
-
+    
     private func setNextButtonDelegate() {
         completeButton.delegate = self
     }
@@ -119,15 +119,19 @@ extension SignupViewController: CompleteButtonDelegate {
                         password: pwTextField.text!,
                         name: nameTextField.text!)
         guard let jsonData = DataCoder.encodeJSONData(user) else { return }
-        NetworkManager.excuteURLSession(method: .post,
-                                        from: SignupURL.urlStringUserIntitatationInfo,
-                                        data: jsonData) { data in
-                                            guard let data = data else { return }
-                                            guard let createUserResponse = DataCoder.decodeJSONData(type: CreateUserResponse.self,
-                                                                                              data: data,
-                                                                                              dateDecodingStrategy: nil)
-                                                else { return }
-                                            resultHandler(createUserResponse.success)
+        
+        NetworkManager.excuteURLSession(
+            method: .post,
+            from: SignupURL.urlStringUserIntitatationInfo,
+            data: jsonData
+        ) { data in
+            guard let data = data else { return }
+            guard let createUserResponse = DataCoder.decodeJSONData(
+                type: CreateUserResponse.self,
+                data: data,
+                dateDecodingStrategy: nil) else { return }
+            
+            resultHandler(createUserResponse.success)
         }
     }
     

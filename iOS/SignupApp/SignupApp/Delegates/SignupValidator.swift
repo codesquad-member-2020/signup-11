@@ -30,7 +30,11 @@ class SignupValidator: NSObject {
 }
 
 extension SignupValidator: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
         let textFieldTextCount = textField.text?.count ?? 0
         let totalLength = textFieldTextCount + string.count - range.length
         return totalLength <= textLimit

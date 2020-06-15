@@ -34,7 +34,9 @@ class SignupField: FormField, SignupTextableView {
     
     private func setMessageLabel() {
         addSubview(messageLabel)
-        messageLabel.trailingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+        messageLabel.trailingAnchor.constraint(
+            greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor
+        ).isActive = true
         messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         messageLabel.topAnchor.constraint(equalTo: self.bottomAnchor, constant: 2).isActive = true
     }
