@@ -13,11 +13,6 @@ class SignupValidator: NSObject {
         return 20
     }
     
-    private func isTextLengthZero(count: Int?) -> Bool {
-        guard let count = count else { return false }
-        return count == 0
-    }
-    
     private static let messageRequireText = "필수 항목입니다."
     
     func validateText(of signupTextableView: SignupTextableView?) {
@@ -26,6 +21,11 @@ class SignupValidator: NSObject {
         if isTextLengthZero(count: signupTextableView.text?.count) {
             signupTextableView.setWrongCase(message: Self.messageRequireText)
         }
+    }
+    
+    private func isTextLengthZero(count: Int?) -> Bool {
+        guard let count = count else { return false }
+        return count == 0
     }
 }
 
