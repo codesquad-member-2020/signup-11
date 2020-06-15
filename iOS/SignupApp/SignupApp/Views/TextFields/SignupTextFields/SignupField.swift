@@ -12,7 +12,7 @@ protocol SignupFieldDelegate: class {
     func signupFieldIsCorrectDidChange()
 }
 
-class SignupField: FormField {
+class SignupField: FormField, SignupTextableView {
     private(set) var isCorrect = false {
         didSet {
             guard isCorrect != oldValue else { return }

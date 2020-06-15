@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A35D407249799CD0038AD6F /* SignupTextableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D406249799CD0038AD6F /* SignupTextableView.swift */; };
 		5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */; };
 		5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E3242B5BB20095FA0C /* SignupField.swift */; };
 		5A4CA5E9242B7E9D0095FA0C /* SignupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A35D406249799CD0038AD6F /* SignupTextableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextableView.swift; sourceTree = "<group>"; };
 		5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordField.swift; sourceTree = "<group>"; };
 		5A4CA5E3242B5BB20095FA0C /* SignupField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupField.swift; sourceTree = "<group>"; };
 		5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupValidator.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				5A7C6316242DCBAA0073CF72 /* CompleteButton.swift */,
 				5A7C6305242CB2D70073CF72 /* MessageLabel.swift */,
 				5A4CA5E0242B53C90095FA0C /* TextFields */,
+				5A35D406249799CD0038AD6F /* SignupTextableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				5A834FB1242F5FC5006245F2 /* FormField.swift in Sources */,
 				5A4CA5F1242B7FBF0095FA0C /* NameValidator.swift in Sources */,
 				5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */,
+				5A35D407249799CD0038AD6F /* SignupTextableView.swift in Sources */,
 				5A834FB72430490D006245F2 /* Login.swift in Sources */,
 				5A7C6315242DA3070073CF72 /* LoginResponse.swift in Sources */,
 				5A834FB9243077D1006245F2 /* SignupURL.swift in Sources */,
