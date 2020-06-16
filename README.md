@@ -40,7 +40,7 @@
   * 아이디가 이미 존재하는 경우 
   * 아이디의 조건이 맞는 경우 
 
-![id](https://user-images.githubusercontent.com/38216027/84370216-ecc5db80-ac12-11ea-8262-e0619436f12d.gif)
+![idCorrect](https://user-images.githubusercontent.com/38216027/84474542-fa886900-acc5-11ea-8a4c-884bddb95cc5.gif)
 
 * 비밀번호 
   * 8자 이상, 16자 이하로 적지 않은 경우
