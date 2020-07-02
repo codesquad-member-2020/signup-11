@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A11BE6D24AE022600EC499E /* IDPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BE6C24AE022600EC499E /* IDPresenterTests.swift */; };
+		5A11BE6F24AE056500EC499E /* PasswordPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BE6E24AE056500EC499E /* PasswordPresenterTests.swift */; };
 		5A35D407249799CD0038AD6F /* SignupTextableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D406249799CD0038AD6F /* SignupTextableView.swift */; };
 		5A35D40924979E990038AD6F /* IDableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D40824979E990038AD6F /* IDableView.swift */; };
 		5A35D40B2497A18D0038AD6F /* RePasswordableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		5A11BE6C24AE022600EC499E /* IDPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDPresenterTests.swift; sourceTree = "<group>"; };
+		5A11BE6E24AE056500EC499E /* PasswordPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenterTests.swift; sourceTree = "<group>"; };
 		5A35D406249799CD0038AD6F /* SignupTextableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextableView.swift; sourceTree = "<group>"; };
 		5A35D40824979E990038AD6F /* IDableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDableView.swift; sourceTree = "<group>"; };
 		5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordableView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				5A834522242A301E00F20FAA /* SignupPresenterTests.swift */,
 				5A834524242A301E00F20FAA /* Info.plist */,
 				5A11BE6C24AE022600EC499E /* IDPresenterTests.swift */,
+				5A11BE6E24AE056500EC499E /* PasswordPresenterTests.swift */,
 			);
 			path = SignupAppTests;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A834523242A301E00F20FAA /* SignupPresenterTests.swift in Sources */,
+				5A11BE6F24AE056500EC499E /* PasswordPresenterTests.swift in Sources */,
 				5A11BE6D24AE022600EC499E /* IDPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

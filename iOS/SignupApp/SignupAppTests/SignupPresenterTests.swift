@@ -10,7 +10,7 @@ import XCTest
 import UIKit
 @testable import SignupApp
 
-final class SignupTextableViewSpy: UIView, SignupTextableView {
+private final class SignupTextableViewSpy: UIView, SignupTextableView {
     var isCorrect: Bool = false
     
     var text: String? = ""

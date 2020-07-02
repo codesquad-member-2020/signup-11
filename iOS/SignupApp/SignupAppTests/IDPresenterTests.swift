@@ -10,7 +10,7 @@ import XCTest
 import UIKit
 @testable import SignupApp
 
-final class IDableViewSpy: UIView, IDableView {
+private final class IDableViewSpy: UIView, IDableView {
     var status = Status.isNotCorrect
     
     var isCorrect: Bool = false
