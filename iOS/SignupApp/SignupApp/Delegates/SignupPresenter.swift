@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupValidator: NSObject {
+class SignupPresenter: NSObject {
     var textLimit : Int {
         return 20
     }
@@ -29,7 +29,7 @@ class SignupValidator: NSObject {
     }
 }
 
-extension SignupValidator: UITextFieldDelegate {
+extension SignupPresenter: UITextFieldDelegate {
     func textField(
         _ textField: UITextField,
         shouldChangeCharactersIn range: NSRange,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NameValidator: SignupValidator {
+final class NamePresenter: SignupPresenter {
     private static let messageShouldNotHaveSpace = "공백이 포함되면 안됩니다."
     private static let messageCorrectName = "사용가능한 이름입니다."
     

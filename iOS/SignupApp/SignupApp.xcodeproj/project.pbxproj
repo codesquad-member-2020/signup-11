@@ -12,11 +12,11 @@
 		5A35D40B2497A18D0038AD6F /* RePasswordableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */; };
 		5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */; };
 		5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E3242B5BB20095FA0C /* SignupField.swift */; };
-		5A4CA5E9242B7E9D0095FA0C /* SignupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */; };
-		5A4CA5EB242B7EE30095FA0C /* IDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EA242B7EE30095FA0C /* IDValidator.swift */; };
-		5A4CA5ED242B7F920095FA0C /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EC242B7F920095FA0C /* PasswordValidator.swift */; };
-		5A4CA5EF242B7FAA0095FA0C /* RePasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EE242B7FAA0095FA0C /* RePasswordValidator.swift */; };
-		5A4CA5F1242B7FBF0095FA0C /* NameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5F0242B7FBF0095FA0C /* NameValidator.swift */; };
+		5A4CA5E9242B7E9D0095FA0C /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5E8242B7E9D0095FA0C /* SignupPresenter.swift */; };
+		5A4CA5EB242B7EE30095FA0C /* IDPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EA242B7EE30095FA0C /* IDPresenter.swift */; };
+		5A4CA5ED242B7F920095FA0C /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EC242B7F920095FA0C /* PasswordPresenter.swift */; };
+		5A4CA5EF242B7FAA0095FA0C /* RePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EE242B7FAA0095FA0C /* RePasswordPresenter.swift */; };
+		5A4CA5F1242B7FBF0095FA0C /* NamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5F0242B7FBF0095FA0C /* NamePresenter.swift */; };
 		5A6716D8249346280075B510 /* OverlapValidationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6716D7249346280075B510 /* OverlapValidationButton.swift */; };
 		5A6716DA24934D260075B510 /* IDField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6716D924934D260075B510 /* IDField.swift */; };
 		5A6716DC249351700075B510 /* IDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6716DB249351700075B510 /* IDResponse.swift */; };
@@ -65,11 +65,11 @@
 		5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordableView.swift; sourceTree = "<group>"; };
 		5A4CA5DC242B4DAE0095FA0C /* RePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordField.swift; sourceTree = "<group>"; };
 		5A4CA5E3242B5BB20095FA0C /* SignupField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupField.swift; sourceTree = "<group>"; };
-		5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupValidator.swift; sourceTree = "<group>"; };
-		5A4CA5EA242B7EE30095FA0C /* IDValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDValidator.swift; sourceTree = "<group>"; };
-		5A4CA5EC242B7F920095FA0C /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
-		5A4CA5EE242B7FAA0095FA0C /* RePasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordValidator.swift; sourceTree = "<group>"; };
-		5A4CA5F0242B7FBF0095FA0C /* NameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidator.swift; sourceTree = "<group>"; };
+		5A4CA5E8242B7E9D0095FA0C /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		5A4CA5EA242B7EE30095FA0C /* IDPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDPresenter.swift; sourceTree = "<group>"; };
+		5A4CA5EC242B7F920095FA0C /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
+		5A4CA5EE242B7FAA0095FA0C /* RePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordPresenter.swift; sourceTree = "<group>"; };
+		5A4CA5F0242B7FBF0095FA0C /* NamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePresenter.swift; sourceTree = "<group>"; };
 		5A6716D7249346280075B510 /* OverlapValidationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapValidationButton.swift; sourceTree = "<group>"; };
 		5A6716D924934D260075B510 /* IDField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDField.swift; sourceTree = "<group>"; };
 		5A6716DB249351700075B510 /* IDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDResponse.swift; sourceTree = "<group>"; };
@@ -152,11 +152,11 @@
 		5A4CA5E7242B7CED0095FA0C /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				5A4CA5E8242B7E9D0095FA0C /* SignupValidator.swift */,
-				5A4CA5EA242B7EE30095FA0C /* IDValidator.swift */,
-				5A4CA5EC242B7F920095FA0C /* PasswordValidator.swift */,
-				5A4CA5EE242B7FAA0095FA0C /* RePasswordValidator.swift */,
-				5A4CA5F0242B7FBF0095FA0C /* NameValidator.swift */,
+				5A4CA5E8242B7E9D0095FA0C /* SignupPresenter.swift */,
+				5A4CA5EA242B7EE30095FA0C /* IDPresenter.swift */,
+				5A4CA5EC242B7F920095FA0C /* PasswordPresenter.swift */,
+				5A4CA5EE242B7FAA0095FA0C /* RePasswordPresenter.swift */,
+				5A4CA5F0242B7FBF0095FA0C /* NamePresenter.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -391,13 +391,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7C6312242D9F1B0073CF72 /* DataCoder.swift in Sources */,
-				5A4CA5EB242B7EE30095FA0C /* IDValidator.swift in Sources */,
+				5A4CA5EB242B7EE30095FA0C /* IDPresenter.swift in Sources */,
 				5A6716D8249346280075B510 /* OverlapValidationButton.swift in Sources */,
 				5A834510242A301B00F20FAA /* SignupViewController.swift in Sources */,
 				5A35D40924979E990038AD6F /* IDableView.swift in Sources */,
 				5A83450C242A301B00F20FAA /* AppDelegate.swift in Sources */,
 				5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */,
-				5A4CA5EF242B7FAA0095FA0C /* RePasswordValidator.swift in Sources */,
+				5A4CA5EF242B7FAA0095FA0C /* RePasswordPresenter.swift in Sources */,
 				5A6716DC249351700075B510 /* IDResponse.swift in Sources */,
 				5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */,
 				5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */,
@@ -406,12 +406,12 @@
 				5A7C6317242DCBAA0073CF72 /* CompleteButton.swift in Sources */,
 				5A7C6310242D9EEB0073CF72 /* NetworkManager.swift in Sources */,
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
-				5A4CA5ED242B7F920095FA0C /* PasswordValidator.swift in Sources */,
+				5A4CA5ED242B7F920095FA0C /* PasswordPresenter.swift in Sources */,
 				5A6716DE249351D70075B510 /* CreateUserResponse.swift in Sources */,
-				5A4CA5E9242B7E9D0095FA0C /* SignupValidator.swift in Sources */,
+				5A4CA5E9242B7E9D0095FA0C /* SignupPresenter.swift in Sources */,
 				5A6716DA24934D260075B510 /* IDField.swift in Sources */,
 				5A834FB1242F5FC5006245F2 /* FormField.swift in Sources */,
-				5A4CA5F1242B7FBF0095FA0C /* NameValidator.swift in Sources */,
+				5A4CA5F1242B7FBF0095FA0C /* NamePresenter.swift in Sources */,
 				5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */,
 				5A35D407249799CD0038AD6F /* SignupTextableView.swift in Sources */,
 				5A834FB72430490D006245F2 /* Login.swift in Sources */,
