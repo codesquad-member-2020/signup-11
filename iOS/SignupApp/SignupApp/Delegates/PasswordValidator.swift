@@ -14,7 +14,7 @@ final class PasswordValidator: SignupValidator {
     }
     
     private static let messageCorrectTextLength = "8자 이상 16자 이하로 입력해주세요."
-    private static let messageWriteUpperCapitalLetter = "영문 대문자를 최소 1자 이상 포함해주세요. "
+    private static let messageWriteUpperCapitalLetter = "영문 대문자를 최소 1자 이상 포함해주세요.g"
     private static let messageWriteNumber = "숫자를 최소 1자 이상 포함해주세요."
     private static let messageWriteSpecialCharacter = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
     private static let messageCorrectPassword = "안전한 비밀번호입니다."
