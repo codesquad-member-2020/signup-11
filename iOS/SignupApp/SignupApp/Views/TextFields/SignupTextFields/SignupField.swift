@@ -53,14 +53,6 @@ class SignupField: FormField, SignupTextableView {
         setCorrectTrue()
     }
     
-    func clearMessage() {
-        messageLabel.text = ""
-    }
-    
-    func isEqual(message: String) -> Bool {
-        messageLabel.text == message
-    }
-    
     private func setCorrectTrue() {
         isCorrect = true
     }
