@@ -14,8 +14,8 @@ final class RePasswordableViewSpy: UIView, RePasswordableView {
     var passwordTextableView: SignupTextableView? = SignupField()
     var isCorrect: Bool = false
     var text: String? = nil
-    
     var message: String? = nil
+    
     func setWrongCase(message: String) {
         self.message = message
     }

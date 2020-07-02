@@ -12,10 +12,9 @@ import UIKit
 
 private final class SignupTextableViewSpy: UIView, SignupTextableView {
     var isCorrect: Bool = false
-    
     var text: String? = ""
-    
     var message: String? = nil
+    
     func setWrongCase(message: String) {
         self.message = message
     }
