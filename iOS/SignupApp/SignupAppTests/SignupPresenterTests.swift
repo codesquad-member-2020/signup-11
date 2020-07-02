@@ -10,20 +10,6 @@ import XCTest
 import UIKit
 @testable import SignupApp
 
-private final class SignupTextableViewSpy: UIView, SignupTextableView {
-    var isCorrect: Bool = false
-    var text: String? = ""
-    var message: String? = nil
-    
-    func setWrongCase(message: String) {
-        self.message = message
-    }
-    
-    func setCorrectCase(message: String) {
-        self.message = message
-    }
-}
-
 final class SignupPresenterTests: XCTestCase {
     private var presenter: SignupPresenter!
     private var textableView: SignupTextableViewSpy!
@@ -31,6 +17,7 @@ final class SignupPresenterTests: XCTestCase {
     override func setUp() {
         presenter = SignupPresenter()
         textableView = SignupTextableViewSpy()
+        textableView.text = ""
     }
 
     override func tearDown() {
@@ -41,7 +28,6 @@ final class SignupPresenterTests: XCTestCase {
     func test_validateText_텍스트_길이가_0일때() throws {
         //when
         presenter.validateText(of: textableView)
-        
         //then
         let result = try XCTUnwrap(textableView.message)
         XCTAssertEqual(result, "필수 항목입니다.")

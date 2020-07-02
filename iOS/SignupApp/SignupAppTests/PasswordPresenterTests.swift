@@ -10,20 +10,6 @@ import XCTest
 import UIKit
 @testable import SignupApp
 
-private final class SignupTextableViewSpy: UIView, SignupTextableView {
-    var isCorrect: Bool = false
-    var text: String? = nil
-    var message: String? = nil
-    
-    func setWrongCase(message: String) {
-        self.message = message
-    }
-    
-    func setCorrectCase(message: String) {
-        self.message = message
-    }
-}
-
 final class PasswordPresenterTests: XCTestCase {
     private var presenter: PasswordPresenter!
     

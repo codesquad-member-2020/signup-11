@@ -10,7 +10,7 @@ import XCTest
 import UIKit
 @testable import SignupApp
 
-final class RePasswordableViewSpy: UIView, RePasswordableView {
+private final class RePasswordableViewSpy: UIView, RePasswordableView {
     var passwordTextableView: SignupTextableView? = SignupField()
     var isCorrect: Bool = false
     var text: String? = nil
