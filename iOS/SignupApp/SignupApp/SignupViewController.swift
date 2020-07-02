@@ -16,10 +16,10 @@ final class SignupViewController: UIViewController {
     @IBOutlet weak var completeButton: CompleteButton!
     private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     
-    private let idTextFieldDelegate = IDValidator()
-    private let pwAgainTextFieldDelegate = RePasswordValidator()
-    private let nameTextFieldDelegate = NameValidator()
-    private let pwTextFieldDelegate = PasswordValidator()
+    private let idTextFieldDelegate = IDPresenter()
+    private let pwAgainTextFieldDelegate = RePasswordPresenter()
+    private let nameTextFieldDelegate = NamePresenter()
+    private let pwTextFieldDelegate = PasswordPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
