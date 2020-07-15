@@ -81,6 +81,12 @@ final class SignupViewController: UIViewController {
     }
 }
 
+extension SignupViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+}
+
 extension SignupViewController: CompleteButtonDelegate {
     func completeButtonBecomeFirstResponder() {
         if completeButton.isEnabled {

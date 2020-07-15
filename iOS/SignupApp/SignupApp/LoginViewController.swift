@@ -62,6 +62,12 @@ final class LoginViewController: UIViewController {
     }
 }
 
+extension LoginViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+}
+
 private class ToastLabel: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
