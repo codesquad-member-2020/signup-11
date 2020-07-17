@@ -9,16 +9,18 @@
 import UIKit
 
 final class NamePresenter: SignupPresenter {
-    private static let messageShouldNotHaveSpace = "공백이 포함되면 안됩니다."
-    private static let messageCorrectName = "사용가능한 이름입니다."
+    private enum Message {
+        static let noSpaceRequest = "공백이 포함되면 안됩니다."
+        static let correctName = "사용가능한 이름입니다."
+    }
     
     override func validateText(of signupTextableView: SignupTextableView?) {
         guard let signupTextableView = signupTextableView else { return }
         
         if !hasNoSpace(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Self.messageShouldNotHaveSpace)
+            signupTextableView.setWrongCase(message: Message.noSpaceRequest)
         } else {
-            signupTextableView.setCorrectCase(message: Self.messageCorrectName)
+            signupTextableView.setCorrectCase(message: Message.correctName)
         }
         
         super.validateText(of: signupTextableView)

@@ -9,20 +9,22 @@
 import UIKit
 
 final class IDPresenter: SignupPresenter {
-    private static let messageNotCorrectID = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-)만 사용 가능합니다."
-    private static let messageRequireValidation = "사용 가능하지만 아이디 중복 검사를 진행하셔야 합니다."
-
+    private enum Message {
+        static let notCorrectID = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-)만 사용 가능합니다."
+        static let validationRequest = "사용 가능하지만 아이디 중복 검사를 진행하셔야 합니다."
+    }
+    
     override func validateText(of signupTextableView: SignupTextableView?) {
         guard let signupTextableView = signupTextableView else { return }
         
         guard let idTextableView = signupTextableView as? IDableView,
-        idTextableView.status != .isCorrect else { return }
+            idTextableView.status != .isCorrect else { return }
         
         if isCorrectID(idTextableView.text) {
-            idTextableView.setWrongCase(message: Self.messageRequireValidation)
+            idTextableView.setWrongCase(message: Message.notCorrectID)
             idTextableView.status = .isCorrectButNotCheckOverlapValidation
         } else {
-            idTextableView.setWrongCase(message: Self.messageNotCorrectID)
+            idTextableView.setWrongCase(message: Message.validationRequest)
             idTextableView.status = .isNotCorrect
         }
         

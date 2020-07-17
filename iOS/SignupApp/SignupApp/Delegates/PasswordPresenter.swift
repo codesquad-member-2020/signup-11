@@ -13,26 +13,27 @@ final class PasswordPresenter: SignupPresenter {
         return 16
     }
     
-    private static let messageCorrectTextLength = "8자 이상 16자 이하로 입력해주세요."
-    private static let messageWriteUpperCapitalLetter = "영문 대문자를 최소 1자 이상 포함해주세요."
-    private static let messageWriteNumber = "숫자를 최소 1자 이상 포함해주세요."
-    private static let messageWriteSpecialCharacter = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
-    private static let messageCorrectPassword = "안전한 비밀번호입니다."
+    private enum Message {
+        static let correctTextLengthRequest = "8자 이상 16자 이하로 입력해주세요."
+        static let upperCapitalLetterRequest = "영문 대문자를 최소 1자 이상 포함해주세요."
+        static let numberRequest = "숫자를 최소 1자 이상 포함해주세요."
+        static let specialCharacterRequest = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
+        static let correctPassword = "안전한 비밀번호입니다."
+    }
     
     override func validateText(of signupTextableView: SignupTextableView?) {
         guard let signupTextableView = signupTextableView else { return }
         
         if !isCorrectLength(min: 8, max: 16, count: signupTextableView.text?.count) {
-            signupTextableView.setWrongCase(message: Self.messageCorrectTextLength)
-            
+            signupTextableView.setWrongCase(message: Message.correctTextLengthRequest)
         } else if !hasUpperCaseLetter(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Self.messageWriteUpperCapitalLetter)
+            signupTextableView.setWrongCase(message: Message.upperCapitalLetterRequest)
         } else if !hasNumber(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Self.messageWriteNumber)
+            signupTextableView.setWrongCase(message: Message.numberRequest)
         } else if !hasSpecialCharacter(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Self.messageWriteSpecialCharacter)
+            signupTextableView.setWrongCase(message: Message.specialCharacterRequest)
         } else {
-            signupTextableView.setCorrectCase(message: Self.messageCorrectPassword)
+            signupTextableView.setCorrectCase(message: Message.correctPassword)
         }
         
         super.validateText(of: signupTextableView)

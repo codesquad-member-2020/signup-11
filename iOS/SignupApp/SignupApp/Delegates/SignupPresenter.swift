@@ -13,13 +13,15 @@ class SignupPresenter: NSObject {
         return 20
     }
     
-    private static let messageRequireText = "필수 항목입니다."
+    private enum Message {
+        static let textInputRequest = "필수 항목입니다."
+    }
     
     func validateText(of signupTextableView: SignupTextableView?) {
         guard let signupTextableView = signupTextableView else { return }
         
         if isTextLengthZero(count: signupTextableView.text?.count) {
-            signupTextableView.setWrongCase(message: Self.messageRequireText)
+            signupTextableView.setWrongCase(message: Message.textInputRequest)
         }
     }
     
