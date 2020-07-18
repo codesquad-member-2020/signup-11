@@ -89,21 +89,18 @@ extension SignupViewController {
 
 extension SignupViewController: CompleteButtonDelegate {
     func completeButtonBecomeFirstResponder() {
-        if completeButton.isEnabled {
-            createUser { result in
-                guard let result = result, result else { return }
-                DispatchQueue.main.async {
-                    self.showLoginViewController()
-                }
-            }
-        } else {
+        guard completeButton.isEnabled else {
             invalidTextFieldBecomeFirstResponder()
+            return
         }
+        
+        completeButtonTapped()
     }
     
     private func invalidTextFieldBecomeFirstResponder() {
         for textField in textFields {
             guard let textField = textField else { return }
+            
             if !textField.isCorrect {
                 textField.becomeFirstResponder()
                 return
