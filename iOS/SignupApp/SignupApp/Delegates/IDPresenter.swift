@@ -14,21 +14,21 @@ final class IDPresenter: SignupPresenter {
         static let validationRequest = "사용 가능하지만 아이디 중복 검사를 진행하셔야 합니다."
     }
     
-    override func validateText(of signupTextableView: SignupTextableView?) {
-        guard let signupTextableView = signupTextableView else { return }
+    override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
+        guard super.validateText(of: signupTextableView) else { return false }
+        guard let signupTextableView = signupTextableView,
+        let idTextableView = signupTextableView as? IDableView,
+            idTextableView.status != .isCorrect else { return false }
         
-        guard let idTextableView = signupTextableView as? IDableView,
-            idTextableView.status != .isCorrect else { return }
-        
-        if isCorrectID(idTextableView.text) {
+        guard isCorrectID(idTextableView.text) else {
             idTextableView.setWrongCase(message: Message.notCorrectID)
-            idTextableView.status = .isCorrectButNotCheckOverlapValidation
-        } else {
-            idTextableView.setWrongCase(message: Message.validationRequest)
             idTextableView.status = .isNotCorrect
+            return false
         }
         
-        super.validateText(of: idTextableView)
+        idTextableView.setWrongCase(message: Message.validationRequest)
+        idTextableView.status = .isCorrectButNotCheckOverlapValidation
+        return false
     }
     
     private static let correctIDPattern = "^[a-z0-9_\\-]{5,20}$"

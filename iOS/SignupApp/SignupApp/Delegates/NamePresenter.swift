@@ -14,16 +14,17 @@ final class NamePresenter: SignupPresenter {
         static let correctName = "사용가능한 이름입니다."
     }
     
-    override func validateText(of signupTextableView: SignupTextableView?) {
-        guard let signupTextableView = signupTextableView else { return }
+    override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
+        guard super.validateText(of: signupTextableView) else { return false }
+        guard let signupTextableView = signupTextableView else { return false }
         
-        if !hasNoSpace(signupTextableView.text) {
+        guard hasNoSpace(signupTextableView.text) else {
             signupTextableView.setWrongCase(message: Message.noSpaceRequest)
-        } else {
-            signupTextableView.setCorrectCase(message: Message.correctName)
+            return false
         }
         
-        super.validateText(of: signupTextableView)
+        signupTextableView.setCorrectCase(message: Message.correctName)
+        return true
     }
     
     private static let spaceCharacterPattern = "[\\s]"

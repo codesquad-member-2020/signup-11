@@ -21,22 +21,32 @@ final class PasswordPresenter: SignupPresenter {
         static let correctPassword = "안전한 비밀번호입니다."
     }
     
-    override func validateText(of signupTextableView: SignupTextableView?) {
-        guard let signupTextableView = signupTextableView else { return }
+    override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
+        guard super.validateText(of: signupTextableView) else { return false }
+        guard let signupTextableView = signupTextableView else { return false }
         
-        if !isCorrectLength(min: 8, max: 16, count: signupTextableView.text?.count) {
+        guard isCorrectLength(min: 8, max: 16, count: signupTextableView.text?.count) else {
             signupTextableView.setWrongCase(message: Message.correctTextLengthRequest)
-        } else if !hasUpperCaseLetter(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Message.upperCapitalLetterRequest)
-        } else if !hasNumber(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Message.numberRequest)
-        } else if !hasSpecialCharacter(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Message.specialCharacterRequest)
-        } else {
-            signupTextableView.setCorrectCase(message: Message.correctPassword)
+            return false
         }
         
-        super.validateText(of: signupTextableView)
+        guard hasUpperCaseLetter(signupTextableView.text) else {
+            signupTextableView.setWrongCase(message: Message.upperCapitalLetterRequest)
+            return false
+        }
+        
+        guard hasNumber(signupTextableView.text) else {
+            signupTextableView.setWrongCase(message: Message.numberRequest)
+            return false
+        }
+        
+        guard hasSpecialCharacter(signupTextableView.text) else {
+            signupTextableView.setWrongCase(message: Message.specialCharacterRequest)
+            return false
+        }
+        
+        signupTextableView.setCorrectCase(message: Message.correctPassword)
+        return true
     }
     
     private func isCorrectLength(min: Int = 1, max: Int, count: Int?) -> Bool {

@@ -15,20 +15,24 @@ final class RePasswordPresenter: SignupPresenter {
         static let samePassword = "비밀번호가 일치합니다."
     }
     
-    override func validateText(of signupTextableView: SignupTextableView?) {
-        guard let signupTextableView = signupTextableView else { return }
+    override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
+        guard super.validateText(of: signupTextableView) else { return false }
+        guard let signupTextableView = signupTextableView else { return false }
         guard let rePasswordableView = signupTextableView as? RePasswordableView,
-            let passwordTextableView = rePasswordableView.passwordTextableView else { return }
+            let passwordTextableView = rePasswordableView.passwordTextableView else { return false }
         
-        if !passwordTextableView.isCorrect {
+        guard passwordTextableView.isCorrect else {
             rePasswordableView.setWrongCase(message: Message.prePasswordInputRequest)
-        } else if !isSameText(lhs: passwordTextableView.text, rhs: rePasswordableView.text) {
-            rePasswordableView.setWrongCase(message: Message.notSame)
-        } else {
-            rePasswordableView.setCorrectCase(message: Message.samePassword)
+            return false
         }
         
-        super.validateText(of: rePasswordableView)
+        guard isSameText(lhs: passwordTextableView.text, rhs: rePasswordableView.text) else {
+            rePasswordableView.setWrongCase(message: Message.notSame)
+            return false
+        }
+        
+        rePasswordableView.setCorrectCase(message: Message.samePassword)
+        return true
     }
     
     private func isSameText(lhs: String?, rhs: String?) -> Bool {
