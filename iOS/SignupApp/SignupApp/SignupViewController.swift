@@ -23,40 +23,40 @@ final class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setRePasswordField()
-        setDelegates()
-        setNextResponders()
+        configureRePasswordField()
+        configureDelegates()
+        configureNextResponders()
     }
     
-    private func setRePasswordField() {
+    private func configureRePasswordField() {
         pwAgainTextField.passwordTextableView = pwTextField
     }
     
-    private func setDelegates() {
-        setUITextFieldDelegates()
-        setSignupFieldDelegates()
-        setNextButtonDelegate()
+    private func configureDelegates() {
+        cofigureUITextFieldDelegates()
+        configureSignupFieldDelegates()
+        configureNextButtonDelegate()
     }
     
-    private func setUITextFieldDelegates() {
+    private func cofigureUITextFieldDelegates() {
         idTextField.delegate = idTextFieldDelegate
         pwTextField.delegate = pwTextFieldDelegate
         pwAgainTextField.delegate = pwAgainTextFieldDelegate
         nameTextField.delegate = nameTextFieldDelegate
     }
     
-    private func setSignupFieldDelegates() {
+    private func configureSignupFieldDelegates() {
         idTextField.signupFieldDelegate = self
         pwTextField.signupFieldDelegate = self
         pwAgainTextField.signupFieldDelegate = self
         nameTextField.signupFieldDelegate = self
     }
     
-    private func setNextButtonDelegate() {
+    private func configureNextButtonDelegate() {
         completeButton.delegate = self
     }
     
-    private func setNextResponders() {
+    private func configureNextResponders() {
         idTextField.nextResonder = pwTextField
         pwTextField.nextResonder = pwAgainTextField
         pwAgainTextField.nextResonder = nameTextField
@@ -156,9 +156,9 @@ extension SignupViewController: SignupFieldDelegate {
     
     private func changeNextButton() {
         if isAllCorrect() {
-            completeButton.enabled()
+            completeButton.makeEnabled()
         } else {
-            completeButton.disabled()
+            completeButton.makeDisabled()
         }
     }
     

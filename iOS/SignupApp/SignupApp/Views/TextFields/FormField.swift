@@ -13,19 +13,15 @@ class FormField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        configureBorder()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setup()
+        configureBorder()
     }
     
-    private func setup() {
-        setBorder()
-    }
-    
-    private func setBorder() {
+    private func configureBorder() {
         layer.borderWidth = 0.9
         layer.borderColor = UIColor.greyColor.cgColor
     }

@@ -43,7 +43,6 @@ final class LoginViewController: UIViewController {
                 ) else { return }
             
             resultHandler(loginResponse.success)
-            
         }
     }
     
@@ -65,27 +64,5 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-    }
-}
-
-private class ToastLabel: UITextField {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    private func setup() {
-        backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        textColor = UIColor.white
-        textAlignment = .center;
-        font = UIFont(name: "Montserrat-Light", size: 12.0)
-        alpha = 1.0
-        layer.cornerRadius = 10;
-        clipsToBounds  =  true
     }
 }

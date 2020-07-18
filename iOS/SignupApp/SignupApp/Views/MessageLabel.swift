@@ -11,15 +11,15 @@ import UIKit
 final class MessageLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        configureView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setup()
+        configureView()
     }
     
-    private func setup() {
+    private func configureView() {
         translatesAutoresizingMaskIntoConstraints = false
         isHidden = true
         font = font.withSize(12)

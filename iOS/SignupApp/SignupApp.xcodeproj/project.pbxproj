@@ -12,6 +12,7 @@
 		5A11BE7124AE08D500EC499E /* RepasswordPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BE7024AE08D500EC499E /* RepasswordPresenterTests.swift */; };
 		5A11BE7324AE0CBF00EC499E /* NamePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BE7224AE0CBF00EC499E /* NamePresenterTests.swift */; };
 		5A11BE7524AE0D8B00EC499E /* SignupTextableViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BE7424AE0D8B00EC499E /* SignupTextableViewSpy.swift */; };
+		5A25561324C2B1220014D5E4 /* ToastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25561224C2B1220014D5E4 /* ToastLabel.swift */; };
 		5A35D407249799CD0038AD6F /* SignupTextableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D406249799CD0038AD6F /* SignupTextableView.swift */; };
 		5A35D40924979E990038AD6F /* IDableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D40824979E990038AD6F /* IDableView.swift */; };
 		5A35D40B2497A18D0038AD6F /* RePasswordableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */; };
@@ -70,6 +71,7 @@
 		5A11BE7024AE08D500EC499E /* RepasswordPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepasswordPresenterTests.swift; sourceTree = "<group>"; };
 		5A11BE7224AE0CBF00EC499E /* NamePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePresenterTests.swift; sourceTree = "<group>"; };
 		5A11BE7424AE0D8B00EC499E /* SignupTextableViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextableViewSpy.swift; sourceTree = "<group>"; };
+		5A25561224C2B1220014D5E4 /* ToastLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastLabel.swift; sourceTree = "<group>"; };
 		5A35D406249799CD0038AD6F /* SignupTextableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextableView.swift; sourceTree = "<group>"; };
 		5A35D40824979E990038AD6F /* IDableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDableView.swift; sourceTree = "<group>"; };
 		5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordableView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				5A35D406249799CD0038AD6F /* SignupTextableView.swift */,
 				5A35D40824979E990038AD6F /* IDableView.swift */,
 				5A35D40A2497A18D0038AD6F /* RePasswordableView.swift */,
+				5A25561224C2B1220014D5E4 /* ToastLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */,
 				5A4CA5EF242B7FAA0095FA0C /* RePasswordPresenter.swift in Sources */,
 				5A6716DC249351700075B510 /* IDResponse.swift in Sources */,
+				5A25561324C2B1220014D5E4 /* ToastLabel.swift in Sources */,
 				5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */,
 				5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */,
 				5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */,

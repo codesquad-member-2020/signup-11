@@ -24,15 +24,15 @@ class SignupField: FormField, SignupTextableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setMessageLabel()
+        configureMessageLabel()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setMessageLabel()
+        configureMessageLabel()
     }
     
-    private func setMessageLabel() {
+    private func configureMessageLabel() {
         addSubview(messageLabel)
         messageLabel.trailingAnchor.constraint(
             greaterThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor

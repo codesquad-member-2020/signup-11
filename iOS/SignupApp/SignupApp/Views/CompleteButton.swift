@@ -18,12 +18,14 @@ final class CompleteButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        configureDelegate()
+        makeDisabled()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setup()
+        configureDelegate()
+        makeDisabled()
     }
     
     deinit {
@@ -34,27 +36,26 @@ final class CompleteButton: UIButton {
         delegate?.completeButtonTapped()
     }
     
-    private func setup() {
+    private func configureDelegate() {
         addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        disabled()
     }
     
-    func disabled() {
-        setGreyButton()
+    func makeDisabled() {
+        configureGreyButton()
         isEnabled = false
     }
     
-    private func setGreyButton() {
+    private func configureGreyButton() {
         setTitleColor(UIColor.greyColor, for: .disabled)
         tintColor = UIColor.greyColor
     }
     
-    func enabled() {
-        setGreenButton()
+    func makeEnabled() {
+        configureGreenButton()
         isEnabled = true
     }
     
-    private func setGreenButton() {
+    private func configureGreenButton() {
         setTitleColor(UIColor.greenColor, for: .normal)
         tintColor = UIColor.greenColor
     }
