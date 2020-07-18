@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SignupViewController: UIViewController {
+final class SignupViewController: UIViewController, ToastShowable {
     @IBOutlet weak var idTextField: IDField!
     @IBOutlet weak var pwTextField: SignupField!
     @IBOutlet weak var pwAgainTextField: RePasswordField!
@@ -21,83 +21,106 @@ final class SignupViewController: UIViewController {
     private let nameTextFieldDelegate = NamePresenter()
     private let pwTextFieldDelegate = PasswordPresenter()
     
+    var toastLabel: ToastLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setRePasswordField()
-        setDelegates()
-        setNextResponders()
+        configureRePasswordField()
+        configureDelegates()
+        configureNextResponders()
+        configureToastLabel()
     }
     
-    private func setRePasswordField() {
+    private func configureRePasswordField() {
         pwAgainTextField.passwordTextableView = pwTextField
     }
     
-    private func setDelegates() {
-        setUITextFieldDelegates()
-        setSignupFieldDelegates()
-        setNextButtonDelegate()
+    private func configureDelegates() {
+        cofigureUITextFieldDelegates()
+        configureSignupFieldDelegates()
+        configureNextButtonDelegate()
     }
     
-    private func setUITextFieldDelegates() {
+    private func cofigureUITextFieldDelegates() {
         idTextField.delegate = idTextFieldDelegate
         pwTextField.delegate = pwTextFieldDelegate
         pwAgainTextField.delegate = pwAgainTextFieldDelegate
         nameTextField.delegate = nameTextFieldDelegate
     }
     
-    private func setSignupFieldDelegates() {
+    private func configureSignupFieldDelegates() {
         idTextField.signupFieldDelegate = self
         pwTextField.signupFieldDelegate = self
         pwAgainTextField.signupFieldDelegate = self
         nameTextField.signupFieldDelegate = self
     }
     
-    private func setNextButtonDelegate() {
+    private func configureNextButtonDelegate() {
         completeButton.delegate = self
     }
     
-    private func setNextResponders() {
+    private func configureNextResponders() {
         idTextField.nextResonder = pwTextField
         pwTextField.nextResonder = pwAgainTextField
         pwAgainTextField.nextResonder = nameTextField
         nameTextField.nextResonder = completeButton
     }
     
+    private func configureToastLabel() {
+        toastLabel = ToastLabel(
+            frame: CGRect(
+                x: 10,
+                y: self.view.frame.size.height-100,
+                width: view.frame.size.width - 2 * 10,
+                height: 35)
+        )
+    }
+    
     @IBAction func validatationButtonDidTouch(_ sender: OverlapValidationButton) {
-        guard idTextField.status == .isCorrectButNotCheckOverlapValidation else { return }
+        guard idTextField.isRequiredOverlapValidation else { return }
         
         sender.validateOverlappedID(idTextField.text) { isOverlapped in
             if isOverlapped {
-                DispatchQueue.main.async {
-                    self.idTextField.setWrongCaseOverlappedID()
-                }
+                self.setWrongCaseIDTextFieldForOverlaped()
                 return
             }
-            DispatchQueue.main.async {
-                self.idTextField.setCorrectCase()
-                self.idTextField.status = .isCorrect
-            }
+            self.setCorrectCaseIDTextField()
         }
+    }
+    
+    private func setWrongCaseIDTextFieldForOverlaped() {
+        DispatchQueue.main.async {
+                    self.idTextField.setWrongCaseOverlappedID()
+        }
+    }
+    
+    private func setCorrectCaseIDTextField() {
+        DispatchQueue.main.async {
+            self.idTextField.setCorrectCase()
+        }
+    }
+}
+
+extension SignupViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
 
 extension SignupViewController: CompleteButtonDelegate {
     func completeButtonBecomeFirstResponder() {
-        if completeButton.isEnabled {
-            createUser { result in
-                guard let result = result, result else { return }
-                DispatchQueue.main.async {
-                    self.showLoginViewController()
-                }
-            }
-        } else {
+        guard completeButton.isEnabled else {
             invalidTextFieldBecomeFirstResponder()
+            return
         }
+        
+        completeButtonTapped()
     }
     
     private func invalidTextFieldBecomeFirstResponder() {
         for textField in textFields {
             guard let textField = textField else { return }
+            
             if !textField.isCorrect {
                 textField.becomeFirstResponder()
                 return
@@ -108,9 +131,13 @@ extension SignupViewController: CompleteButtonDelegate {
     func completeButtonTapped() {
         createUser { result in
             guard let result = result, result else { return }
-            DispatchQueue.main.async {
-                self.showLoginViewController()
-            }
+            self.showToast(by: result)
+        }
+    }
+    
+    func showToast(by result: Bool) {
+        DispatchQueue.main.async {
+            result ? self.show(message: "회원가입 성공!") : self.show(message: "통신오류로 인한 회원가입 실패")
         }
     }
     
@@ -134,13 +161,6 @@ extension SignupViewController: CompleteButtonDelegate {
             resultHandler(createUserResponse.success)
         }
     }
-    
-    private func showLoginViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let loginViewController = storyboard.instantiateViewController(identifier: "loginViewController")
-        navigationController?.pushViewController(loginViewController,
-                                                 animated: true)
-    }
 }
 
 extension SignupViewController: SignupFieldDelegate {
@@ -150,9 +170,9 @@ extension SignupViewController: SignupFieldDelegate {
     
     private func changeNextButton() {
         if isAllCorrect() {
-            completeButton.enabled()
+            completeButton.makeEnabled()
         } else {
-            completeButton.disabled()
+            completeButton.makeDisabled()
         }
     }
     

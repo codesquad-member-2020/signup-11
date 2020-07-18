@@ -8,12 +8,6 @@
 
 import Foundation
 
-enum Status {
-    case isNotCorrect
-    case isCorrectButNotCheckOverlapValidation
-    case isCorrect
-}
-
 protocol IDableView: SignupTextableView {
-    var status: Status {get set}
+    var isRequiredOverlapValidation: Bool {get set}
 }

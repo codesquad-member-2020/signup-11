@@ -9,24 +9,30 @@
 import UIKit
 
 final class RePasswordPresenter: SignupPresenter {
-    private static let messagePrePasswordFirst = "이전 비밀번호를 먼저 올바르게 입력해주시기 바랍니다."
-    private static let messageNotSamePassword = "비밀번호가 일치하지 않습니다."
-    private static let messageSamePassword = "비밀번호가 일치합니다."
+    private enum Message {
+        static let prePasswordInputRequest = "이전 비밀번호를 먼저 올바르게 입력해주시기 바랍니다."
+        static let notSame = "비밀번호가 일치하지 않습니다."
+        static let samePassword = "비밀번호가 일치합니다."
+    }
     
-    override func validateText(of signupTextableView: SignupTextableView?) {
-        guard let signupTextableView = signupTextableView else { return }
+    override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
+        guard super.validateText(of: signupTextableView) else { return false }
+        guard let signupTextableView = signupTextableView else { return false }
         guard let rePasswordableView = signupTextableView as? RePasswordableView,
-            let passwordTextableView = rePasswordableView.passwordTextableView else { return }
- 
-        if !passwordTextableView.isCorrect {
-                 rePasswordableView.setWrongCase(message: Self.messagePrePasswordFirst)
-        } else if !isSameText(lhs: passwordTextableView.text, rhs: rePasswordableView.text) {
-            rePasswordableView.setWrongCase(message: Self.messageNotSamePassword)
-        } else {
-            rePasswordableView.setCorrectCase(message: Self.messageSamePassword)
+            let passwordTextableView = rePasswordableView.passwordTextableView else { return false }
+        
+        guard passwordTextableView.isCorrect else {
+            rePasswordableView.setWrongCase(message: Message.prePasswordInputRequest)
+            return false
         }
         
-        super.validateText(of: rePasswordableView)
+        guard isSameText(lhs: passwordTextableView.text, rhs: rePasswordableView.text) else {
+            rePasswordableView.setWrongCase(message: Message.notSame)
+            return false
+        }
+        
+        rePasswordableView.setCorrectCase(message: Message.samePassword)
+        return true
     }
     
     private func isSameText(lhs: String?, rhs: String?) -> Bool {

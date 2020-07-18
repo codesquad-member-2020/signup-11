@@ -13,29 +13,40 @@ final class PasswordPresenter: SignupPresenter {
         return 16
     }
     
-    private static let messageCorrectTextLength = "8자 이상 16자 이하로 입력해주세요."
-    private static let messageWriteUpperCapitalLetter = "영문 대문자를 최소 1자 이상 포함해주세요."
-    private static let messageWriteNumber = "숫자를 최소 1자 이상 포함해주세요."
-    private static let messageWriteSpecialCharacter = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
-    private static let messageCorrectPassword = "안전한 비밀번호입니다."
+    private enum Message {
+        static let correctTextLengthRequest = "8자 이상 16자 이하로 입력해주세요."
+        static let upperCapitalLetterRequest = "영문 대문자를 최소 1자 이상 포함해주세요."
+        static let numberRequest = "숫자를 최소 1자 이상 포함해주세요."
+        static let specialCharacterRequest = "특수문자를 최소 1자 이상 포함해주세요.(!@#$%)"
+        static let correctPassword = "안전한 비밀번호입니다."
+    }
     
-    override func validateText(of signupTextableView: SignupTextableView?) {
-        guard let signupTextableView = signupTextableView else { return }
+    override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
+        guard super.validateText(of: signupTextableView) else { return false }
+        guard let signupTextableView = signupTextableView else { return false }
         
-        if !isCorrectLength(min: 8, max: 16, count: signupTextableView.text?.count) {
-            signupTextableView.setWrongCase(message: Self.messageCorrectTextLength)
-            
-        } else if !hasUpperCaseLetter(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Self.messageWriteUpperCapitalLetter)
-        } else if !hasNumber(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Self.messageWriteNumber)
-        } else if !hasSpecialCharacter(signupTextableView.text) {
-            signupTextableView.setWrongCase(message: Self.messageWriteSpecialCharacter)
-        } else {
-            signupTextableView.setCorrectCase(message: Self.messageCorrectPassword)
+        guard isCorrectLength(min: 8, max: 16, count: signupTextableView.text?.count) else {
+            signupTextableView.setWrongCase(message: Message.correctTextLengthRequest)
+            return false
         }
         
-        super.validateText(of: signupTextableView)
+        guard hasUpperCaseLetter(signupTextableView.text) else {
+            signupTextableView.setWrongCase(message: Message.upperCapitalLetterRequest)
+            return false
+        }
+        
+        guard hasNumber(signupTextableView.text) else {
+            signupTextableView.setWrongCase(message: Message.numberRequest)
+            return false
+        }
+        
+        guard hasSpecialCharacter(signupTextableView.text) else {
+            signupTextableView.setWrongCase(message: Message.specialCharacterRequest)
+            return false
+        }
+        
+        signupTextableView.setCorrectCase(message: Message.correctPassword)
+        return true
     }
     
     private func isCorrectLength(min: Int = 1, max: Int, count: Int?) -> Bool {

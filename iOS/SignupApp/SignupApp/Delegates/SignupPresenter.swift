@@ -13,19 +13,25 @@ class SignupPresenter: NSObject {
         return 20
     }
     
-    private static let messageRequireText = "필수 항목입니다."
-    
-    func validateText(of signupTextableView: SignupTextableView?) {
-        guard let signupTextableView = signupTextableView else { return }
-        
-        if isTextLengthZero(count: signupTextableView.text?.count) {
-            signupTextableView.setWrongCase(message: Self.messageRequireText)
-        }
+    private enum Message {
+        static let textInputRequest = "필수 항목입니다."
     }
     
-    private func isTextLengthZero(count: Int?) -> Bool {
+    @discardableResult
+    func validateText(of signupTextableView: SignupTextableView?) -> Bool {
+        guard let signupTextableView = signupTextableView else { return false }
+        
+        guard isNotZero(count: signupTextableView.text?.count) else {
+            signupTextableView.setWrongCase(message: Message.textInputRequest)
+            return false
+        }
+        
+        return true
+    }
+    
+    private func isNotZero(count: Int?) -> Bool {
         guard let count = count else { return false }
-        return count == 0
+        return count != 0
     }
 }
 

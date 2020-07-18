@@ -11,7 +11,7 @@ import UIKit
 @testable import SignupApp
 
 private final class IDableViewSpy: UIView, IDableView {
-    var status = Status.isNotCorrect
+    var status = Status.notCorrect
     var isCorrect: Bool = false
     var text: String? = nil
     var message: String? = nil
