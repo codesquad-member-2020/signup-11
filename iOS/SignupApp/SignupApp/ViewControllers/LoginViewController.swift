@@ -8,12 +8,15 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController, ToastShowable {
     @IBOutlet weak var idTextField: FormField!
     @IBOutlet weak var pwTextField: FormField!
     
+    var toastLabel: ToastLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureToastLabel()
     }
     
     @IBAction func loginButtonTouched(_ sender: UIButton) {
@@ -46,18 +49,14 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    private func showToast(message : String) {
-        let toastLabel = ToastLabel(frame: CGRect(x: 10,
-                                                  y: self.view.frame.size.height-100,
-                                                  width: view.frame.size.width - 2 * 10,
-                                                  height: 35))
-        toastLabel.text = message
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: {(isCompleted) in
-            toastLabel.removeFromSuperview()
-        })
+    private func configureToastLabel() {
+        toastLabel = ToastLabel(
+            frame: CGRect(
+                x: 10,
+                y: self.view.frame.size.height-100,
+                width: view.frame.size.width - 2 * 10,
+                height: 35)
+        )
     }
 }
 
