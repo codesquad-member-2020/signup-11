@@ -22,9 +22,14 @@ final class LoginViewController: UIViewController, ToastShowable {
     @IBAction func loginButtonTouched(_ sender: UIButton) {
         isLogin { result in
             guard let result = result else { return }
-            DispatchQueue.main.async {
-                result ? self.showToast(message: "로그인 성공!") : self.showToast(message: "로그인 실패!")
-            }
+            
+            self.showToast(by: result)
+        }
+    }
+    
+    private func showToast(by result: Bool) {
+        DispatchQueue.main.async {
+            result ? self.showToast(message: "로그인 성공!") : self.showToast(message: "로그인 실패!")
         }
     }
     

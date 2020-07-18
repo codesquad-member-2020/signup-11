@@ -68,14 +68,22 @@ final class SignupViewController: UIViewController {
         
         sender.validateOverlappedID(idTextField.text) { isOverlapped in
             if isOverlapped {
-                DispatchQueue.main.async {
-                    self.idTextField.setWrongCaseOverlappedID()
-                }
+                self.setWrongCaseIDTextFieldForOverlaped()
                 return
             }
-            DispatchQueue.main.async {
-                self.idTextField.setCorrectCase()
-            }
+            self.setCorrectCaseIDTextField()
+        }
+    }
+    
+    private func setWrongCaseIDTextFieldForOverlaped() {
+        DispatchQueue.main.async {
+                    self.idTextField.setWrongCaseOverlappedID()
+        }
+    }
+    
+    private func setCorrectCaseIDTextField() {
+        DispatchQueue.main.async {
+            self.idTextField.setCorrectCase()
         }
     }
 }
