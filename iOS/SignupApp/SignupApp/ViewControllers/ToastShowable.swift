@@ -11,11 +11,12 @@ import UIKit
 protocol ToastShowable: UIViewController {
     var toastLabel: ToastLabel! {get set}
     
-    func showToast(message: String)
+    func show(message: String)
+    func showToast(by result: Bool)
 }
 
 extension ToastShowable {
-    func showToast(message: String) {
+    func show(message: String) {
         toastLabel.text = message
         view.addSubview(toastLabel)
         

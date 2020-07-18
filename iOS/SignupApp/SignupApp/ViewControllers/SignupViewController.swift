@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SignupViewController: UIViewController {
+final class SignupViewController: UIViewController, ToastShowable {
     @IBOutlet weak var idTextField: IDField!
     @IBOutlet weak var pwTextField: SignupField!
     @IBOutlet weak var pwAgainTextField: RePasswordField!
@@ -21,11 +21,14 @@ final class SignupViewController: UIViewController {
     private let nameTextFieldDelegate = NamePresenter()
     private let pwTextFieldDelegate = PasswordPresenter()
     
+    var toastLabel: ToastLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureRePasswordField()
         configureDelegates()
         configureNextResponders()
+        configureToastLabel()
     }
     
     private func configureRePasswordField() {
@@ -61,6 +64,16 @@ final class SignupViewController: UIViewController {
         pwTextField.nextResonder = pwAgainTextField
         pwAgainTextField.nextResonder = nameTextField
         nameTextField.nextResonder = completeButton
+    }
+    
+    private func configureToastLabel() {
+        toastLabel = ToastLabel(
+            frame: CGRect(
+                x: 10,
+                y: self.view.frame.size.height-100,
+                width: view.frame.size.width - 2 * 10,
+                height: 35)
+        )
     }
     
     @IBAction func validatationButtonDidTouch(_ sender: OverlapValidationButton) {
@@ -118,9 +131,13 @@ extension SignupViewController: CompleteButtonDelegate {
     func completeButtonTapped() {
         createUser { result in
             guard let result = result, result else { return }
-            DispatchQueue.main.async {
-                self.showLoginViewController()
-            }
+            self.showToast(by: result)
+        }
+    }
+    
+    func showToast(by result: Bool) {
+        DispatchQueue.main.async {
+            result ? self.show(message: "회원가입 성공!") : self.show(message: "통신오류로 인한 회원가입 실패")
         }
     }
     
@@ -143,13 +160,6 @@ extension SignupViewController: CompleteButtonDelegate {
             
             resultHandler(createUserResponse.success)
         }
-    }
-    
-    private func showLoginViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let loginViewController = storyboard.instantiateViewController(identifier: "loginViewController")
-        navigationController?.pushViewController(loginViewController,
-                                                 animated: true)
     }
 }
 

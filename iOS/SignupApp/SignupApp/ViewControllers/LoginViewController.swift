@@ -27,9 +27,9 @@ final class LoginViewController: UIViewController, ToastShowable {
         }
     }
     
-    private func showToast(by result: Bool) {
+    func showToast(by result: Bool) {
         DispatchQueue.main.async {
-            result ? self.showToast(message: "로그인 성공!") : self.showToast(message: "로그인 실패!")
+            result ? self.show(message: "로그인 성공!") : self.show(message: "로그인 실패!")
         }
     }
     
