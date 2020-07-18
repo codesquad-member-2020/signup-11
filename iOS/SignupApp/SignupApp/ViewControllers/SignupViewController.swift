@@ -64,7 +64,7 @@ final class SignupViewController: UIViewController {
     }
     
     @IBAction func validatationButtonDidTouch(_ sender: OverlapValidationButton) {
-        guard idTextField.status == .isCorrectButNotCheckOverlapValidation else { return }
+        guard idTextField.isRequiredOverlapValidation else { return }
         
         sender.validateOverlappedID(idTextField.text) { isOverlapped in
             if isOverlapped {
@@ -75,7 +75,6 @@ final class SignupViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.idTextField.setCorrectCase()
-                self.idTextField.status = .isCorrect
             }
         }
     }

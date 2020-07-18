@@ -17,17 +17,17 @@ final class IDPresenter: SignupPresenter {
     override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
         guard super.validateText(of: signupTextableView) else { return false }
         guard let signupTextableView = signupTextableView,
-        let idTextableView = signupTextableView as? IDableView,
-            idTextableView.status != .isCorrect else { return false }
+            let idTextableView = signupTextableView as? IDableView,
+            !idTextableView.isCorrect else { return false }
         
         guard isCorrectID(idTextableView.text) else {
             idTextableView.setWrongCase(message: Message.notCorrectID)
-            idTextableView.status = .isNotCorrect
+            idTextableView.isRequiredOverlapValidation = false
             return false
         }
         
         idTextableView.setWrongCase(message: Message.validationRequest)
-        idTextableView.status = .isCorrectButNotCheckOverlapValidation
+        idTextableView.isRequiredOverlapValidation = true
         return false
     }
     

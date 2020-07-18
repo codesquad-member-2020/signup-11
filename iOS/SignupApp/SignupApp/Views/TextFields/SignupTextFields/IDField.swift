@@ -9,8 +9,8 @@
 import UIKit
 
 final class IDField: SignupField, IDableView {
-    var status = Status.isNotCorrect
-
+    var isRequiredOverlapValidation = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
