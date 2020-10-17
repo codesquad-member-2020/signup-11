@@ -80,6 +80,7 @@ final class SignupViewController: UIViewController, ToastShowable {
     @IBAction func validatationButtonDidTouch(_ sender: OverlapValidationButton) {
         guard idTextField.isRequiredOverlapValidation else { return }
         
+        // 중복확인을 뷰가 하면 안되지, 네트워크 연동인데. 네트워크 객체하도록 코드를 작성하자.
         sender.validateOverlappedID(idTextField.text) { isOverlapped in
             if isOverlapped {
                 self.setWrongCaseIDTextFieldForOverlaped()
@@ -129,6 +130,7 @@ extension SignupViewController: CompleteButtonDelegate {
         }
     }
     
+    // 이 부분 분리해야 돼
     func completeButtonTapped() {
         createUser { result in
             guard let result = result, result else { return }
@@ -142,15 +144,18 @@ extension SignupViewController: CompleteButtonDelegate {
         }
     }
     
+    // 이 부분 분리하자.
     private func createUser(resultHandler: @escaping (Bool?) -> ()) {
         let user = User(userId: idTextField.text!,
                         password: pwTextField.text!,
                         name: nameTextField.text!)
+        // 디코드도 따로 하는 객체를 만들자. UseCase(queue) -> Task(디코딩 역할) -> NetworkDispatcher(네트워크 로드) , Request
         guard let jsonData = DataCoder.encodeJSONData(user) else { return }
         
+        // 이 메소드는 인스턴스 메소드로 만든다.
         NetworkManager.excuteURLSession(
             method: .post,
-            from: SignupURL.urlStringUserIntitatationInfo,
+            from: Endpoints.urlStringUserIntitatationInfo,
             data: jsonData
         ) { data in
             guard let data = data else { return }

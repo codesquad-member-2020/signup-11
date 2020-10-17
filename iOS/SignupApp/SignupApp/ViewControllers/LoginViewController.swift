@@ -34,6 +34,7 @@ final class LoginViewController: UIViewController, ToastShowable {
         }
     }
     
+    // 이 부분도 분리하자 
     private func isLogin(resultHandler: @escaping (Bool?) -> ()) {
         let login = Login(userId: idTextField.text!,
                           password: pwTextField.text!)
@@ -41,7 +42,7 @@ final class LoginViewController: UIViewController, ToastShowable {
         
         NetworkManager.excuteURLSession(
             method: .post,
-            from: SignupURL.urlStringLoginInfo,
+            from: Endpoints.urlStringLoginInfo,
             data: jsonData
         ) { data in
             guard let data = data else { return }

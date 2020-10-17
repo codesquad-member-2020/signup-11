@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum SignupURL {
+enum Endpoints {
     static let urlStringUserIDInfo = "https://signup11.herokuapp.com/api/userId/"
     static let urlStringUserIntitatationInfo = "https://signup11.herokuapp.com/users"
     static let urlStringLoginInfo = "https://signup11.herokuapp.com/users/login"

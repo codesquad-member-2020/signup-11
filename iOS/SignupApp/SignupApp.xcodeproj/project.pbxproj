@@ -46,7 +46,7 @@
 		5A834FB1242F5FC5006245F2 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB0242F5FC5006245F2 /* FormField.swift */; };
 		5A834FB52430459A006245F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB42430459A006245F2 /* User.swift */; };
 		5A834FB72430490D006245F2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB62430490D006245F2 /* Login.swift */; };
-		5A834FB9243077D1006245F2 /* SignupURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB8243077D1006245F2 /* SignupURL.swift */; };
+		5A834FB9243077D1006245F2 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB8243077D1006245F2 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +112,7 @@
 		5A834FB0242F5FC5006245F2 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		5A834FB42430459A006245F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A834FB62430490D006245F2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		5A834FB8243077D1006245F2 /* SignupURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupURL.swift; sourceTree = "<group>"; };
+		5A834FB8243077D1006245F2 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */,
-				5A834FB8243077D1006245F2 /* SignupURL.swift */,
+				5A834FB8243077D1006245F2 /* Endpoints.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -447,7 +447,7 @@
 				5A35D407249799CD0038AD6F /* SignupTextableView.swift in Sources */,
 				5A834FB72430490D006245F2 /* Login.swift in Sources */,
 				5A7C6315242DA3070073CF72 /* LoginResponse.swift in Sources */,
-				5A834FB9243077D1006245F2 /* SignupURL.swift in Sources */,
+				5A834FB9243077D1006245F2 /* Endpoints.swift in Sources */,
 				5A834FB52430459A006245F2 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

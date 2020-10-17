@@ -22,7 +22,7 @@ final class OverlapValidationButton: UIButton {
         
         NetworkManager.excuteURLSession(
             method: .get,
-            from: "\(SignupURL.urlStringUserIDInfo)\(id)", data: nil) { data in
+            from: "\(Endpoints.urlStringUserIDInfo)\(id)", data: nil) { data in
                 guard let data = data else { return }
                 guard let idResponse = DataCoder.decodeJSONData(
                     type: IDResponse.self,

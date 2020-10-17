@@ -35,6 +35,7 @@ final class NetworkManager {
         }.resume()
     }
     
+    // 이것도 객체로 분리해자. 
     private static func request(with url: URL, method: HTTPMethod, data: Data?) -> URLRequest {
         var request = URLRequest(url: url)
         
