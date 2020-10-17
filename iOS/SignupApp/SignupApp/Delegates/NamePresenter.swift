@@ -16,6 +16,7 @@ final class NamePresenter: SignupPresenter {
     
     override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
         guard super.validateText(of: signupTextableView) else { return false }
+        
         guard let signupTextableView = signupTextableView else { return false }
         
         guard hasNoSpace(signupTextableView.text) else {

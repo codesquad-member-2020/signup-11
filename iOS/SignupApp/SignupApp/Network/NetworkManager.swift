@@ -24,17 +24,25 @@ final class NetworkManager {
     static func excuteURLSession(method: HTTPMethod,
                                  from urlString: String,
                                  data: Data?,
-                                 completionHandler: @escaping (Data?) -> ()) {
+                                 completionHandler: @escaping (Data?) -> Void) {
         guard let url = URL(string: urlString) else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = method.description
-        request.httpBody = data
-        request.addValue(jsonType, forHTTPHeaderField: headerContentType)
-        request.addValue(jsonType, forHTTPHeaderField: headerAccept)
+        
+        let request = Self.request(with: url, method: method, data: data)
         URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
             guard error == nil else { return }
             guard let data = data else { return }
             completionHandler(data)
         }.resume()
+    }
+    
+    private static func request(with url: URL, method: HTTPMethod, data: Data?) -> URLRequest {
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = method.description
+        request.httpBody = data
+        request.addValue(jsonType, forHTTPHeaderField: headerContentType)
+        request.addValue(jsonType, forHTTPHeaderField: headerAccept)
+        
+        return request
     }
 }

@@ -16,6 +16,7 @@ final class LoginViewController: UIViewController, ToastShowable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureToastLabel()
     }
     
@@ -58,7 +59,7 @@ final class LoginViewController: UIViewController, ToastShowable {
         toastLabel = ToastLabel(
             frame: CGRect(
                 x: 10,
-                y: self.view.frame.size.height-100,
+                y: self.view.frame.size.height - 100,
                 width: view.frame.size.width - 2 * 10,
                 height: 35)
         )

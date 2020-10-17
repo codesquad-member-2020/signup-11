@@ -16,6 +16,7 @@ final class IDPresenter: SignupPresenter {
     
     override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
         guard super.validateText(of: signupTextableView) else { return false }
+        
         guard let signupTextableView = signupTextableView,
             let idTextableView = signupTextableView as? IDableView,
             !idTextableView.isCorrect else { return false }

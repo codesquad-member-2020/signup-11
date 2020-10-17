@@ -23,6 +23,7 @@ final class PasswordPresenter: SignupPresenter {
     
     override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
         guard super.validateText(of: signupTextableView) else { return false }
+        
         guard let signupTextableView = signupTextableView else { return false }
         
         guard isCorrectLength(min: 8, max: 16, count: signupTextableView.text?.count) else {

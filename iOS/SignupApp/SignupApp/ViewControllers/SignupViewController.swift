@@ -25,6 +25,7 @@ final class SignupViewController: UIViewController, ToastShowable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureRePasswordField()
         configureDelegates()
         configureNextResponders()
@@ -90,7 +91,7 @@ final class SignupViewController: UIViewController, ToastShowable {
     
     private func setWrongCaseIDTextFieldForOverlaped() {
         DispatchQueue.main.async {
-                    self.idTextField.setWrongCaseOverlappedID()
+            self.idTextField.setWrongCaseOverlappedID()
         }
     }
     

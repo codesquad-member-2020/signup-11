@@ -41,8 +41,10 @@ extension SignupPresenter: UITextFieldDelegate {
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
+        
         let textFieldTextCount = textField.text?.count ?? 0
         let totalLength = textFieldTextCount + string.count - range.length
+        
         return totalLength <= textLimit
     }
     

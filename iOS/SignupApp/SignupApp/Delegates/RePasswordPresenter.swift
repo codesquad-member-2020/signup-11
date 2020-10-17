@@ -17,6 +17,7 @@ final class RePasswordPresenter: SignupPresenter {
     
     override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
         guard super.validateText(of: signupTextableView) else { return false }
+        
         guard let signupTextableView = signupTextableView else { return false }
         guard let rePasswordableView = signupTextableView as? RePasswordableView,
             let passwordTextableView = rePasswordableView.passwordTextableView else { return false }

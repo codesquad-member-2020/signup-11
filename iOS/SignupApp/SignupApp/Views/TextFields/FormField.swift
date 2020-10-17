@@ -13,11 +13,13 @@ class FormField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         configureBorder()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
         configureBorder()
     }
     
