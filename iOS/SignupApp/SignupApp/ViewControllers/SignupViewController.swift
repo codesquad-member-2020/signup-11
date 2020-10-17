@@ -16,10 +16,10 @@ final class SignupViewController: UIViewController, ToastShowable {
     @IBOutlet weak var completeButton: CompleteButton!
     private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     
-    private let idTextFieldDelegate = IDPresenter()
-    private let pwAgainTextFieldDelegate = RePasswordPresenter()
-    private let nameTextFieldDelegate = NamePresenter()
-    private let pwTextFieldDelegate = PasswordPresenter()
+    private let idPresenter = IDPresenter()
+    private let passwordPresenter = PasswordPresenter()
+    private let rePasswordPresenter = RePasswordPresenter()
+    private let namePresenter = NamePresenter()
     
     var toastLabel: ToastLabel!
     
@@ -43,10 +43,10 @@ final class SignupViewController: UIViewController, ToastShowable {
     }
     
     private func cofigureUITextFieldDelegates() {
-        idTextField.delegate = idTextFieldDelegate
-        pwTextField.delegate = pwTextFieldDelegate
-        pwAgainTextField.delegate = pwAgainTextFieldDelegate
-        nameTextField.delegate = nameTextFieldDelegate
+        idTextField.delegate = idPresenter
+        pwTextField.delegate = passwordPresenter
+        pwAgainTextField.delegate = rePasswordPresenter
+        nameTextField.delegate = namePresenter
     }
     
     private func configureSignupFieldDelegates() {
@@ -71,7 +71,7 @@ final class SignupViewController: UIViewController, ToastShowable {
         toastLabel = ToastLabel(
             frame: CGRect(
                 x: 10,
-                y: self.view.frame.size.height-100,
+                y: self.view.frame.size.height - 100,
                 width: view.frame.size.width - 2 * 10,
                 height: 35)
         )
@@ -145,7 +145,7 @@ extension SignupViewController: CompleteButtonDelegate {
     }
     
     // 이 부분 분리하자.
-    private func createUser(resultHandler: @escaping (Bool?) -> ()) {
+    private func createUser(resultHandler: @escaping (Bool?) -> Void) {
         let user = User(userId: idTextField.text!,
                         password: pwTextField.text!,
                         name: nameTextField.text!)

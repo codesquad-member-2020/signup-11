@@ -8,6 +8,7 @@
 
 import Foundation
 
+// 이것도 없앤다.
 final class DataCoder {
     static func decodeJSONData<T>(
         type: T.Type,
