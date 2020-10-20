@@ -53,6 +53,7 @@
 		5ABD39C8253EE4AE00129166 /* UserCreationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C7253EE4AE00129166 /* UserCreationUseCase.swift */; };
 		5ABD39CA253EE56F00129166 /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C9253EE56F00129166 /* NetworkDispatcher.swift */; };
 		5ABD39CF253EEB0E00129166 /* ValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39CE253EEB0E00129166 /* ValidationUseCase.swift */; };
+		5ABD39D1253EEDD400129166 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39D0253EEDD400129166 /* LoginUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		5ABD39C7253EE4AE00129166 /* UserCreationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreationUseCase.swift; sourceTree = "<group>"; };
 		5ABD39C9253EE56F00129166 /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 		5ABD39CE253EEB0E00129166 /* ValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUseCase.swift; sourceTree = "<group>"; };
+		5ABD39D0253EEDD400129166 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 			children = (
 				5ABD39C7253EE4AE00129166 /* UserCreationUseCase.swift */,
 				5ABD39CE253EEB0E00129166 /* ValidationUseCase.swift */,
+				5ABD39D0253EEDD400129166 /* LoginUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				5A834FB72430490D006245F2 /* Login.swift in Sources */,
 				5ABD39C8253EE4AE00129166 /* UserCreationUseCase.swift in Sources */,
 				5A7C6315242DA3070073CF72 /* LoginResponse.swift in Sources */,
+				5ABD39D1253EEDD400129166 /* LoginUseCase.swift in Sources */,
 				5A834FB9243077D1006245F2 /* Endpoints.swift in Sources */,
 				5A834FB52430459A006245F2 /* User.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  UserCreationUseCase.swift
+//  LoginUseCase.swift
 //  SignupApp
 //
 //  Created by kimdo2297 on 2020/10/20.
@@ -8,24 +8,25 @@
 
 import Foundation
 
-final class UserCreationUseCase {
-    private let queue = DispatchQueue(label: "usercreation.usecase.queue")
+final class LoginUseCase {
+    private let queue = DispatchQueue(label: "login.usecase.queue")
     private let networkDispatcher: NetworkDispatcher
     
     init(networkDispatcher: NetworkDispatcher) {
         self.networkDispatcher = networkDispatcher
     }
     
-    func createUser(with request: Request, resultHandler: @escaping (Bool) -> Void) {
+    func requestIsLogin(with request: LoginRequest, resultHandler: @escaping (Bool) -> Void) {
         queue.async { [weak self] in
             self?.networkDispatcher.excute(request: request) { data in
                 guard let data = data else { return }
-                guard let createUserResponse = DataCoder.decodeJSONData(
-                    type: CreateUserResponse.self,
+                guard let loginResponse = DataCoder.decodeJSONData(
+                    type: LoginResponse.self,
                     data: data,
-                    dateDecodingStrategy: nil) else { return }
+                    dateDecodingStrategy: nil
+                    ) else { return }
                 
-                resultHandler(createUserResponse.success)
+                resultHandler(loginResponse.success)
             }
         }
     }

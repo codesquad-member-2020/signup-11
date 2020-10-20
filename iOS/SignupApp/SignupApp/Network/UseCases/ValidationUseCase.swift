@@ -17,7 +17,7 @@ final class ValidationUseCase {
     }
 
     func validateIsOverlapped(with request: ValidationRequest, resultHandler: @escaping (Bool) -> Void) {
-        queue.sync { [weak self] in
+        queue.async { [weak self] in
             self?.networkDispatcher.excute(request: request) { data in
                 guard let data = data else { return }
                 guard let idResponse = DataCoder.decodeJSONData(
