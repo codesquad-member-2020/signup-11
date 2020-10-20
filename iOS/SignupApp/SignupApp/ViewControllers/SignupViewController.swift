@@ -16,6 +16,7 @@ final class SignupViewController: UIViewController, ToastShowable {
     @IBOutlet weak var completeButton: CompleteButton!
     private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     
+    private let userCreationUseCase = UserCreationUseCase(networkDispatcher: NetworkManager())
     private let idPresenter = IDPresenter()
     private let passwordPresenter = PasswordPresenter()
     private let rePasswordPresenter = RePasswordPresenter()
@@ -130,10 +131,14 @@ extension SignupViewController: CompleteButtonDelegate {
         }
     }
     
-    // 이 부분 분리해야 돼
     func completeButtonTapped() {
-        createUser { result in
-            guard let result = result, result else { return }
+        guard let jsonData = User(userId: idTextField.text!,
+        password: pwTextField.text!,
+        name: nameTextField.text!).toJSON else { return }
+        
+        userCreationUseCase.createUser(with: UserCreationRequest(data: jsonData)) { result in
+            guard result else { return }
+            
             self.showToast(by: result)
         }
     }
@@ -141,30 +146,6 @@ extension SignupViewController: CompleteButtonDelegate {
     func showToast(by result: Bool) {
         DispatchQueue.main.async {
             result ? self.show(message: "회원가입 성공!") : self.show(message: "통신오류로 인한 회원가입 실패")
-        }
-    }
-    
-    // 이 부분 분리하자.
-    private func createUser(resultHandler: @escaping (Bool?) -> Void) {
-        let user = User(userId: idTextField.text!,
-                        password: pwTextField.text!,
-                        name: nameTextField.text!)
-        // 디코드도 따로 하는 객체를 만들자. UseCase(queue) -> Task(디코딩 역할) -> NetworkDispatcher(네트워크 로드) , Request
-        guard let jsonData = DataCoder.encodeJSONData(user) else { return }
-        
-        // 이 메소드는 인스턴스 메소드로 만든다.
-        NetworkManager.excuteURLSession(
-            method: .post,
-            from: Endpoints.urlStringUserIntitatationInfo,
-            data: jsonData
-        ) { data in
-            guard let data = data else { return }
-            guard let createUserResponse = DataCoder.decodeJSONData(
-                type: CreateUserResponse.self,
-                data: data,
-                dateDecodingStrategy: nil) else { return }
-            
-            resultHandler(createUserResponse.success)
         }
     }
 }

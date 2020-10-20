@@ -20,16 +20,15 @@ final class OverlapValidationButton: UIButton {
     func validateOverlappedID(_ id: String?, completion: @escaping (Bool) -> Void) {
         guard let id = id else { return }
         
-        NetworkManager.excuteURLSession(
-            method: .get,
-            from: "\(Endpoints.urlStringUserIDInfo)\(id)", data: nil) { data in
-                guard let data = data else { return }
-                guard let idResponse = DataCoder.decodeJSONData(
-                    type: IDResponse.self,
-                    data: data,
-                    dateDecodingStrategy: nil
-                    ) else { return }
-                completion(idResponse.isOverlapped)
+        NetworkManager().excute(request: ValidationRequest(id: id)) { data in
+            guard let data = data else { return }
+            guard let idResponse = DataCoder.decodeJSONData(
+                type: IDResponse.self,
+                data: data,
+                dateDecodingStrategy: nil
+                ) else { return }
+            
+            completion(idResponse.isOverlapped)
         }
     }
 }

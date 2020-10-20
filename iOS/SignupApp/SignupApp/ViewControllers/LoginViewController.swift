@@ -36,15 +36,10 @@ final class LoginViewController: UIViewController, ToastShowable {
     
     // 이 부분도 분리하자 
     private func isLogin(resultHandler: @escaping (Bool?) -> Void) {
-        let login = Login(userId: idTextField.text!,
-                          password: pwTextField.text!)
-        guard let jsonData = DataCoder.encodeJSONData(login) else { return }
+        guard let jsonData = Login(userId: idTextField.text!,
+                                   password: pwTextField.text!).toJson else { return }
         
-        NetworkManager.excuteURLSession(
-            method: .post,
-            from: Endpoints.urlStringLoginInfo,
-            data: jsonData
-        ) { data in
+        NetworkManager().excute(request: LoginRequest(data: jsonData)) { data in
             guard let data = data else { return }
             guard let loginResponse = DataCoder.decodeJSONData(
                 type: LoginResponse.self,

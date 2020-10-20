@@ -47,6 +47,12 @@
 		5A834FB52430459A006245F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB42430459A006245F2 /* User.swift */; };
 		5A834FB72430490D006245F2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB62430490D006245F2 /* Login.swift */; };
 		5A834FB9243077D1006245F2 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB8243077D1006245F2 /* Endpoints.swift */; };
+		5ABD39C0253EE07300129166 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39BF253EE07300129166 /* Request.swift */; };
+		5ABD39C2253EE20E00129166 /* ValidationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C1253EE20E00129166 /* ValidationRequest.swift */; };
+		5ABD39C4253EE2B900129166 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C3253EE2B900129166 /* LoginRequest.swift */; };
+		5ABD39C6253EE41700129166 /* UserCreationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C5253EE41700129166 /* UserCreationRequest.swift */; };
+		5ABD39C8253EE4AE00129166 /* UserCreationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C7253EE4AE00129166 /* UserCreationUseCase.swift */; };
+		5ABD39CA253EE56F00129166 /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C9253EE56F00129166 /* NetworkDispatcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +119,12 @@
 		5A834FB42430459A006245F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A834FB62430490D006245F2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5A834FB8243077D1006245F2 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		5ABD39BF253EE07300129166 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		5ABD39C1253EE20E00129166 /* ValidationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRequest.swift; sourceTree = "<group>"; };
+		5ABD39C3253EE2B900129166 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		5ABD39C5253EE41700129166 /* UserCreationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreationRequest.swift; sourceTree = "<group>"; };
+		5ABD39C7253EE4AE00129166 /* UserCreationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreationUseCase.swift; sourceTree = "<group>"; };
+		5ABD39C9253EE56F00129166 /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +212,12 @@
 			children = (
 				5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */,
 				5A834FB8243077D1006245F2 /* Endpoints.swift */,
+				5ABD39BF253EE07300129166 /* Request.swift */,
+				5ABD39C1253EE20E00129166 /* ValidationRequest.swift */,
+				5ABD39C3253EE2B900129166 /* LoginRequest.swift */,
+				5ABD39C5253EE41700129166 /* UserCreationRequest.swift */,
+				5ABD39C7253EE4AE00129166 /* UserCreationUseCase.swift */,
+				5ABD39C9253EE56F00129166 /* NetworkDispatcher.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -425,12 +443,16 @@
 				5A6716D8249346280075B510 /* OverlapValidationButton.swift in Sources */,
 				5A834510242A301B00F20FAA /* SignupViewController.swift in Sources */,
 				5A35D40924979E990038AD6F /* IDableView.swift in Sources */,
+				5ABD39C2253EE20E00129166 /* ValidationRequest.swift in Sources */,
+				5ABD39C0253EE07300129166 /* Request.swift in Sources */,
 				5A83450C242A301B00F20FAA /* AppDelegate.swift in Sources */,
+				5ABD39C6253EE41700129166 /* UserCreationRequest.swift in Sources */,
 				5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */,
 				5A4CA5EF242B7FAA0095FA0C /* RePasswordPresenter.swift in Sources */,
 				5A6716DC249351700075B510 /* IDResponse.swift in Sources */,
 				5A25561324C2B1220014D5E4 /* ToastLabel.swift in Sources */,
 				5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */,
+				5ABD39CA253EE56F00129166 /* NetworkDispatcher.swift in Sources */,
 				5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */,
 				5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */,
 				5A35D40B2497A18D0038AD6F /* RePasswordableView.swift in Sources */,
@@ -438,6 +460,7 @@
 				5A7C6310242D9EEB0073CF72 /* NetworkManager.swift in Sources */,
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
 				5A4CA5ED242B7F920095FA0C /* PasswordPresenter.swift in Sources */,
+				5ABD39C4253EE2B900129166 /* LoginRequest.swift in Sources */,
 				5A6716DE249351D70075B510 /* CreateUserResponse.swift in Sources */,
 				5A4CA5E9242B7E9D0095FA0C /* SignupPresenter.swift in Sources */,
 				5A6716DA24934D260075B510 /* IDField.swift in Sources */,
@@ -446,6 +469,7 @@
 				5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */,
 				5A35D407249799CD0038AD6F /* SignupTextableView.swift in Sources */,
 				5A834FB72430490D006245F2 /* Login.swift in Sources */,
+				5ABD39C8253EE4AE00129166 /* UserCreationUseCase.swift in Sources */,
 				5A7C6315242DA3070073CF72 /* LoginResponse.swift in Sources */,
 				5A834FB9243077D1006245F2 /* Endpoints.swift in Sources */,
 				5A834FB52430459A006245F2 /* User.swift in Sources */,
