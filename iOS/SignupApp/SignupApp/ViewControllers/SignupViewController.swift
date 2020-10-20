@@ -17,6 +17,7 @@ final class SignupViewController: UIViewController, ToastShowable {
     private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     
     private let userCreationUseCase = UserCreationUseCase(networkDispatcher: NetworkManager())
+    private let validationUseCase = ValidationUseCase(networkDispatcher: NetworkManager())
     private let idPresenter = IDPresenter()
     private let passwordPresenter = PasswordPresenter()
     private let rePasswordPresenter = RePasswordPresenter()
@@ -78,11 +79,11 @@ final class SignupViewController: UIViewController, ToastShowable {
         )
     }
     
-    @IBAction func validatationButtonDidTouch(_ sender: OverlapValidationButton) {
+    @IBAction func validatationButtonDidTouch(_ sender: UIButton) {
         guard idTextField.isRequiredOverlapValidation else { return }
-        
-        // 중복확인을 뷰가 하면 안되지, 네트워크 연동인데. 네트워크 객체하도록 코드를 작성하자.
-        sender.validateOverlappedID(idTextField.text) { isOverlapped in
+        guard let id = idTextField.text else { return }
+
+        validationUseCase.validateIsOverlapped(with: ValidationRequest(id: id)) { isOverlapped in
             if isOverlapped {
                 self.setWrongCaseIDTextFieldForOverlaped()
                 return
