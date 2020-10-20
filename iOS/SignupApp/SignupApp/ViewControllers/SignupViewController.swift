@@ -16,15 +16,18 @@ final class SignupViewController: UIViewController, ToastShowable {
     @IBOutlet weak var completeButton: CompleteButton!
     private lazy var textFields = [idTextField, pwTextField, pwAgainTextField, nameTextField]
     
-    private let idTextFieldDelegate = IDPresenter()
-    private let pwAgainTextFieldDelegate = RePasswordPresenter()
-    private let nameTextFieldDelegate = NamePresenter()
-    private let pwTextFieldDelegate = PasswordPresenter()
+    private let userCreationUseCase = UserCreationUseCase(networkDispatcher: NetworkManager())
+    private let validationUseCase = ValidationUseCase(networkDispatcher: NetworkManager())
+    private let idPresenter = IDPresenter()
+    private let passwordPresenter = PasswordPresenter()
+    private let rePasswordPresenter = RePasswordPresenter()
+    private let namePresenter = NamePresenter()
     
     var toastLabel: ToastLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureRePasswordField()
         configureDelegates()
         configureNextResponders()
@@ -42,10 +45,10 @@ final class SignupViewController: UIViewController, ToastShowable {
     }
     
     private func cofigureUITextFieldDelegates() {
-        idTextField.delegate = idTextFieldDelegate
-        pwTextField.delegate = pwTextFieldDelegate
-        pwAgainTextField.delegate = pwAgainTextFieldDelegate
-        nameTextField.delegate = nameTextFieldDelegate
+        idTextField.delegate = idPresenter
+        pwTextField.delegate = passwordPresenter
+        pwAgainTextField.delegate = rePasswordPresenter
+        nameTextField.delegate = namePresenter
     }
     
     private func configureSignupFieldDelegates() {
@@ -70,16 +73,17 @@ final class SignupViewController: UIViewController, ToastShowable {
         toastLabel = ToastLabel(
             frame: CGRect(
                 x: 10,
-                y: self.view.frame.size.height-100,
+                y: self.view.frame.size.height - 100,
                 width: view.frame.size.width - 2 * 10,
                 height: 35)
         )
     }
     
-    @IBAction func validatationButtonDidTouch(_ sender: OverlapValidationButton) {
+    @IBAction func validatationButtonDidTouch(_ sender: UIButton) {
         guard idTextField.isRequiredOverlapValidation else { return }
-        
-        sender.validateOverlappedID(idTextField.text) { isOverlapped in
+        guard let id = idTextField.text else { return }
+
+        validationUseCase.validateIsOverlapped(with: ValidationRequest(id: id)) { isOverlapped in
             if isOverlapped {
                 self.setWrongCaseIDTextFieldForOverlaped()
                 return
@@ -90,7 +94,7 @@ final class SignupViewController: UIViewController, ToastShowable {
     
     private func setWrongCaseIDTextFieldForOverlaped() {
         DispatchQueue.main.async {
-                    self.idTextField.setWrongCaseOverlappedID()
+            self.idTextField.setWrongCaseOverlappedID()
         }
     }
     
@@ -129,8 +133,13 @@ extension SignupViewController: CompleteButtonDelegate {
     }
     
     func completeButtonTapped() {
-        createUser { result in
-            guard let result = result, result else { return }
+        guard let jsonData = User(userId: idTextField.text!,
+        password: pwTextField.text!,
+        name: nameTextField.text!).toJSON else { return }
+        
+        userCreationUseCase.createUser(with: UserCreationRequest(data: jsonData)) { result in
+            guard result else { return }
+            
             self.showToast(by: result)
         }
     }
@@ -138,27 +147,6 @@ extension SignupViewController: CompleteButtonDelegate {
     func showToast(by result: Bool) {
         DispatchQueue.main.async {
             result ? self.show(message: "회원가입 성공!") : self.show(message: "통신오류로 인한 회원가입 실패")
-        }
-    }
-    
-    private func createUser(resultHandler: @escaping (Bool?) -> ()) {
-        let user = User(userId: idTextField.text!,
-                        password: pwTextField.text!,
-                        name: nameTextField.text!)
-        guard let jsonData = DataCoder.encodeJSONData(user) else { return }
-        
-        NetworkManager.excuteURLSession(
-            method: .post,
-            from: SignupURL.urlStringUserIntitatationInfo,
-            data: jsonData
-        ) { data in
-            guard let data = data else { return }
-            guard let createUserResponse = DataCoder.decodeJSONData(
-                type: CreateUserResponse.self,
-                data: data,
-                dateDecodingStrategy: nil) else { return }
-            
-            resultHandler(createUserResponse.success)
         }
     }
 }

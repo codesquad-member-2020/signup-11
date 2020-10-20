@@ -14,8 +14,10 @@ final class NamePresenter: SignupPresenter {
         static let correctName = "사용가능한 이름입니다."
     }
     
+    @discardableResult
     override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
         guard super.validateText(of: signupTextableView) else { return false }
+        
         guard let signupTextableView = signupTextableView else { return false }
         
         guard hasNoSpace(signupTextableView.text) else {

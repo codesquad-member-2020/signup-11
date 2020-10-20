@@ -21,8 +21,10 @@ final class PasswordPresenter: SignupPresenter {
         static let correctPassword = "안전한 비밀번호입니다."
     }
     
+    @discardableResult
     override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
         guard super.validateText(of: signupTextableView) else { return false }
+        
         guard let signupTextableView = signupTextableView else { return false }
         
         guard isCorrectLength(min: 8, max: 16, count: signupTextableView.text?.count) else {

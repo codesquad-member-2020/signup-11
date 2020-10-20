@@ -24,11 +24,13 @@ class SignupField: FormField, SignupTextableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         configureMessageLabel()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
         configureMessageLabel()
     }
     

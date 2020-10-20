@@ -8,6 +8,7 @@
 
 import Foundation
 
+// 이것도 없앤다.
 final class DataCoder {
     static func decodeJSONData<T>(
         type: T.Type,
@@ -27,6 +28,7 @@ final class DataCoder {
     
     static func encodeJSONData<T>(_ value: T) -> Data? where T: Encodable {
         guard let jsonData = try? JSONEncoder().encode(value) else { return nil }
+        
         return jsonData
     }
 }

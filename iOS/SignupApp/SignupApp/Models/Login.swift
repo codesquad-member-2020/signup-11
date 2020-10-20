@@ -11,4 +11,8 @@ import Foundation
 struct Login: Codable {
     let userId: String
     let password: String
+    
+    var toJson: Data? {
+        return DataCoder.encodeJSONData(self)
+    }
 }

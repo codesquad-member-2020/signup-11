@@ -15,8 +15,10 @@ final class RePasswordPresenter: SignupPresenter {
         static let samePassword = "비밀번호가 일치합니다."
     }
     
+    @discardableResult
     override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
         guard super.validateText(of: signupTextableView) else { return false }
+        
         guard let signupTextableView = signupTextableView else { return false }
         guard let rePasswordableView = signupTextableView as? RePasswordableView,
             let passwordTextableView = rePasswordableView.passwordTextableView else { return false }
@@ -37,6 +39,7 @@ final class RePasswordPresenter: SignupPresenter {
     
     private func isSameText(lhs: String?, rhs: String?) -> Bool {
         guard let lhs = lhs, let rhs = rhs else { return false }
+        
         return lhs == rhs
     }
 }

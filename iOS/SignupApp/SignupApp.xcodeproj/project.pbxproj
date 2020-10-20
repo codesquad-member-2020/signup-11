@@ -24,7 +24,6 @@
 		5A4CA5ED242B7F920095FA0C /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EC242B7F920095FA0C /* PasswordPresenter.swift */; };
 		5A4CA5EF242B7FAA0095FA0C /* RePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5EE242B7FAA0095FA0C /* RePasswordPresenter.swift */; };
 		5A4CA5F1242B7FBF0095FA0C /* NamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA5F0242B7FBF0095FA0C /* NamePresenter.swift */; };
-		5A6716D8249346280075B510 /* OverlapValidationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6716D7249346280075B510 /* OverlapValidationButton.swift */; };
 		5A6716DA24934D260075B510 /* IDField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6716D924934D260075B510 /* IDField.swift */; };
 		5A6716DC249351700075B510 /* IDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6716DB249351700075B510 /* IDResponse.swift */; };
 		5A6716DE249351D70075B510 /* CreateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6716DD249351D70075B510 /* CreateUserResponse.swift */; };
@@ -46,7 +45,15 @@
 		5A834FB1242F5FC5006245F2 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB0242F5FC5006245F2 /* FormField.swift */; };
 		5A834FB52430459A006245F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB42430459A006245F2 /* User.swift */; };
 		5A834FB72430490D006245F2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB62430490D006245F2 /* Login.swift */; };
-		5A834FB9243077D1006245F2 /* SignupURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB8243077D1006245F2 /* SignupURL.swift */; };
+		5A834FB9243077D1006245F2 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A834FB8243077D1006245F2 /* Endpoints.swift */; };
+		5ABD39C0253EE07300129166 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39BF253EE07300129166 /* Request.swift */; };
+		5ABD39C2253EE20E00129166 /* ValidationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C1253EE20E00129166 /* ValidationRequest.swift */; };
+		5ABD39C4253EE2B900129166 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C3253EE2B900129166 /* LoginRequest.swift */; };
+		5ABD39C6253EE41700129166 /* UserCreationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C5253EE41700129166 /* UserCreationRequest.swift */; };
+		5ABD39C8253EE4AE00129166 /* UserCreationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C7253EE4AE00129166 /* UserCreationUseCase.swift */; };
+		5ABD39CA253EE56F00129166 /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39C9253EE56F00129166 /* NetworkDispatcher.swift */; };
+		5ABD39CF253EEB0E00129166 /* ValidationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39CE253EEB0E00129166 /* ValidationUseCase.swift */; };
+		5ABD39D1253EEDD400129166 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD39D0253EEDD400129166 /* LoginUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +91,6 @@
 		5A4CA5EC242B7F920095FA0C /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
 		5A4CA5EE242B7FAA0095FA0C /* RePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RePasswordPresenter.swift; sourceTree = "<group>"; };
 		5A4CA5F0242B7FBF0095FA0C /* NamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePresenter.swift; sourceTree = "<group>"; };
-		5A6716D7249346280075B510 /* OverlapValidationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapValidationButton.swift; sourceTree = "<group>"; };
 		5A6716D924934D260075B510 /* IDField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDField.swift; sourceTree = "<group>"; };
 		5A6716DB249351700075B510 /* IDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDResponse.swift; sourceTree = "<group>"; };
 		5A6716DD249351D70075B510 /* CreateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserResponse.swift; sourceTree = "<group>"; };
@@ -112,7 +118,15 @@
 		5A834FB0242F5FC5006245F2 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		5A834FB42430459A006245F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A834FB62430490D006245F2 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		5A834FB8243077D1006245F2 /* SignupURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupURL.swift; sourceTree = "<group>"; };
+		5A834FB8243077D1006245F2 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		5ABD39BF253EE07300129166 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		5ABD39C1253EE20E00129166 /* ValidationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRequest.swift; sourceTree = "<group>"; };
+		5ABD39C3253EE2B900129166 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		5ABD39C5253EE41700129166 /* UserCreationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreationRequest.swift; sourceTree = "<group>"; };
+		5ABD39C7253EE4AE00129166 /* UserCreationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreationUseCase.swift; sourceTree = "<group>"; };
+		5ABD39C9253EE56F00129166 /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
+		5ABD39CE253EEB0E00129166 /* ValidationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUseCase.swift; sourceTree = "<group>"; };
+		5ABD39D0253EEDD400129166 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +167,6 @@
 		5A4CA5D7242B4BE60095FA0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5A6716D7249346280075B510 /* OverlapValidationButton.swift */,
 				5A7C6316242DCBAA0073CF72 /* CompleteButton.swift */,
 				5A7C6305242CB2D70073CF72 /* MessageLabel.swift */,
 				5A4CA5E0242B53C90095FA0C /* TextFields */,
@@ -198,8 +211,10 @@
 		5A7C630E242D9EDB0073CF72 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */,
-				5A834FB8243077D1006245F2 /* SignupURL.swift */,
+				5A834FB8243077D1006245F2 /* Endpoints.swift */,
+				5ABD39CD253EEAED00129166 /* NetworkDispatcher */,
+				5ABD39CC253EEAD400129166 /* UseCases */,
+				5ABD39CB253EEABB00129166 /* Request */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -286,6 +301,36 @@
 				5A6716D924934D260075B510 /* IDField.swift */,
 			);
 			path = SignupTextFields;
+			sourceTree = "<group>";
+		};
+		5ABD39CB253EEABB00129166 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				5ABD39C3253EE2B900129166 /* LoginRequest.swift */,
+				5ABD39BF253EE07300129166 /* Request.swift */,
+				5ABD39C5253EE41700129166 /* UserCreationRequest.swift */,
+				5ABD39C1253EE20E00129166 /* ValidationRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		5ABD39CC253EEAD400129166 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				5ABD39C7253EE4AE00129166 /* UserCreationUseCase.swift */,
+				5ABD39CE253EEB0E00129166 /* ValidationUseCase.swift */,
+				5ABD39D0253EEDD400129166 /* LoginUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		5ABD39CD253EEAED00129166 /* NetworkDispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				5ABD39C9253EE56F00129166 /* NetworkDispatcher.swift */,
+				5A7C630F242D9EEB0073CF72 /* NetworkManager.swift */,
+			);
+			path = NetworkDispatcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,15 +467,19 @@
 				5A25561624C2B94E0014D5E4 /* ToastShowable.swift in Sources */,
 				5A7C6312242D9F1B0073CF72 /* DataCoder.swift in Sources */,
 				5A4CA5EB242B7EE30095FA0C /* IDPresenter.swift in Sources */,
-				5A6716D8249346280075B510 /* OverlapValidationButton.swift in Sources */,
 				5A834510242A301B00F20FAA /* SignupViewController.swift in Sources */,
 				5A35D40924979E990038AD6F /* IDableView.swift in Sources */,
+				5ABD39C2253EE20E00129166 /* ValidationRequest.swift in Sources */,
+				5ABD39C0253EE07300129166 /* Request.swift in Sources */,
 				5A83450C242A301B00F20FAA /* AppDelegate.swift in Sources */,
+				5ABD39C6253EE41700129166 /* UserCreationRequest.swift in Sources */,
 				5A7C630B242CC3270073CF72 /* UIColor.swift in Sources */,
 				5A4CA5EF242B7FAA0095FA0C /* RePasswordPresenter.swift in Sources */,
 				5A6716DC249351700075B510 /* IDResponse.swift in Sources */,
 				5A25561324C2B1220014D5E4 /* ToastLabel.swift in Sources */,
 				5A4CA5E4242B5BB20095FA0C /* SignupField.swift in Sources */,
+				5ABD39CF253EEB0E00129166 /* ValidationUseCase.swift in Sources */,
+				5ABD39CA253EE56F00129166 /* NetworkDispatcher.swift in Sources */,
 				5A7C6319242DE2C00073CF72 /* LoginViewController.swift in Sources */,
 				5A7C6306242CB2D70073CF72 /* MessageLabel.swift in Sources */,
 				5A35D40B2497A18D0038AD6F /* RePasswordableView.swift in Sources */,
@@ -438,6 +487,7 @@
 				5A7C6310242D9EEB0073CF72 /* NetworkManager.swift in Sources */,
 				5A83450E242A301B00F20FAA /* SceneDelegate.swift in Sources */,
 				5A4CA5ED242B7F920095FA0C /* PasswordPresenter.swift in Sources */,
+				5ABD39C4253EE2B900129166 /* LoginRequest.swift in Sources */,
 				5A6716DE249351D70075B510 /* CreateUserResponse.swift in Sources */,
 				5A4CA5E9242B7E9D0095FA0C /* SignupPresenter.swift in Sources */,
 				5A6716DA24934D260075B510 /* IDField.swift in Sources */,
@@ -446,8 +496,10 @@
 				5A4CA5DD242B4DAE0095FA0C /* RePasswordField.swift in Sources */,
 				5A35D407249799CD0038AD6F /* SignupTextableView.swift in Sources */,
 				5A834FB72430490D006245F2 /* Login.swift in Sources */,
+				5ABD39C8253EE4AE00129166 /* UserCreationUseCase.swift in Sources */,
 				5A7C6315242DA3070073CF72 /* LoginResponse.swift in Sources */,
-				5A834FB9243077D1006245F2 /* SignupURL.swift in Sources */,
+				5ABD39D1253EEDD400129166 /* LoginUseCase.swift in Sources */,
+				5A834FB9243077D1006245F2 /* Endpoints.swift in Sources */,
 				5A834FB52430459A006245F2 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

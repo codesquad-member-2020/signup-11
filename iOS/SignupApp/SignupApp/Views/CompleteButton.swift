@@ -18,12 +18,14 @@ final class CompleteButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         configureDelegate()
         makeDisabled()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
         configureDelegate()
         makeDisabled()
     }

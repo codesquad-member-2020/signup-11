@@ -17,4 +17,8 @@ struct User: Codable {
     let email = "test@gmail.com"
     let phone = "01012345678"
     let interests = "영화감상, 자전거"
+    
+    var toJSON: Data? {
+        return DataCoder.encodeJSONData(self)
+    }
 }
