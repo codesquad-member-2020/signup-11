@@ -14,11 +14,14 @@ final class IDPresenter: SignupPresenter {
         static let validationRequest = "사용 가능하지만 아이디 중복 검사를 진행하셔야 합니다."
     }
     
-    override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
-        guard super.validateText(of: signupTextableView) else { return false }
+    init(idableView: IDableView) {
+        super.init(signupTextableView: idableView)
+    }
+    
+    override func validateText() -> Bool {
+        guard super.validateText() else { return false }
         
-        guard let signupTextableView = signupTextableView,
-            let idTextableView = signupTextableView as? IDableView,
+        guard let idTextableView = signupTextableView as? IDableView,
             !idTextableView.isCorrect else { return false }
         
         guard isCorrectID(idTextableView.text) else {

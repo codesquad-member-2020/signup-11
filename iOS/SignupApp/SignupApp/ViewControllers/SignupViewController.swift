@@ -18,10 +18,11 @@ final class SignupViewController: UIViewController, ToastShowable {
     
     private let userCreationUseCase = UserCreationUseCase(networkDispatcher: NetworkManager())
     private let validationUseCase = ValidationUseCase(networkDispatcher: NetworkManager())
-    private let idPresenter = IDPresenter()
-    private let passwordPresenter = PasswordPresenter()
-    private let rePasswordPresenter = RePasswordPresenter()
-    private let namePresenter = NamePresenter()
+    
+    private lazy var idPresenter = IDPresenter(idableView: idTextField)
+    private lazy var passwordPresenter = PasswordPresenter(signupTextableView: pwTextField)
+    private lazy var rePasswordPresenter = RePasswordPresenter(signupTextableView: pwAgainTextField)
+    private lazy var namePresenter = NamePresenter(signupTextableView: nameTextField)
     
     var toastLabel: ToastLabel!
     
