@@ -17,10 +17,15 @@ class SignupPresenter: NSObject {
         static let textInputRequest = "필수 항목입니다."
     }
     
+    weak var signupTextableView: SignupTextableView?
+    
+    init(signupTextableView: SignupTextableView) {
+        self.signupTextableView = signupTextableView
+    }
+    
     @discardableResult
-    func validateText(of signupTextableView: SignupTextableView?) -> Bool {
+    func validateText() -> Bool {
         guard let signupTextableView = signupTextableView else { return false }
-        
         guard isNotZero(count: signupTextableView.text?.count) else {
             signupTextableView.setWrongCase(message: Message.textInputRequest)
             return false
@@ -56,11 +61,11 @@ extension SignupPresenter: UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        validateText(of: textField as? SignupField)
+        validateText()
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        validateText(of: textField as? SignupField)
+        validateText()
         return true
     }
 }
