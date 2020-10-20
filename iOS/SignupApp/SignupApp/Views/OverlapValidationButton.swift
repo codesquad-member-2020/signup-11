@@ -17,7 +17,7 @@ final class OverlapValidationButton: UIButton {
         super.init(coder: coder)
     }
     
-    func validateOverlappedID(_ id: String?, completion: @escaping (Bool) -> ()) {
+    func validateOverlappedID(_ id: String?, completion: @escaping (Bool) -> Void) {
         guard let id = id else { return }
         
         NetworkManager.excuteURLSession(

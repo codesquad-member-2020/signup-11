@@ -39,6 +39,7 @@ final class RepasswordPresenterTests: XCTestCase {
     func test_이전_패스워드가_조건이_맞지_않을_때() throws {
         //given
         let spy = RePasswordableViewSpy()
+        spy.text = "1111"
         spy.passwordTextableView?.isCorrect = false
         
         //when

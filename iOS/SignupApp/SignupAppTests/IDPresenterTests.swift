@@ -11,7 +11,7 @@ import UIKit
 @testable import SignupApp
 
 private final class IDableViewSpy: UIView, IDableView {
-    var status = Status.notCorrect
+    var isRequiredOverlapValidation: Bool = false
     var isCorrect: Bool = false
     var text: String? = nil
     var message: String? = nil
@@ -45,7 +45,7 @@ final class IDPresenterTests: XCTestCase {
         }()
         
         //when
-        presenter.validateText(of: spy)
+        _ = presenter.validateText(of: spy)
         
         //then
         let result = try XCTUnwrap(spy.message)
@@ -61,7 +61,7 @@ final class IDPresenterTests: XCTestCase {
         }()
         
         //when
-        presenter.validateText(of: spy)
+        _ = presenter.validateText(of: spy)
         
         //then
         let result = try XCTUnwrap(spy.message)

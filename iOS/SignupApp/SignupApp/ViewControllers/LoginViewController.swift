@@ -35,7 +35,7 @@ final class LoginViewController: UIViewController, ToastShowable {
     }
     
     // 이 부분도 분리하자 
-    private func isLogin(resultHandler: @escaping (Bool?) -> ()) {
+    private func isLogin(resultHandler: @escaping (Bool?) -> Void) {
         let login = Login(userId: idTextField.text!,
                           password: pwTextField.text!)
         guard let jsonData = DataCoder.encodeJSONData(login) else { return }

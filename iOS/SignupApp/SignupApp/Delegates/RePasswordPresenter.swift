@@ -15,6 +15,7 @@ final class RePasswordPresenter: SignupPresenter {
         static let samePassword = "비밀번호가 일치합니다."
     }
     
+    @discardableResult
     override func validateText(of signupTextableView: SignupTextableView?) -> Bool {
         guard super.validateText(of: signupTextableView) else { return false }
         
