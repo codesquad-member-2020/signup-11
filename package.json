@@ -1,0 +1,25 @@
+{
+  "name": "signup-11",
+  "version": "1.0.0",
+  "description": "회원가입 프로젝트 - 11팀",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codesquad-memeber-2020/signup-11.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codesquad-memeber-2020/signup-11/issues"
+  },
+  "homepage": "https://github.com/codesquad-memeber-2020/signup-11#readme",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}

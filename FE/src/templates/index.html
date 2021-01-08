@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="link">
+      <ul class="link-list clearfix">
+        <li><a href="login.html">로그인</a></li>
+        <li><a href="index.html">회원가입</a></li>
+      </ul>
+    </div>
+    <div class="form-wrap join">
+      <form name="question" method="post" action="/login">
+        <div class="form-title">
+          <h1>회원가입</h1>
+        </div>
+        <div class="form-group">
+          <label for="user-id">아이디</label>
+          <input class="form-control" id="user-id" name="user-id" required />
+          <span class="message">
+            사용 가능 합니다.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="password">비밀번호</label>
+          <input type="password" class="form-control" id="password1" name="password1" placeholder="Password" required />
+          <span class="message">
+            안전한 비밀번호 입니다.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="password">비밀번호 재확인</label>
+          <input type="password" class="form-control" id="password2" name="password2" placeholder="Password" required />
+          <span class="message">
+            비밀번호가 일치하지 않습니다.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input class="form-control" id="name" name="name" placeholder="Name" required />
+        </div>
+        <div class="form-group birth-group">
+          <label for="birth1">생년월일</label>
+          <span class="birth-contents">
+            <input class="form-control" id="birth1" name="birth1" placeholder="년도" required />
+            <select id="mm" class="sel" aria-label="월" required>
+              <option value="">월</option>
+              <option value="01">1</option>
+              <option value="02">2</option>
+              <option value="03">3</option>
+              <option value="04">4</option>
+              <option value="05">5</option>
+              <option value="06">6</option>
+              <option value="07">7</option>
+              <option value="08">8</option>
+              <option value="09">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <input class="form-control" id="birth2" name="birth2" placeholder="일" required />
+            <span class="message">
+              태어난 년도 4자리를 정확하게 입력하세요.
+            </span>
+          </span>
+        </div>
+        <div class="form-group gender-group">
+          <label for="birth">성별</label>
+          <select name="gender" id="gender" aria-label="성별">
+            <option value="">성별</option>
+            <option value="남자">남자</option>
+            <option value="여자">여자</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="email">이메일</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
+          <span class="message">
+            이메일 주소를 다시 확인해주세요.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="phone">휴대전화</label>
+          <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+            placeholder="- 없이 입력해주세요. 예) 01043214321" required />
+          <span class="message">
+            형식에 맞지 않는 번호입니다.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="">관심사</label>
+          <div class="tag-container">
+            <input type="text" class="form-control" name="" id="">
+          </div>
+          <span class="message">
+            형식에 맞지 않는 번호입니다.
+          </span>
+        </div>
+        <div class="form-group term-group">
+          <input type="checkbox" class="form-control" id="terms1" name="terms1" value="Y" class="chk" required>
+          <div class="terms-pop-btn">
+            <button type="button" id="modalBtn">
+              약관에 동의합니다.
+            </button>
+          </div>
+
+        </div>
+        <div class="terms-modal" id="modal">
+          <div class="close-button">
+            <button type="button" class="closeBtn">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="terms-container">
+            <div class="terms-title">
+              <h3>개인정보 수집 및 이용에 대한 안내</h3>
+            </div>
+            <div class="terms-contents">
+              <ul>
+                <li>
+                  <div class="sub-title">1. 처리하는 개인정보 항목</div>
+                  <div class="sub-title-contents">
+                    네이버 라이브러리에 회원가입을 하지 않아도 도서 검색, 희망도서 신청, Q&A 등의 서비스를 회원과 동일하게 이용할 수 있습니다. 도서 열람 또는 뉴스레터 서비스 등의 개인화 혹은
+                    회원제
+                    서비스를 이용하기 위해 회원가입이 필요하며, 아래와 같이 필요한 최소한의 개인정보를 수집합니다.
+                  </div>
+                  <span>
+                    - 수집하는 개인정보 : 이름, 연령대, 성별, 거주지, 직업, 관심도서, 주 방문목적, 이메일주소
+                  </span>
+                  <span>
+                    그 밖에 서비스 이용 과정에서 아래와 같은 정보들이 자동으로 생성되어 수집될 수 있습니다.
+                  </span>
+                  <span>
+                    - 네이버 라이브러리 방문 일시 등의 이용기록
+                  </span>
+                  <span>
+                    - 브라우저 종류 및 OS, 방문 기록(IP Address, 접속시간), 쿠키
+                  </span>
+                </li>
+                <li>
+                  <div class="sub-title">2. 개인정보의 처리목적</div>
+                  <div class="sub-title-contents">
+                    네이버 라이브러리는 회원관리, 서비스 향상 및 개선, 부정 이용의 방지 및 제재, 맞춤 서비스 제공을 위한 목적만으로 개인정보를 처리합니다.
+                  </div>
+                </li>
+                <li>
+                  <div class="sub-title">3. 개인정보의 제 3자 제공</div>
+                  <div class="sub-title-contents">
+                    회사는 개인정보를 “2. 개인정보의 처리목적”에서 고지한 범위내에서 이용하며, 정보주체의 사전 동의 없이는 동 범위를 초과하여 이용하거나 원칙적으로 개인정보를 외부에 공개하지
+                    않습니다.
+                    다만, 아래의 경우에는 예외로 합니다.</div>
+                </li>
+                <li>
+                  <div class="sub-title">3. 개인정보의 제 3자 제공</div>
+                  <div class="sub-title-contents">
+                    회사는 개인정보를 “2. 개인정보의 처리목적”에서 고지한 범위내에서 이용하며, 정보주체의 사전 동의 없이는 동 범위를 초과하여 이용하거나 원칙적으로 개인정보를 외부에 공개하지
+                    않습니다.
+                    다만, 아래의 경우에는 예외로 합니다.</div>
+                  <span>- 정보주체가 사전에 동의한 경우</span>
+                  <span>- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우
+                  </span>
+                </li>
+                <li>
+                  <div class="sub-title">4. 개인정보 처리의 위탁</div>
+                  <div class="sub-title-contents">회사는 원활한 업무 처리를 위해서 아래와 같이 개인정보를 위탁하고 있으며, 관계 법령에 따른 위탁계약 시 개인정보가 안전하게
+                    관리될 수 있도록 필요한 사항을 규정하고 있습니다.</div>
+                </li>
+              </ul>
+            </div>
+            <div class="agree">
+              <label for="terms1">약관 동의</label>
+            </div>
+          </div>
+        </div>
+        <div class="join-button">
+          <button class='reset' type="reset">초기화</button>
+          <button type="submit">가입하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="../js/terms.js"></script>
+  <script src="../js/interests.js"></script>
+  <script type='module' src="../js/index.js"></script>
+</body>
+
+</html>
